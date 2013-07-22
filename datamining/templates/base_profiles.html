@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'Profiles' %}{% endblock %}
+
+{% block extrahead %}
+{{ block.super }}
+   <script type="text/javascript">                                  
+       $(function() {      
+           $('.button-edit-profile').buttonset();                                                                     
+       })                                       
+   </script>     
+{% endblock %}

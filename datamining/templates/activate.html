@@ -1,0 +1,17 @@
+{% extends "base_profiles.html" %}
+
+{% block title %}Activate a user{% endblock %}
+
+{% block content %}    
+  <h2>Activate a person</h2>
+
+  <p>
+    Activating user account for {{ person.first_name }} {{ person.last_name }}
+  </p>
+
+<form action="{% url profiles.views.activate person.id %}" method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+</form>
+{% endblock %}

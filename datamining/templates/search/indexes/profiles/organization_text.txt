@@ -1,0 +1,7 @@
+{{ object.title }}
+{{ object.description }}      
+{{ object.type.name}}
+
+{% if object.tags %}
+    {{ object.tags }} 
+{% endif %}

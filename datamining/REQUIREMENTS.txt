@@ -1,0 +1,27 @@
+django>=1.3
+MySQL-python
+PIL
+sorl-thumbnail==3.2.5
+simplejson
+pysolr
+pycurl
+BeautifulSoup    
+django-tagging
+django-extensions
+django-haystack
+south
+django-maintenancemode
+-e git://github.com/mikeedwards/django-basic-apps.git#egg=basic
+-e git://github.com/callowayproject/django-objectpermissions.git#egg=objectpermissions
+-e hg+http://bitbucket.org/fabian/django-piston#egg=django-piston
+-e svn+http://django-grappelli.googlecode.com/svn/branches/grappelli_dev#egg=grappelli
+-e hg+http://bitbucket.org/fetzig/grappelli-admin-tools#egg=django-admin-tools
+feedjack
+django-ajax-selects
+-e hg+https://django-ajax-filtered-fields.googlecode.com/hg/#egg=django-ajax-filtered-fields 
+-e git://github.com/pydanny/django-social-bookmarking.git#egg=social-bookmarking
+python-cjson
+-e svn+http://django-calais.googlecode.com/svn/trunk/#egg=djangocalais
+hashlib
+django-axes
+-e git+git://github.com/mikl/django-password-required.git#egg=password_required

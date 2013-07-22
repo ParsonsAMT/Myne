@@ -1,0 +1,53 @@
+        {% if mlt %}
+        <h2>Related:</h2>
+        <div id="mlt-profile">
+            <ul>
+                {% for result in mlt %}
+                    <li>
+                    {% ifequal result.model_name "facultymember" %}
+                    <img src="{{ MEDIA_URL }}images/defaults/20px/DataMyne_Icon_Faculty_20.jpg" style="margin-right:10px; border:1px solid #333; vertical-align: middle;"/>                  
+                    {% endifequal %} 
+                    {% ifequal result.model_name "student" %}
+                    <img src="{{ MEDIA_URL }}images/defaults/20px/DataMyne_Icon_Student_20.jpg" style="margin-right:10px; border:1px solid #333; vertical-align: middle;"/>                     
+                    {% endifequal %} 
+                    {% ifequal result.model_name "staff" %}
+                    <img src="{{ MEDIA_URL }}images/defaults/20px/DataMyne_Icon_Staff_20.jpg" style="margin-right:10px; border:1px solid #333; vertical-align: middle;"/>                     
+                    {% endifequal %} 
+                    {% ifequal result.model_name "course" %}
+                    <img src="{{ MEDIA_URL }}images/defaults/20px/DataMyne_Icon_Course_20.jpg" style="margin-right:10px; border:1px solid #333; vertical-align: middle;"/>                     
+                    {% endifequal %} 
+                    {% ifequal result.model_name "organization" %}
+                    <img src="{{ MEDIA_URL }}images/defaults/20px/DataMyne_Icon_Group_20.jpg" style="margin-right:10px; border:1px solid #333; vertical-align: middle;"/>                     
+                    {% endifequal %} 
+                    {% ifequal result.model_name "committee" %}
+                    <img src="{{ MEDIA_URL }}images/defaults/20px/DataMyne_Icon_Committee_20.jpg" style="margin-right:10px; border:1px solid #333; vertical-align: middle;"/>                     
+                    {% endifequal %} 
+
+                    {% ifequal result.model_name "work" %}
+                    <img src="{{ MEDIA_URL }}images/defaults/20px/DataMyne_Icon_Work_20.jpg" style="margin-right:10px; border:1px solid #333; vertical-align: middle;"/>                     
+                    <a href="{{ result.object.get_absolute_url }}">{% spaceless %}
+                    {% if result.object.title %}
+                       {{ result.object.title|truncatewords:4 }}
+                    {% else %}
+	                    {% if result.object.url %}
+	                       {{ result.object.url|urlizetrunc:30 }}
+	                    {% else %}
+	                        {% for affiliation in result.object.affiliations.all %}
+	                           {{ affiliation.person }}{% if not forloop.last %}, {% endif %}
+	                        {% endfor %}
+	                    {% endif %}
+                    {% endif %}
+                    {% endspaceless %}</a></li>
+                    {% endifequal %} 
+
+                    {% ifequal result.model_name "meeting" %}
+                    <img src="{{ MEDIA_URL }}images/defaults/20px/DataMyne_Icon_Committee_20.jpg" style="margin-right:10px; border:1px solid #333; vertical-align: middle;"/>                     
+                    {% endifequal %} 
+
+                    {% ifnotequal result.model_name "work" %}
+                    <a href="{{ result.object.get_absolute_url }}">{{ result.object }}</a></li>
+                    {% endifnotequal %} 
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}

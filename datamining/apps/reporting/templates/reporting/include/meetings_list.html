@@ -1,0 +1,26 @@
+      {% if edittable or container.meetings.all %}
+        <div id="meetings-container">
+        <h2>Meetings</h2>
+        {% if edittable %}
+        <div class="buttons-meeting-container"><a href="{% url reporting_add_meeting model_name container.id  %}">Add Meeting</a></div>
+            <script type="text/javascript">                                  
+                $(function() {      
+                    $('.buttons-meeting-container').buttonset();                                                                     
+                })                                       
+            </script>     
+        {% endif %}
+        {% if container.meetings.all %}
+          <div class="meetings">
+            <dl>
+            {% for meeting in container.meetings.all %}
+                <dt><a href="{{ meeting.get_absolute_url }}">{{ meeting.start_time }}</a></dt>
+                <dd>{{ meeting.agenda }} 
+                {% if meeting.minutes %}
+                <br/><a href="{{ meeting.get_absolute_url }}#meeting-minutes">See minutes</a>
+                {% endif %}</dd>
+            {% endfor %}
+            </dl>  
+          </div>
+        {% endif %}
+        </div>
+      {% endif %}

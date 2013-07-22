@@ -1,0 +1,401 @@
+\indexentry{apps.profiles.models (module)|hyperpage}{3}
+\indexentry{ActivePersonManager (class in apps.profiles.models)|hyperpage}{3}
+\indexentry{AreaOfStudy (class in apps.profiles.models)|hyperpage}{3}
+\indexentry{unit\_permissions (apps.profiles.models.AreaOfStudy attribute)|hyperpage}{3}
+\indexentry{BaseModel (class in apps.profiles.models)|hyperpage}{3}
+\indexentry{get\_unit() (apps.profiles.models.BaseModel method)|hyperpage}{3}
+\indexentry{has\_unit\_permission() (apps.profiles.models.BaseModel method)|hyperpage}{3}
+\indexentry{save() (apps.profiles.models.BaseModel method)|hyperpage}{3}
+\indexentry{unit\_permissions (apps.profiles.models.BaseModel attribute)|hyperpage}{3}
+\indexentry{ContactEmail (class in apps.profiles.models)|hyperpage}{3}
+\indexentry{unit\_permissions (apps.profiles.models.ContactEmail attribute)|hyperpage}{4}
+\indexentry{Course (class in apps.profiles.models)|hyperpage}{4}
+\indexentry{get\_unit() (apps.profiles.models.Course method)|hyperpage}{4}
+\indexentry{unit\_permissions (apps.profiles.models.Course attribute)|hyperpage}{4}
+\indexentry{CourseImage (class in apps.profiles.models)|hyperpage}{4}
+\indexentry{unit\_permissions (apps.profiles.models.CourseImage attribute)|hyperpage}{4}
+\indexentry{Department (class in apps.profiles.models)|hyperpage}{5}
+\indexentry{authorities (apps.profiles.models.Department attribute)|hyperpage}{5}
+\indexentry{unit\_permissions (apps.profiles.models.Department attribute)|hyperpage}{5}
+\indexentry{Division (class in apps.profiles.models)|hyperpage}{5}
+\indexentry{authorities (apps.profiles.models.Division attribute)|hyperpage}{5}
+\indexentry{unit\_permissions (apps.profiles.models.Division attribute)|hyperpage}{5}
+\indexentry{Expertise (class in apps.profiles.models)|hyperpage}{5}
+\indexentry{unit\_permissions (apps.profiles.models.Expertise attribute)|hyperpage}{5}
+\indexentry{FacultyMember (class in apps.profiles.models)|hyperpage}{5}
+\indexentry{Invitation (class in apps.profiles.models)|hyperpage}{5}
+\indexentry{content\_object (apps.profiles.models.Invitation attribute)|hyperpage}{6}
+\indexentry{Link (class in apps.profiles.models)|hyperpage}{6}
+\indexentry{content\_object (apps.profiles.models.Link attribute)|hyperpage}{6}
+\indexentry{unit\_permissions (apps.profiles.models.Link attribute)|hyperpage}{6}
+\indexentry{Organization (class in apps.profiles.models)|hyperpage}{6}
+\indexentry{affiliations (apps.profiles.models.Organization attribute)|hyperpage}{6}
+\indexentry{has\_unit\_permission() (apps.profiles.models.Organization method)|hyperpage}{6}
+\indexentry{meetings (apps.profiles.models.Organization attribute)|hyperpage}{6}
+\indexentry{unit\_permissions (apps.profiles.models.Organization attribute)|hyperpage}{7}
+\indexentry{OrganizationType (class in apps.profiles.models)|hyperpage}{7}
+\indexentry{unit\_permissions (apps.profiles.models.OrganizationType attribute)|hyperpage}{7}
+\indexentry{Person (class in apps.profiles.models)|hyperpage}{7}
+\indexentry{activate() (apps.profiles.models.Person method)|hyperpage}{7}
+\indexentry{cv\_text (apps.profiles.models.Person attribute)|hyperpage}{7}
+\indexentry{deactivate() (apps.profiles.models.Person method)|hyperpage}{7}
+\indexentry{group\_perms\_set (apps.profiles.models.Person attribute)|hyperpage}{7}
+\indexentry{unit\_permissions (apps.profiles.models.Person attribute)|hyperpage}{7}
+\indexentry{user\_perms\_set (apps.profiles.models.Person attribute)|hyperpage}{7}
+\indexentry{Program (class in apps.profiles.models)|hyperpage}{7}
+\indexentry{affiliations (apps.profiles.models.Program attribute)|hyperpage}{8}
+\indexentry{authorities (apps.profiles.models.Program attribute)|hyperpage}{8}
+\indexentry{unit\_permissions (apps.profiles.models.Program attribute)|hyperpage}{8}
+\indexentry{Project (class in apps.profiles.models)|hyperpage}{8}
+\indexentry{unit\_permissions (apps.profiles.models.Project attribute)|hyperpage}{8}
+\indexentry{Requirement (class in apps.profiles.models)|hyperpage}{8}
+\indexentry{unit\_permissions (apps.profiles.models.Requirement attribute)|hyperpage}{8}
+\indexentry{School (class in apps.profiles.models)|hyperpage}{8}
+\indexentry{authorities (apps.profiles.models.School attribute)|hyperpage}{8}
+\indexentry{unit\_permissions (apps.profiles.models.School attribute)|hyperpage}{9}
+\indexentry{Section (class in apps.profiles.models)|hyperpage}{9}
+\indexentry{get\_display\_title() (apps.profiles.models.Section method)|hyperpage}{9}
+\indexentry{unit\_permissions (apps.profiles.models.Section attribute)|hyperpage}{9}
+\indexentry{Semester (class in apps.profiles.models)|hyperpage}{9}
+\indexentry{unit\_permissions (apps.profiles.models.Semester attribute)|hyperpage}{9}
+\indexentry{Sponsorship (class in apps.profiles.models)|hyperpage}{9}
+\indexentry{content\_object (apps.profiles.models.Sponsorship attribute)|hyperpage}{9}
+\indexentry{unit\_permissions (apps.profiles.models.Sponsorship attribute)|hyperpage}{10}
+\indexentry{Staff (class in apps.profiles.models)|hyperpage}{10}
+\indexentry{Student (class in apps.profiles.models)|hyperpage}{10}
+\indexentry{Subject (class in apps.profiles.models)|hyperpage}{10}
+\indexentry{unit\_permissions (apps.profiles.models.Subject attribute)|hyperpage}{10}
+\indexentry{UnitPermission (class in apps.profiles.models)|hyperpage}{10}
+\indexentry{content\_object (apps.profiles.models.UnitPermission attribute)|hyperpage}{11}
+\indexentry{Work (class in apps.profiles.models)|hyperpage}{11}
+\indexentry{affiliations (apps.profiles.models.Work attribute)|hyperpage}{11}
+\indexentry{unit\_permissions (apps.profiles.models.Work attribute)|hyperpage}{11}
+\indexentry{WorkURL (class in apps.profiles.models)|hyperpage}{11}
+\indexentry{unit\_permissions (apps.profiles.models.WorkURL attribute)|hyperpage}{11}
+\indexentry{apps.profiles.views (module)|hyperpage}{13}
+\indexentry{accept\_invitation() (in module apps.profiles.views)|hyperpage}{13}
+\indexentry{accept\_organization\_invitation() (in module apps.profiles.views)|hyperpage}{13}
+\indexentry{activate() (in module apps.profiles.views)|hyperpage}{13}
+\indexentry{add\_syllabus() (in module apps.profiles.views)|hyperpage}{13}
+\indexentry{admin() (in module apps.profiles.views)|hyperpage}{13}
+\indexentry{api() (in module apps.profiles.views)|hyperpage}{13}
+\indexentry{browse() (in module apps.profiles.views)|hyperpage}{13}
+\indexentry{contact() (in module apps.profiles.views)|hyperpage}{13}
+\indexentry{contact\_student() (in module apps.profiles.views)|hyperpage}{13}
+\indexentry{decline\_invitation() (in module apps.profiles.views)|hyperpage}{13}
+\indexentry{delete\_work() (in module apps.profiles.views)|hyperpage}{13}
+\indexentry{download\_syllabus() (in module apps.profiles.views)|hyperpage}{14}
+\indexentry{edit\_course\_profile() (in module apps.profiles.views)|hyperpage}{14}
+\indexentry{edit\_organization() (in module apps.profiles.views)|hyperpage}{14}
+\indexentry{edit\_person\_profile() (in module apps.profiles.views)|hyperpage}{14}
+\indexentry{edit\_profile() (in module apps.profiles.views)|hyperpage}{14}
+\indexentry{edit\_section\_profile() (in module apps.profiles.views)|hyperpage}{14}
+\indexentry{edit\_staff\_profile() (in module apps.profiles.views)|hyperpage}{15}
+\indexentry{edit\_student\_profile() (in module apps.profiles.views)|hyperpage}{15}
+\indexentry{edit\_work() (in module apps.profiles.views)|hyperpage}{15}
+\indexentry{filter() (in module apps.profiles.views)|hyperpage}{15}
+\indexentry{home() (in module apps.profiles.views)|hyperpage}{15}
+\indexentry{list\_profiles() (in module apps.profiles.views)|hyperpage}{15}
+\indexentry{stats\_report() (in module apps.profiles.views)|hyperpage}{15}
+\indexentry{view\_course() (in module apps.profiles.views)|hyperpage}{16}
+\indexentry{view\_invitation() (in module apps.profiles.views)|hyperpage}{16}
+\indexentry{view\_organization() (in module apps.profiles.views)|hyperpage}{16}
+\indexentry{view\_person\_profile() (in module apps.profiles.views)|hyperpage}{16}
+\indexentry{view\_profile() (in module apps.profiles.views)|hyperpage}{16}
+\indexentry{view\_program() (in module apps.profiles.views)|hyperpage}{16}
+\indexentry{view\_project\_profile() (in module apps.profiles.views)|hyperpage}{17}
+\indexentry{view\_section() (in module apps.profiles.views)|hyperpage}{17}
+\indexentry{view\_staff\_profile() (in module apps.profiles.views)|hyperpage}{17}
+\indexentry{view\_student\_profile() (in module apps.profiles.views)|hyperpage}{17}
+\indexentry{view\_work() (in module apps.profiles.views)|hyperpage}{18}
+\indexentry{wordpress() (in module apps.profiles.views)|hyperpage}{18}
+\indexentry{apps.profiles.fields (module)|hyperpage}{19}
+\indexentry{DataMyneSplitDateTimeField (class in apps.profiles.fields)|hyperpage}{19}
+\indexentry{compress() (apps.profiles.fields.DataMyneSplitDateTimeField method)|hyperpage}{19}
+\indexentry{widget (apps.profiles.fields.DataMyneSplitDateTimeField attribute)|hyperpage}{19}
+\indexentry{apps.profiles.forms (module)|hyperpage}{21}
+\indexentry{AdminCourseForm (class in apps.profiles.forms)|hyperpage}{21}
+\indexentry{AdminCourseForm.Meta (class in apps.profiles.forms)|hyperpage}{21}
+\indexentry{model (apps.profiles.forms.AdminCourseForm.Meta attribute)|hyperpage}{21}
+\indexentry{media (apps.profiles.forms.AdminCourseForm attribute)|hyperpage}{21}
+\indexentry{AdminFacultyForm (class in apps.profiles.forms)|hyperpage}{21}
+\indexentry{AdminFacultyForm.Meta (class in apps.profiles.forms)|hyperpage}{21}
+\indexentry{model (apps.profiles.forms.AdminFacultyForm.Meta attribute)|hyperpage}{21}
+\indexentry{clean\_bio() (apps.profiles.forms.AdminFacultyForm method)|hyperpage}{21}
+\indexentry{clean\_expertise() (apps.profiles.forms.AdminFacultyForm method)|hyperpage}{21}
+\indexentry{media (apps.profiles.forms.AdminFacultyForm attribute)|hyperpage}{21}
+\indexentry{AdminSectionForm (class in apps.profiles.forms)|hyperpage}{21}
+\indexentry{AdminSectionForm.Meta (class in apps.profiles.forms)|hyperpage}{21}
+\indexentry{model (apps.profiles.forms.AdminSectionForm.Meta attribute)|hyperpage}{21}
+\indexentry{media (apps.profiles.forms.AdminSectionForm attribute)|hyperpage}{21}
+\indexentry{AdminStaffForm (class in apps.profiles.forms)|hyperpage}{21}
+\indexentry{AdminStaffForm.Meta (class in apps.profiles.forms)|hyperpage}{22}
+\indexentry{model (apps.profiles.forms.AdminStaffForm.Meta attribute)|hyperpage}{22}
+\indexentry{clean\_bio() (apps.profiles.forms.AdminStaffForm method)|hyperpage}{22}
+\indexentry{clean\_expertise() (apps.profiles.forms.AdminStaffForm method)|hyperpage}{22}
+\indexentry{media (apps.profiles.forms.AdminStaffForm attribute)|hyperpage}{22}
+\indexentry{AdminStudentForm (class in apps.profiles.forms)|hyperpage}{22}
+\indexentry{AdminStudentForm.Meta (class in apps.profiles.forms)|hyperpage}{22}
+\indexentry{model (apps.profiles.forms.AdminStudentForm.Meta attribute)|hyperpage}{22}
+\indexentry{clean\_bio() (apps.profiles.forms.AdminStudentForm method)|hyperpage}{22}
+\indexentry{clean\_expertise() (apps.profiles.forms.AdminStudentForm method)|hyperpage}{22}
+\indexentry{media (apps.profiles.forms.AdminStudentForm attribute)|hyperpage}{22}
+\indexentry{ContactForm (class in apps.profiles.forms)|hyperpage}{22}
+\indexentry{media (apps.profiles.forms.ContactForm attribute)|hyperpage}{22}
+\indexentry{ContactStudentForm (class in apps.profiles.forms)|hyperpage}{22}
+\indexentry{media (apps.profiles.forms.ContactStudentForm attribute)|hyperpage}{22}
+\indexentry{CourseForm (class in apps.profiles.forms)|hyperpage}{22}
+\indexentry{CourseForm.Meta (class in apps.profiles.forms)|hyperpage}{22}
+\indexentry{media (apps.profiles.forms.CourseForm attribute)|hyperpage}{22}
+\indexentry{FacultyForm (class in apps.profiles.forms)|hyperpage}{22}
+\indexentry{FacultyForm.Meta (class in apps.profiles.forms)|hyperpage}{23}
+\indexentry{media (apps.profiles.forms.FacultyForm attribute)|hyperpage}{23}
+\indexentry{FilterForm (class in apps.profiles.forms)|hyperpage}{23}
+\indexentry{media (apps.profiles.forms.FilterForm attribute)|hyperpage}{23}
+\indexentry{InvitationForm (class in apps.profiles.forms)|hyperpage}{23}
+\indexentry{media (apps.profiles.forms.InvitationForm attribute)|hyperpage}{23}
+\indexentry{OrganizationForm (class in apps.profiles.forms)|hyperpage}{23}
+\indexentry{OrganizationForm.Meta (class in apps.profiles.forms)|hyperpage}{23}
+\indexentry{model (apps.profiles.forms.OrganizationForm.Meta attribute)|hyperpage}{23}
+\indexentry{media (apps.profiles.forms.OrganizationForm attribute)|hyperpage}{23}
+\indexentry{PersonActivateForm (class in apps.profiles.forms)|hyperpage}{23}
+\indexentry{media (apps.profiles.forms.PersonActivateForm attribute)|hyperpage}{23}
+\indexentry{SearchForm (class in apps.profiles.forms)|hyperpage}{23}
+\indexentry{media (apps.profiles.forms.SearchForm attribute)|hyperpage}{23}
+\indexentry{SectionForm (class in apps.profiles.forms)|hyperpage}{23}
+\indexentry{SectionForm.Meta (class in apps.profiles.forms)|hyperpage}{23}
+\indexentry{media (apps.profiles.forms.SectionForm.Meta attribute)|hyperpage}{24}
+\indexentry{media (apps.profiles.forms.SectionForm attribute)|hyperpage}{24}
+\indexentry{StaffForm (class in apps.profiles.forms)|hyperpage}{24}
+\indexentry{StaffForm.Meta (class in apps.profiles.forms)|hyperpage}{24}
+\indexentry{media (apps.profiles.forms.StaffForm attribute)|hyperpage}{24}
+\indexentry{StudentForm (class in apps.profiles.forms)|hyperpage}{24}
+\indexentry{StudentForm.Meta (class in apps.profiles.forms)|hyperpage}{24}
+\indexentry{media (apps.profiles.forms.StudentForm attribute)|hyperpage}{24}
+\indexentry{SyllabusForm (class in apps.profiles.forms)|hyperpage}{24}
+\indexentry{SyllabusForm.Meta (class in apps.profiles.forms)|hyperpage}{24}
+\indexentry{model (apps.profiles.forms.SyllabusForm.Meta attribute)|hyperpage}{24}
+\indexentry{media (apps.profiles.forms.SyllabusForm attribute)|hyperpage}{24}
+\indexentry{WorkForm (class in apps.profiles.forms)|hyperpage}{24}
+\indexentry{WorkForm.Meta (class in apps.profiles.forms)|hyperpage}{24}
+\indexentry{model (apps.profiles.forms.WorkForm.Meta attribute)|hyperpage}{24}
+\indexentry{media (apps.profiles.forms.WorkForm attribute)|hyperpage}{24}
+\indexentry{WorkURLForm (class in apps.profiles.forms)|hyperpage}{24}
+\indexentry{WorkURLForm.Meta (class in apps.profiles.forms)|hyperpage}{24}
+\indexentry{model (apps.profiles.forms.WorkURLForm.Meta attribute)|hyperpage}{25}
+\indexentry{media (apps.profiles.forms.WorkURLForm attribute)|hyperpage}{25}
+\indexentry{apps.profiles.handlers (module)|hyperpage}{27}
+\indexentry{CourseHandler (class in apps.profiles.handlers)|hyperpage}{27}
+\indexentry{model (apps.profiles.handlers.CourseHandler attribute)|hyperpage}{27}
+\indexentry{queryset() (apps.profiles.handlers.CourseHandler method)|hyperpage}{27}
+\indexentry{ExpertiseHandler (class in apps.profiles.handlers)|hyperpage}{27}
+\indexentry{model (apps.profiles.handlers.ExpertiseHandler attribute)|hyperpage}{27}
+\indexentry{queryset() (apps.profiles.handlers.ExpertiseHandler method)|hyperpage}{27}
+\indexentry{FacultyHandler (class in apps.profiles.handlers)|hyperpage}{27}
+\indexentry{model (apps.profiles.handlers.FacultyHandler attribute)|hyperpage}{27}
+\indexentry{queryset() (apps.profiles.handlers.FacultyHandler method)|hyperpage}{27}
+\indexentry{FacultyResultHandler (class in apps.profiles.handlers)|hyperpage}{27}
+\indexentry{read() (apps.profiles.handlers.FacultyResultHandler method)|hyperpage}{27}
+\indexentry{OrganizationHandler (class in apps.profiles.handlers)|hyperpage}{27}
+\indexentry{model (apps.profiles.handlers.OrganizationHandler attribute)|hyperpage}{27}
+\indexentry{queryset() (apps.profiles.handlers.OrganizationHandler method)|hyperpage}{27}
+\indexentry{PersonHandler (class in apps.profiles.handlers)|hyperpage}{28}
+\indexentry{model (apps.profiles.handlers.PersonHandler attribute)|hyperpage}{28}
+\indexentry{queryset() (apps.profiles.handlers.PersonHandler method)|hyperpage}{28}
+\indexentry{ProjectHandler (class in apps.profiles.handlers)|hyperpage}{28}
+\indexentry{model (apps.profiles.handlers.ProjectHandler attribute)|hyperpage}{28}
+\indexentry{queryset() (apps.profiles.handlers.ProjectHandler method)|hyperpage}{28}
+\indexentry{RecentFacultyHandler (class in apps.profiles.handlers)|hyperpage}{28}
+\indexentry{queryset() (apps.profiles.handlers.RecentFacultyHandler method)|hyperpage}{28}
+\indexentry{RecentStudentHandler (class in apps.profiles.handlers)|hyperpage}{28}
+\indexentry{queryset() (apps.profiles.handlers.RecentStudentHandler method)|hyperpage}{28}
+\indexentry{RecentWorkHandler (class in apps.profiles.handlers)|hyperpage}{28}
+\indexentry{queryset() (apps.profiles.handlers.RecentWorkHandler method)|hyperpage}{28}
+\indexentry{ResultHandler (class in apps.profiles.handlers)|hyperpage}{28}
+\indexentry{convert\_search\_queryset() (apps.profiles.handlers.ResultHandler method)|hyperpage}{28}
+\indexentry{model (apps.profiles.handlers.ResultHandler attribute)|hyperpage}{28}
+\indexentry{read() (apps.profiles.handlers.ResultHandler method)|hyperpage}{28}
+\indexentry{StudentHandler (class in apps.profiles.handlers)|hyperpage}{28}
+\indexentry{model (apps.profiles.handlers.StudentHandler attribute)|hyperpage}{28}
+\indexentry{queryset() (apps.profiles.handlers.StudentHandler method)|hyperpage}{28}
+\indexentry{StudentResultHandler (class in apps.profiles.handlers)|hyperpage}{28}
+\indexentry{read() (apps.profiles.handlers.StudentResultHandler method)|hyperpage}{29}
+\indexentry{TagHandler (class in apps.profiles.handlers)|hyperpage}{29}
+\indexentry{model (apps.profiles.handlers.TagHandler attribute)|hyperpage}{29}
+\indexentry{TaggedPersonHandler (class in apps.profiles.handlers)|hyperpage}{29}
+\indexentry{model (apps.profiles.handlers.TaggedPersonHandler attribute)|hyperpage}{29}
+\indexentry{queryset() (apps.profiles.handlers.TaggedPersonHandler method)|hyperpage}{29}
+\indexentry{TaggedWorkHandler (class in apps.profiles.handlers)|hyperpage}{29}
+\indexentry{model (apps.profiles.handlers.TaggedWorkHandler attribute)|hyperpage}{29}
+\indexentry{queryset() (apps.profiles.handlers.TaggedWorkHandler method)|hyperpage}{29}
+\indexentry{WorkHandler (class in apps.profiles.handlers)|hyperpage}{29}
+\indexentry{model (apps.profiles.handlers.WorkHandler attribute)|hyperpage}{29}
+\indexentry{WorkResultHandler (class in apps.profiles.handlers)|hyperpage}{29}
+\indexentry{read() (apps.profiles.handlers.WorkResultHandler method)|hyperpage}{29}
+\indexentry{apps.profiles.lookups (module)|hyperpage}{31}
+\indexentry{CourseLookup (class in apps.profiles.lookups)|hyperpage}{31}
+\indexentry{format\_item() (apps.profiles.lookups.CourseLookup method)|hyperpage}{31}
+\indexentry{format\_result() (apps.profiles.lookups.CourseLookup method)|hyperpage}{31}
+\indexentry{get\_objects() (apps.profiles.lookups.CourseLookup method)|hyperpage}{31}
+\indexentry{get\_query() (apps.profiles.lookups.CourseLookup method)|hyperpage}{31}
+\indexentry{DepartmentLookup (class in apps.profiles.lookups)|hyperpage}{31}
+\indexentry{format\_item() (apps.profiles.lookups.DepartmentLookup method)|hyperpage}{31}
+\indexentry{format\_result() (apps.profiles.lookups.DepartmentLookup method)|hyperpage}{31}
+\indexentry{get\_objects() (apps.profiles.lookups.DepartmentLookup method)|hyperpage}{31}
+\indexentry{get\_query() (apps.profiles.lookups.DepartmentLookup method)|hyperpage}{31}
+\indexentry{DivisionLookup (class in apps.profiles.lookups)|hyperpage}{31}
+\indexentry{format\_item() (apps.profiles.lookups.DivisionLookup method)|hyperpage}{31}
+\indexentry{format\_result() (apps.profiles.lookups.DivisionLookup method)|hyperpage}{31}
+\indexentry{get\_objects() (apps.profiles.lookups.DivisionLookup method)|hyperpage}{31}
+\indexentry{get\_query() (apps.profiles.lookups.DivisionLookup method)|hyperpage}{31}
+\indexentry{PersonLookup (class in apps.profiles.lookups)|hyperpage}{31}
+\indexentry{format\_item() (apps.profiles.lookups.PersonLookup method)|hyperpage}{31}
+\indexentry{format\_result() (apps.profiles.lookups.PersonLookup method)|hyperpage}{31}
+\indexentry{get\_objects() (apps.profiles.lookups.PersonLookup method)|hyperpage}{31}
+\indexentry{get\_query() (apps.profiles.lookups.PersonLookup method)|hyperpage}{31}
+\indexentry{ProgramLookup (class in apps.profiles.lookups)|hyperpage}{31}
+\indexentry{format\_item() (apps.profiles.lookups.ProgramLookup method)|hyperpage}{32}
+\indexentry{format\_result() (apps.profiles.lookups.ProgramLookup method)|hyperpage}{32}
+\indexentry{get\_objects() (apps.profiles.lookups.ProgramLookup method)|hyperpage}{32}
+\indexentry{get\_query() (apps.profiles.lookups.ProgramLookup method)|hyperpage}{32}
+\indexentry{SchoolLookup (class in apps.profiles.lookups)|hyperpage}{32}
+\indexentry{format\_item() (apps.profiles.lookups.SchoolLookup method)|hyperpage}{32}
+\indexentry{format\_result() (apps.profiles.lookups.SchoolLookup method)|hyperpage}{32}
+\indexentry{get\_objects() (apps.profiles.lookups.SchoolLookup method)|hyperpage}{32}
+\indexentry{get\_query() (apps.profiles.lookups.SchoolLookup method)|hyperpage}{32}
+\indexentry{WorkLookup (class in apps.profiles.lookups)|hyperpage}{32}
+\indexentry{format\_item() (apps.profiles.lookups.WorkLookup method)|hyperpage}{32}
+\indexentry{format\_result() (apps.profiles.lookups.WorkLookup method)|hyperpage}{32}
+\indexentry{get\_objects() (apps.profiles.lookups.WorkLookup method)|hyperpage}{32}
+\indexentry{get\_query() (apps.profiles.lookups.WorkLookup method)|hyperpage}{32}
+\indexentry{apps.profiles.backends (module)|hyperpage}{33}
+\indexentry{EmailModelBackend (class in apps.profiles.backends)|hyperpage}{33}
+\indexentry{authenticate() (apps.profiles.backends.EmailModelBackend method)|hyperpage}{33}
+\indexentry{SchoolLDAPBackend (class in apps.profiles.backends)|hyperpage}{33}
+\indexentry{get\_or\_create\_user() (apps.profiles.backends.SchoolLDAPBackend method)|hyperpage}{33}
+\indexentry{apps.reporting.models (module)|hyperpage}{35}
+\indexentry{Affiliation (class in apps.reporting.models)|hyperpage}{35}
+\indexentry{Affiliation.DoesNotExist|hyperpage}{35}
+\indexentry{Affiliation.MultipleObjectsReturned|hyperpage}{35}
+\indexentry{begin() (apps.reporting.models.Affiliation method)|hyperpage}{35}
+\indexentry{content\_object (apps.reporting.models.Affiliation attribute)|hyperpage}{35}
+\indexentry{content\_type (apps.reporting.models.Affiliation attribute)|hyperpage}{35}
+\indexentry{created\_by (apps.reporting.models.Affiliation attribute)|hyperpage}{35}
+\indexentry{get\_next\_by\_created\_at() (apps.reporting.models.Affiliation method)|hyperpage}{35}
+\indexentry{get\_next\_by\_updated\_at() (apps.reporting.models.Affiliation method)|hyperpage}{35}
+\indexentry{get\_previous\_by\_created\_at() (apps.reporting.models.Affiliation method)|hyperpage}{35}
+\indexentry{get\_previous\_by\_updated\_at() (apps.reporting.models.Affiliation method)|hyperpage}{35}
+\indexentry{person (apps.reporting.models.Affiliation attribute)|hyperpage}{35}
+\indexentry{retire() (apps.reporting.models.Affiliation method)|hyperpage}{35}
+\indexentry{role (apps.reporting.models.Affiliation attribute)|hyperpage}{35}
+\indexentry{unit\_permissions (apps.reporting.models.Affiliation attribute)|hyperpage}{36}
+\indexentry{AffiliationCurrentManager (class in apps.reporting.models)|hyperpage}{36}
+\indexentry{begin\_all() (apps.reporting.models.AffiliationCurrentManager method)|hyperpage}{36}
+\indexentry{get\_query\_set() (apps.reporting.models.AffiliationCurrentManager method)|hyperpage}{36}
+\indexentry{retire\_all() (apps.reporting.models.AffiliationCurrentManager method)|hyperpage}{36}
+\indexentry{AffiliationFutureManager (class in apps.reporting.models)|hyperpage}{36}
+\indexentry{get\_query\_set() (apps.reporting.models.AffiliationFutureManager method)|hyperpage}{36}
+\indexentry{AffiliationPastManager (class in apps.reporting.models)|hyperpage}{36}
+\indexentry{get\_query\_set() (apps.reporting.models.AffiliationPastManager method)|hyperpage}{36}
+\indexentry{Authority (class in apps.reporting.models)|hyperpage}{36}
+\indexentry{Authority.DoesNotExist|hyperpage}{36}
+\indexentry{Authority.MultipleObjectsReturned|hyperpage}{36}
+\indexentry{committee (apps.reporting.models.Authority attribute)|hyperpage}{36}
+\indexentry{content\_object (apps.reporting.models.Authority attribute)|hyperpage}{36}
+\indexentry{content\_type (apps.reporting.models.Authority attribute)|hyperpage}{36}
+\indexentry{created\_by (apps.reporting.models.Authority attribute)|hyperpage}{36}
+\indexentry{get\_next\_by\_created\_at() (apps.reporting.models.Authority method)|hyperpage}{36}
+\indexentry{get\_next\_by\_updated\_at() (apps.reporting.models.Authority method)|hyperpage}{36}
+\indexentry{get\_previous\_by\_created\_at() (apps.reporting.models.Authority method)|hyperpage}{36}
+\indexentry{get\_previous\_by\_updated\_at() (apps.reporting.models.Authority method)|hyperpage}{36}
+\indexentry{unit\_permissions (apps.reporting.models.Authority attribute)|hyperpage}{36}
+\indexentry{Committee (class in apps.reporting.models)|hyperpage}{37}
+\indexentry{Committee.DoesNotExist|hyperpage}{37}
+\indexentry{Committee.MultipleObjectsReturned|hyperpage}{37}
+\indexentry{accept\_invitation() (apps.reporting.models.Committee method)|hyperpage}{37}
+\indexentry{affiliations (apps.reporting.models.Committee attribute)|hyperpage}{37}
+\indexentry{authorities (apps.reporting.models.Committee attribute)|hyperpage}{37}
+\indexentry{created\_by (apps.reporting.models.Committee attribute)|hyperpage}{37}
+\indexentry{get\_absolute\_url() (apps.reporting.models.Committee method)|hyperpage}{37}
+\indexentry{get\_next\_by\_created\_at() (apps.reporting.models.Committee method)|hyperpage}{37}
+\indexentry{get\_next\_by\_updated\_at() (apps.reporting.models.Committee method)|hyperpage}{37}
+\indexentry{get\_previous\_by\_created\_at() (apps.reporting.models.Committee method)|hyperpage}{37}
+\indexentry{get\_previous\_by\_updated\_at() (apps.reporting.models.Committee method)|hyperpage}{37}
+\indexentry{get\_unit() (apps.reporting.models.Committee method)|hyperpage}{37}
+\indexentry{meetings (apps.reporting.models.Committee attribute)|hyperpage}{37}
+\indexentry{parent (apps.reporting.models.Committee attribute)|hyperpage}{37}
+\indexentry{subcommittees (apps.reporting.models.Committee attribute)|hyperpage}{37}
+\indexentry{unit\_permissions (apps.reporting.models.Committee attribute)|hyperpage}{37}
+\indexentry{Meeting (class in apps.reporting.models)|hyperpage}{37}
+\indexentry{Meeting.DoesNotExist|hyperpage}{38}
+\indexentry{Meeting.MultipleObjectsReturned|hyperpage}{38}
+\indexentry{accept\_invitation() (apps.reporting.models.Meeting method)|hyperpage}{38}
+\indexentry{content\_object (apps.reporting.models.Meeting attribute)|hyperpage}{38}
+\indexentry{content\_type (apps.reporting.models.Meeting attribute)|hyperpage}{38}
+\indexentry{created\_by (apps.reporting.models.Meeting attribute)|hyperpage}{38}
+\indexentry{get\_absolute\_url() (apps.reporting.models.Meeting method)|hyperpage}{38}
+\indexentry{get\_next\_by\_created\_at() (apps.reporting.models.Meeting method)|hyperpage}{38}
+\indexentry{get\_next\_by\_end\_time() (apps.reporting.models.Meeting method)|hyperpage}{38}
+\indexentry{get\_next\_by\_start\_time() (apps.reporting.models.Meeting method)|hyperpage}{38}
+\indexentry{get\_next\_by\_updated\_at() (apps.reporting.models.Meeting method)|hyperpage}{38}
+\indexentry{get\_previous\_by\_created\_at() (apps.reporting.models.Meeting method)|hyperpage}{38}
+\indexentry{get\_previous\_by\_end\_time() (apps.reporting.models.Meeting method)|hyperpage}{38}
+\indexentry{get\_previous\_by\_start\_time() (apps.reporting.models.Meeting method)|hyperpage}{38}
+\indexentry{get\_previous\_by\_updated\_at() (apps.reporting.models.Meeting method)|hyperpage}{38}
+\indexentry{unit\_permissions (apps.reporting.models.Meeting attribute)|hyperpage}{38}
+\indexentry{MeetingManager (class in apps.reporting.models)|hyperpage}{38}
+\indexentry{daily\_occurrences() (apps.reporting.models.MeetingManager method)|hyperpage}{38}
+\indexentry{monthly\_occurrences() (apps.reporting.models.MeetingManager method)|hyperpage}{38}
+\indexentry{range\_occurences() (apps.reporting.models.MeetingManager method)|hyperpage}{38}
+\indexentry{weekly\_occurrences() (apps.reporting.models.MeetingManager method)|hyperpage}{38}
+\indexentry{Role (class in apps.reporting.models)|hyperpage}{39}
+\indexentry{Role.DoesNotExist|hyperpage}{39}
+\indexentry{Role.MultipleObjectsReturned|hyperpage}{39}
+\indexentry{affiliations (apps.reporting.models.Role attribute)|hyperpage}{39}
+\indexentry{content\_type (apps.reporting.models.Role attribute)|hyperpage}{39}
+\indexentry{created\_by (apps.reporting.models.Role attribute)|hyperpage}{39}
+\indexentry{get\_next\_by\_created\_at() (apps.reporting.models.Role method)|hyperpage}{39}
+\indexentry{get\_next\_by\_updated\_at() (apps.reporting.models.Role method)|hyperpage}{39}
+\indexentry{get\_previous\_by\_created\_at() (apps.reporting.models.Role method)|hyperpage}{39}
+\indexentry{get\_previous\_by\_updated\_at() (apps.reporting.models.Role method)|hyperpage}{39}
+\indexentry{unit\_permissions (apps.reporting.models.Role attribute)|hyperpage}{39}
+\indexentry{delete\_area\_of\_study\_affiliations() (in module apps.reporting.models)|hyperpage}{39}
+\indexentry{delete\_committee\_affiliations() (in module apps.reporting.models)|hyperpage}{39}
+\indexentry{delete\_committee\_meetings() (in module apps.reporting.models)|hyperpage}{39}
+\indexentry{delete\_department\_authorities() (in module apps.reporting.models)|hyperpage}{39}
+\indexentry{delete\_division\_authorities() (in module apps.reporting.models)|hyperpage}{39}
+\indexentry{delete\_organization\_affiliations() (in module apps.reporting.models)|hyperpage}{39}
+\indexentry{delete\_organization\_meetings() (in module apps.reporting.models)|hyperpage}{39}
+\indexentry{delete\_program\_affiliations() (in module apps.reporting.models)|hyperpage}{39}
+\indexentry{delete\_program\_authorities() (in module apps.reporting.models)|hyperpage}{39}
+\indexentry{delete\_school\_authorities() (in module apps.reporting.models)|hyperpage}{39}
+\indexentry{index\_committee() (in module apps.reporting.models)|hyperpage}{39}
+\indexentry{index\_meeting() (in module apps.reporting.models)|hyperpage}{39}
+\indexentry{apps.reporting.views (module)|hyperpage}{41}
+\indexentry{edit\_committee() (in module apps.reporting.views)|hyperpage}{41}
+\indexentry{edit\_meeting() (in module apps.reporting.views)|hyperpage}{41}
+\indexentry{list\_committees\_by\_school() (in module apps.reporting.views)|hyperpage}{41}
+\indexentry{view\_committee() (in module apps.reporting.views)|hyperpage}{41}
+\indexentry{view\_meeting() (in module apps.reporting.views)|hyperpage}{42}
+\indexentry{apps.reporting.forms (module)|hyperpage}{43}
+\indexentry{CommitteeAffiliationForm (class in apps.reporting.forms)|hyperpage}{43}
+\indexentry{CommitteeAffiliationForm.Meta (class in apps.reporting.forms)|hyperpage}{43}
+\indexentry{model (apps.reporting.forms.CommitteeAffiliationForm.Meta attribute)|hyperpage}{43}
+\indexentry{media (apps.reporting.forms.CommitteeAffiliationForm attribute)|hyperpage}{43}
+\indexentry{CommitteeForm (class in apps.reporting.forms)|hyperpage}{43}
+\indexentry{CommitteeForm.Meta (class in apps.reporting.forms)|hyperpage}{43}
+\indexentry{model (apps.reporting.forms.CommitteeForm.Meta attribute)|hyperpage}{43}
+\indexentry{media (apps.reporting.forms.CommitteeForm attribute)|hyperpage}{43}
+\indexentry{MeetingForm (class in apps.reporting.forms)|hyperpage}{43}
+\indexentry{MeetingForm.Meta (class in apps.reporting.forms)|hyperpage}{43}
+\indexentry{model (apps.reporting.forms.MeetingForm.Meta attribute)|hyperpage}{43}
+\indexentry{media (apps.reporting.forms.MeetingForm attribute)|hyperpage}{43}
+\indexentry{apps.reporting.handlers (module)|hyperpage}{45}
+\indexentry{CommitteeHandler (class in apps.reporting.handlers)|hyperpage}{45}
+\indexentry{model (apps.reporting.handlers.CommitteeHandler attribute)|hyperpage}{45}
+\indexentry{queryset() (apps.reporting.handlers.CommitteeHandler method)|hyperpage}{45}
+\indexentry{StaffHandler (class in apps.reporting.handlers)|hyperpage}{45}
+\indexentry{model (apps.reporting.handlers.StaffHandler attribute)|hyperpage}{45}
+\indexentry{queryset() (apps.reporting.handlers.StaffHandler method)|hyperpage}{45}
+\indexentry{apps.mobile.views (module)|hyperpage}{47}
+\indexentry{home() (in module apps.mobile.views)|hyperpage}{47}

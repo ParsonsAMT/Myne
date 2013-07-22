@@ -1,0 +1,13 @@
+You've been invited to join the {{ meeting }} on DataMYNE!
+{% if message %}
+
+{{ host.full_name }} sent you this message:
+
+{{ message }}
+{% endif %}
+
+To join, go here:
+http://{{ domain }}{{ url }}
+
+More about this meeting:
+{{ meeting.agenda|striptags }}

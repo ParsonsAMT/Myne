@@ -1,0 +1,550 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Profiles: Views &mdash; DataMYNE v1.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="DataMYNE v1.0.0 documentation" href="../index.html" />
+    <link rel="next" title="Profiles: Fields" href="apps.profiles.fields.html" />
+    <link rel="prev" title="Profiles: Models" href="apps.profiles.models.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.fields.html" title="Profiles: Fields"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.models.html" title="Profiles: Models"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">DataMYNE v1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-apps.profiles.views">
+<span id="profiles-views"></span><h1>Profiles: Views<a class="headerlink" href="#module-apps.profiles.views" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="apps.profiles.views.accept_invitation">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">accept_invitation</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.views.accept_invitation" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the user if logged in, this view simply redirects that user to the
+appropriate view and marks the invite as accepted.</p>
+<p>This view requires that an object that can have an accepted invitation
+possess an <tt class="docutils literal"><span class="pre">accept_invitiation</span></tt> method.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.accept_organization_invitation">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">accept_organization_invitation</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.views.accept_organization_invitation" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view marks an invitation to an organization as accepted.</p>
+<p>Note that this should be deprecated in favor of the more general
+<tt class="docutils literal"><span class="pre">accept_organization</span></tt> view, but requires that the <tt class="docutils literal"><span class="pre">Organization</span></tt>
+model have an <tt class="docutils literal"><span class="pre">accept_organization</span></tt> model built into it.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.activate">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">activate</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.views.activate" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a deprecated method that preceded the move to LDAP authentication.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.add_syllabus">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">add_syllabus</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.views.add_syllabus" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view allows specific users the ability to upload a syllabus
+and attach it to the <tt class="docutils literal"><span class="pre">Section</span></tt> object.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.admin">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">admin</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.views.admin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deprecated.  A new and more complete admin section needs to be created to
+handle the move from DataMYNE as a Parsons-based experiment to university-
+wide infrastrucure.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.api">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">api</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.views.api" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deprecated</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.browse">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">browse</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.views.browse" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a deprecated view.  It served primarily as the <em>browse</em> page, which has
+since been temporarily removed from the main nav pending a redesign.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.contact">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">contact</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.views.contact" title="Permalink to this definition">¶</a></dt>
+<dd><p>A simple contact-form processor.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.contact_student">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">contact_student</tt><big>(</big><em>request</em>, <em>person_id</em><big>)</big><a class="headerlink" href="#apps.profiles.views.contact_student" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view allows users to send students email without revealing the
+student&#8217;s email address publicly.</p>
+<p>There most likely should be a setting on the <tt class="docutils literal"><span class="pre">Student</span></tt> profile page
+which allows the student to disable this.  At time of writing, this
+does not exist in either model or view code and should be considered.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.decline_invitation">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">decline_invitation</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.views.decline_invitation" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the user if logged in, this view simply redirects that user back to his or
+her previous view and deletes the invitation.  The <tt class="docutils literal"><span class="pre">Invitation</span></tt> is one of the
+very few objects that get deleted in the DataMYNE system.  In the future, it
+may prove useful to only &#8220;logically&#8221; delete these, but still retain the connection
+in order to mine more data on social dynamics.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.delete_work">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">delete_work</tt><big>(</big><em>request</em>, <em>work_id</em>, <em>person_id</em><big>)</big><a class="headerlink" href="#apps.profiles.views.delete_work" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view deletes a <tt class="docutils literal"><span class="pre">Work</span></tt> object.  It is one of the few models
+that we allow to be publicly deleted.  Since this is user-contributed content,
+however, it only seems fair that we respect their wishes about the display
+and use of their own work.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.download_syllabus">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">download_syllabus</tt><big>(</big><em>request</em>, <em>section_id</em><big>)</big><a class="headerlink" href="#apps.profiles.views.download_syllabus" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view generates a document based on the uploaded syllabus.
+It tries to create a name for the file that matches the university&#8217;s
+guidelines for naming syllabus documents rather than defaulting to
+the user&#8217;s file naming scheme.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.edit_course_profile">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">edit_course_profile</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.views.edit_course_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view allows for the editing of courses on the public site.
+Like the <tt class="docutils literal"><span class="pre">Person</span></tt> profile views, it has both admin and non-admin
+versions, so be careful with that distinction.  It also uses the 
+unit permissions and Django permissions code.  While simpler here than
+in other parts of the site (cf. <tt class="docutils literal"><span class="pre">edit_organization</span></tt>), the ability to 
+edit is probably best determined with a object method written into the 
+model and not in the view code, as this makes the permissions system
+overly brittle.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.edit_organization">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">edit_organization</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.views.edit_organization" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view edits an <tt class="docutils literal"><span class="pre">Organization</span></tt> object.  See the model documentation
+for a more complete description of what an organization represents.</p>
+<p>Along with the <tt class="docutils literal"><span class="pre">Committee</span></tt> model, organizations represent one of the most
+complicated objects in terms of security.  This model should be refactored first
+as part of a general clean up to remove edittable from the view code and port
+it into the model code itself.</p>
+<p>Also note the use of the <tt class="docutils literal"><span class="pre">current</span></tt> and <tt class="docutils literal"><span class="pre">past</span></tt> managers for the member
+and leader affiliations.  This is one of the benefits of using the 
+<tt class="docutils literal"><span class="pre">Affiliation</span></tt> object over a <tt class="docutils literal"><span class="pre">ManyToManyField</span></tt>: we can retain historical
+information even after the connection is no longer active.  For example, 
+we can know all of the previous leaders of an organization while still allowing 
+the current ones to be the only recipients of security clearance, public display,
+etc.</p>
+<p>In addition, the <tt class="docutils literal"><span class="pre">Affiliation</span></tt> managers have the <tt class="docutils literal"><span class="pre">begin</span></tt> and <tt class="docutils literal"><span class="pre">retire</span></tt> methods
+that allow connections to see easily set to current or past without having to 
+rewrite complicated code.  &#8220;Retirement&#8221; is the preferred way for disposing of a current
+affiliation.  It has the same effect as a deletion, while still retaining the 
+connections for historical and data-mining purposes.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.edit_person_profile">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">edit_person_profile</tt><big>(</big><em>request</em>, <em>person_id</em><big>)</big><a class="headerlink" href="#apps.profiles.views.edit_person_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view serves to unify the <tt class="docutils literal"><span class="pre">FacultyMember</span></tt>, <tt class="docutils literal"><span class="pre">Student</span></tt>, and <tt class="docutils literal"><span class="pre">Staff</span></tt>
+profile edit views under a single edit view.  Within the <tt class="docutils literal"><span class="pre">urls</span></tt> module, 
+any person&#8217;s role-specific profile editing page can be reached from here.  
+This allows a common &#8220;gateway&#8221; to profiles editors without needing to decide, 
+within the templates, which role a <tt class="docutils literal"><span class="pre">Person</span></tt> occupies.</p>
+<p>This should be the destination for all profile edit requests going forward.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.edit_profile">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">edit_profile</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.views.edit_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the profile edit view for <tt class="docutils literal"><span class="pre">FacultyMember</span></tt> objects.  Its function is pretty
+straightforward, but there are some tricky areas:</p>
+<ul class="simple">
+<li>much of this code is similar to other <tt class="docutils literal"><span class="pre">Person</span></tt> objects.  This could be
+refactored into the <tt class="docutils literal"><span class="pre">edit_person_profile</span></tt> view to reduce repetition.</li>
+<li>edittable defines whether a user can edit this object.  This really needs
+to be refactored out of the view code and into the model code, either
+at the level of <tt class="docutils literal"><span class="pre">FacultyMember</span></tt> or, at least in part, at the level of
+<tt class="docutils literal"><span class="pre">Person</span></tt> itself.  The reason for this is that the combination of 
+Django permissions and unit permissions is becoming increasingly brittle.
+Unifying this with a well-written object method would improve security,
+reusability, and performance.</li>
+<li>There are really two edit views: one for regular users and one for admins.
+Be sensitive to the distinction, since admins have access to many fields
+that we do not want users to be able to update (e.g. field provided by
+Banner, etc.)</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.edit_section_profile">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">edit_section_profile</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.views.edit_section_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view allows for the editing of sections on the public site.
+Like the <tt class="docutils literal"><span class="pre">Person</span></tt> profile views, it has both admin and non-admin
+versions, so be careful with that distinction.  It also uses the 
+unit permissions and Django permissions code.  While simpler here than
+in other parts of the site (cf. <tt class="docutils literal"><span class="pre">edit_organization</span></tt>), the ability to 
+edit is probably best determined with a object method written into the 
+model and not in the view code, as this makes the permissions system
+overly brittle.</p>
+<p>One important consideration for the editting permissions is that we
+allow assigned faculty to edit this page, as well as the usual 
+administrators.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.edit_staff_profile">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">edit_staff_profile</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.views.edit_staff_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the profile edit view for <tt class="docutils literal"><span class="pre">Staff</span></tt> objects.  Its function is pretty
+straightforward, but there are some tricky areas:</p>
+<ul class="simple">
+<li>much of this code is similar to other <tt class="docutils literal"><span class="pre">Person</span></tt> objects.  This could be
+refactored into the <tt class="docutils literal"><span class="pre">edit_person_profile</span></tt> view to reduce repetition.</li>
+<li>edittable defines whether a user can edit this object.  This really needs
+to be refactored out of the view code and into the model code, either
+at the level of <tt class="docutils literal"><span class="pre">Staff</span></tt> or, at least in part, at the level of
+<tt class="docutils literal"><span class="pre">Person</span></tt> itself.  The reason for this is that the combination of 
+Django permissions and unit permissions is becoming increasingly brittle.
+Unifying this with a well-written object method would improve security,
+reusability, and performance.</li>
+<li>There are really two edit views: one for regular users and one for admins.
+Be sensitive to the distinction, since admins have access to many fields
+that we do not want users to be able to update (e.g. field provided by
+Banner, etc.)</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.edit_student_profile">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">edit_student_profile</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.views.edit_student_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the profile edit view for <tt class="docutils literal"><span class="pre">Student</span></tt> objects.  Its function is pretty
+straightforward, but there are some tricky areas:</p>
+<ul class="simple">
+<li>much of this code is similar to other <tt class="docutils literal"><span class="pre">Person</span></tt> objects.  This could be
+refactored into the <tt class="docutils literal"><span class="pre">edit_person_profile</span></tt> view to reduce repetition.</li>
+<li>edittable defines whether a user can edit this object.  This really needs
+to be refactored out of the view code and into the model code, either
+at the level of <tt class="docutils literal"><span class="pre">Student</span></tt> or, at least in part, at the level of
+<tt class="docutils literal"><span class="pre">Person</span></tt> itself.  The reason for this is that the combination of 
+Django permissions and unit permissions is becoming increasingly brittle.
+Unifying this with a well-written object method would improve security,
+reusability, and performance.</li>
+<li>There are really two edit views: one for regular users and one for admins.
+Be sensitive to the distinction, since admins have access to many fields
+that we do not want users to be able to update (e.g. field provided by
+Banner, etc.)</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.edit_work">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">edit_work</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.views.edit_work" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view edits a <tt class="docutils literal"><span class="pre">Work</span></tt> object and its affiliated creators.</p>
+<p>As with other model views, this should be refactored to move the
+security code into the model itself rather than re-writing the 
+&#8220;edittable&#8221; flag within the view code.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.filter">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">filter</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.views.filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view has been deprecated since the introduction of new <tt class="docutils literal"><span class="pre">Student</span></tt>
+and <tt class="docutils literal"><span class="pre">Staff</span></tt> models.  A more comprehensive browse/filter view is in
+the planning stages at the time of writing.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.home">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">home</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.views.home" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the home page of DataMYNE.  It calls the <tt class="docutils literal"><span class="pre">_random_images</span></tt>
+function to generate a set of images that contain a mix of user
+profile images and work images.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.list_profiles">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">list_profiles</tt><big>(</big><em>request</em>, <em>tag=''</em><big>)</big><a class="headerlink" href="#apps.profiles.views.list_profiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a deprecated view.  It served primarily as destination for tag links, but has
+since been temporarily removed in favor of a direct link to the search results for a tag.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.stats_report">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">stats_report</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.views.stats_report" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deprecated.  A new admin (with stats) needs to be created.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.view_course">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">view_course</tt><big>(</big><em>request</em>, <em>course_id</em><big>)</big><a class="headerlink" href="#apps.profiles.views.view_course" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view displays the course.  It&#8217;s surprisingly simple, given how much work has
+been done with courses over time.  In fact, a lot of the work of displaying the
+page appears on the template itself, for good or ill.</p>
+<p>Like other simple model views, this view could benefit from being refactored so
+that the security logic exists in the Course model itself and not in the course
+view.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.view_invitation">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">view_invitation</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.views.view_invitation" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the user if logged in, this view simply redirects that user to the
+appropriate view and marks the invite as received.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.view_organization">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">view_organization</tt><big>(</big><em>request</em>, <em>organization_id</em><big>)</big><a class="headerlink" href="#apps.profiles.views.view_organization" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view displays an <tt class="docutils literal"><span class="pre">Organization</span></tt> object.  See the model documentation
+for a more complete description of what an organization represents.</p>
+<p>Along with the <tt class="docutils literal"><span class="pre">Committee</span></tt> model, organizations represent one of the most
+complicated objects in terms of security.  This model should be refactored first
+as part of a general clean up to remove edittable from the view code and port
+it into the model code itself.</p>
+<p>It would also be a good idea to add an &#8220;invite&#8221; permission that could allow
+members with fewer security privileges to still invite new members.</p>
+<p>Also note the use of the <tt class="docutils literal"><span class="pre">current</span></tt> and <tt class="docutils literal"><span class="pre">past</span></tt> managers for the member
+and leader affiliations.  This is one of the benefits of using the 
+<tt class="docutils literal"><span class="pre">Affiliation</span></tt> object over a <tt class="docutils literal"><span class="pre">ManyToManyField</span></tt>: we can retain historical
+information even after the connection is no longer active.  For example, 
+we can know all of the previous leaders of an organization while still allowing 
+the current ones to be the only recipients of security clearance, public display,
+etc.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.view_person_profile">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">view_person_profile</tt><big>(</big><em>request</em>, <em>person_id</em><big>)</big><a class="headerlink" href="#apps.profiles.views.view_person_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view serves to unify the <tt class="docutils literal"><span class="pre">FacultyMember</span></tt>, <tt class="docutils literal"><span class="pre">Student</span></tt>, and <tt class="docutils literal"><span class="pre">Staff</span></tt>
+profile views under a single view.  Within the <tt class="docutils literal"><span class="pre">urls</span></tt> module, any person&#8217;s
+role-specific profile can be reached from here.  This allows a common
+&#8220;gateway&#8221; to profiles without needing to decide, within the templates,
+which role a <tt class="docutils literal"><span class="pre">Person</span></tt> occupies.</p>
+<p>This should be the destination for all profile requests going forward.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.view_profile">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">view_profile</tt><big>(</big><em>request</em>, <em>person_id</em><big>)</big><a class="headerlink" href="#apps.profiles.views.view_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the profile view for <tt class="docutils literal"><span class="pre">FacultyMembers</span></tt>.  Its function is pretty
+straightforward, but there are some tricky areas:</p>
+<ul class="simple">
+<li>much of this code is similar to other <tt class="docutils literal"><span class="pre">Person</span></tt> objects.  This could be
+refactored into the <tt class="docutils literal"><span class="pre">view_person_profile</span></tt> view to reduce repetition.</li>
+<li>edittable defines whether the Edit button appears.  This really needs
+to be refactored out of the view code and into the model code, either
+at the level of <tt class="docutils literal"><span class="pre">FacultyMember</span></tt> or, at least in part, at the level of
+<tt class="docutils literal"><span class="pre">Person</span></tt> itself.  The reason for this is that the combination of 
+Django permissions and unit permissions is becoming increasingly brittle.
+Unifying this with a well-written object method would improve security,
+reusability, and performance.</li>
+<li>mlt refers to the <tt class="docutils literal"><span class="pre">more_like_this</span></tt> method available in <tt class="docutils literal"><span class="pre">haystack</span></tt> 
+(and, in turn, <tt class="docutils literal"><span class="pre">Solr</span></tt>).  It produces what appears to be a fairly interesting
+list of related documents (i.e. other DataMYNE objects with sufficient
+document similarity).  However, this could be improved with a faceted search.
+For example, perhaps only other people and/or works are shown, but not courses
+or committees.  Further user testing is necessary to determine this.</li>
+<li>OpenCalais code exists here which updates the OpenCalais objects in
+the background.  The OC code is still experimental within DataMYNE and
+should probably either be removed or made subject to a debug setting.</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.view_program">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">view_program</tt><big>(</big><em>request</em>, <em>program_id</em><big>)</big><a class="headerlink" href="#apps.profiles.views.view_program" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view is more or less a stub of pag for displaying the <tt class="docutils literal"><span class="pre">Program</span></tt>
+organizational unit.  Ultimately, this should be a place where admins and other
+authorized users can go to work with program-related functions, like managing
+<tt class="docutils literal"><span class="pre">Committee</span></tt> and <tt class="docutils literal"><span class="pre">Authority</span></tt> relationships, etc.  Other org units should 
+probably get similar pages.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.view_project_profile">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">view_project_profile</tt><big>(</big><em>request</em>, <em>project_id</em><big>)</big><a class="headerlink" href="#apps.profiles.views.view_project_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view, and its associated <tt class="docutils literal"><span class="pre">Project</span></tt> model, is deprecated and should
+be refactored out.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.view_section">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">view_section</tt><big>(</big><em>request</em>, <em>section_id</em><big>)</big><a class="headerlink" href="#apps.profiles.views.view_section" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view displays a <tt class="docutils literal"><span class="pre">Section</span></tt> of a <tt class="docutils literal"><span class="pre">Course</span></tt> (see the model
+documentation for a complete description of the distinction between
+the two.)</p>
+<p>This view is notable as being one of the places in which the object-based
+permissions are used.  Object-based permissions are applied at the level of
+a specific object &#8211; in this case, whether the user is allowed to read the
+syllabus of a specific instructor.</p>
+<p>As with other view, the edittable flag here would best be refactored into the
+model code itself rather than remain in the view.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.view_staff_profile">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">view_staff_profile</tt><big>(</big><em>request</em>, <em>person_id</em><big>)</big><a class="headerlink" href="#apps.profiles.views.view_staff_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the profile view for <tt class="docutils literal"><span class="pre">Staff</span></tt> objects.  Its function is pretty
+straightforward, but there are some tricky areas:</p>
+<ul class="simple">
+<li>much of this code is similar to other <tt class="docutils literal"><span class="pre">Person</span></tt> objects.  This could be
+refactored into the <tt class="docutils literal"><span class="pre">view_person_profile</span></tt> view to reduce repetition.</li>
+<li>edittable defines whether the Edit button appears.  This really needs
+to be refactored out of the view code and into the model code, either
+at the level of <tt class="docutils literal"><span class="pre">Staff</span></tt> or, at least in part, at the level of
+<tt class="docutils literal"><span class="pre">Person</span></tt> itself.  The reason for this is that the combination of 
+Django permissions and unit permissions is becoming increasingly brittle.
+Unifying this with a well-written object method would improve security,
+reusability, and performance.</li>
+<li>mlt refers to the <tt class="docutils literal"><span class="pre">more_like_this</span></tt> method available in <tt class="docutils literal"><span class="pre">haystack</span></tt> 
+(and, in turn, <tt class="docutils literal"><span class="pre">Solr</span></tt>).  It produces what appears to be a fairly interesting
+list of related documents (i.e. other DataMYNE objects with sufficient
+document similarity).  However, this could be improved with a faceted search.
+For example, perhaps only other people and/or works are shown, but not courses
+or committees.  Further user testing is necessary to determine this.</li>
+<li>OpenCalais code exists here which updates the OpenCalais objects in
+the background.  The OC code is still experimental within DataMYNE and
+should probably either be removed or made subject to a debug setting.</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.view_student_profile">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">view_student_profile</tt><big>(</big><em>request</em>, <em>person_id</em><big>)</big><a class="headerlink" href="#apps.profiles.views.view_student_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the profile view for <tt class="docutils literal"><span class="pre">Student</span></tt> objects.  Its function is pretty
+straightforward, but there are some tricky areas:</p>
+<ul class="simple">
+<li>much of this code is similar to other <tt class="docutils literal"><span class="pre">Person</span></tt> objects.  This could be
+refactored into the <tt class="docutils literal"><span class="pre">view_person_profile</span></tt> view to reduce repetition.</li>
+<li>edittable defines whether the Edit button appears.  This really needs
+to be refactored out of the view code and into the model code, either
+at the level of <tt class="docutils literal"><span class="pre">Student</span></tt> or, at least in part, at the level of
+<tt class="docutils literal"><span class="pre">Person</span></tt> itself.  The reason for this is that the combination of 
+Django permissions and unit permissions is becoming increasingly brittle.
+Unifying this with a well-written object method would improve security,
+reusability, and performance.</li>
+<li>mlt refers to the <tt class="docutils literal"><span class="pre">more_like_this</span></tt> method available in <tt class="docutils literal"><span class="pre">haystack</span></tt> 
+(and, in turn, <tt class="docutils literal"><span class="pre">Solr</span></tt>).  It produces what appears to be a fairly interesting
+list of related documents (i.e. other DataMYNE objects with sufficient
+document similarity).  However, this could be improved with a faceted search.
+For example, perhaps only other people and/or works are shown, but not courses
+or committees.  Further user testing is necessary to determine this.</li>
+<li>OpenCalais code exists here which updates the OpenCalais objects in
+the background.  The OC code is still experimental within DataMYNE and
+should probably either be removed or made subject to a debug setting.</li>
+</ul>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.view_work">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">view_work</tt><big>(</big><em>request</em>, <em>work_id</em><big>)</big><a class="headerlink" href="#apps.profiles.views.view_work" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view displays a <tt class="docutils literal"><span class="pre">Work</span></tt> object and its affiliated creators.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.views.wordpress">
+<tt class="descclassname">apps.profiles.views.</tt><tt class="descname">wordpress</tt><big>(</big><em>request</em>, <em>faculty_id</em><big>)</big><a class="headerlink" href="#apps.profiles.views.wordpress" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="apps.profiles.models.html"
+                        title="previous chapter">Profiles: Models</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="apps.profiles.fields.html"
+                        title="next chapter">Profiles: Fields</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/generated/apps.profiles.views.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.fields.html" title="Profiles: Fields"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.models.html" title="Profiles: Models"
+             >previous</a> |</li>
+        <li><a href="../index.html">DataMYNE v1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, The New School.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

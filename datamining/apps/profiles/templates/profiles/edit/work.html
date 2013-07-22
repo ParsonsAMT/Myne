@@ -1,0 +1,116 @@
+{% extends "base_profiles.html" %}
+
+{% load thumbnail %}
+{% load adminmedia %}
+
+{% block title %}Edit work{% endblock %}
+
+{% block extrahead %}             
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/jquery.autocomplete.css" type="text/css" media="screen">
+
+  <script type="text/javascript">
+    $(function() {
+		$(".vDateField").datepicker({showOn:"both",
+									 showButtonPanel:true,
+									 changeMonth:true,
+									 changeYear:true,
+									 yearRange: '-40:+5'});
+	});
+  </script>
+{% endblock %}
+
+{% block sitesection %}profile{% endblock %}
+
+{% block breadcrumblinks %}
+<a href="{% url profiles_view_work work.id %}">{{ work.title }}</a>
+Edit
+{% endblock %}
+
+{% block mainbody %}
+{% if work %}
+<form action="{% url profiles_edit_work work.id %}" method="POST" enctype="multipart/form-data">
+{% else %}
+<form action="{% url profiles_add_work %}" method="POST" enctype="multipart/form-data">
+{% endif %}
+{% csrf_token %}
+  {% if form.errors %}
+  <div class="errorlist">
+    Please fix errors below.
+  </div>
+  {% endif %}
+
+
+<div id="ProfileTop">
+  <div id="photo">
+    <h2>Photo</h2>
+    {{ form.image.errors }}
+    {% if work.image %}
+    <img src="{% thumbnail work.image 240x240 crop %}" />
+    <p>
+    <input id="photo-clear_id" type="checkbox" name="photo-clear">
+    <label for="photo-clear_id">Clear</label>
+    </p>
+    <p>
+    Change:
+    {% else %}
+    <img src="{{ MEDIA_URL }}images/defaults/240px/DataMyne_Icon_Work_240.jpg" width="240" height="240" />
+    <p>
+    {% endif %}
+    <input id="id_image" type="file" name="image">
+    </p>
+  </div>
+
+  <div class="basic-info">
+    <h2>Basic Info</h2>
+    {{ form.url.errors }}
+    <p><em>{{ form.url.help_text }}</em></p>
+    <p>{{ form.url.label_tag }}{{ form.url }}</p>
+       
+    {{ form.title.errors }}
+    <p><em>{{ form.title.help_text }}</em></p>
+    <p>{{ form.title.label_tag }}{{ form.title }}</p>
+    
+    {{ form.work_type.errors }}
+    <p><em>{{ form.work_type.help_text }}</em></p>
+    <p><label for="id_worktypes">Type</label>{{ form.work_type }}</p>
+    
+    {{ form.creators.errors }}
+    <p><em>{{ form.creators.help_text }}</em></p>
+    <p><label for="id_creators">Collaborators</label>{{ form.creators }}</p> 
+     
+    {{ form.location.errors }}
+    <p><em>{{ form.location.help_text }}</em></p>
+    <p>{{ form.location.label_tag }}{{ form.location }}</p> 
+    
+    {{ form.date.errors }}
+    <p><em>{{ form.date.help_text }}</em></p>
+    <p>{{ form.date.label_tag }}{{ form.date }}</p> 
+    
+    {{ form.year.errors }}
+    <p><em>{{ form.year.help_text }}</em></p>
+    <p>{{ form.year.label_tag }}{{ form.year }}</p> 
+  </div>
+</div>
+
+  <div>
+    <h2>Description</h2>
+    {{ form.description.errors }}
+    <p><em>{{ form.description.help_text }}</em></p>
+    {{ form.description }}    
+  </div>
+
+  <div>
+    <h2>Tags</h2>
+    {{ form.tags.errors }}
+    <p><em>{{ form.tags.help_text }}</em></p>
+    {{ form.tags }}
+  </div>
+
+    <input class="submit" type="submit" name="saveadd" value="Save and Add Another" />
+    {% if from_profile %}
+        <input class="submit" type="submit" name="saveprofile" value="Save" />
+    {% else %}
+        <input class="submit" type="submit" name="save" value="Save" />
+    {% endif %}
+</form>
+{% endblock %}

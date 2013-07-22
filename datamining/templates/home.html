@@ -1,0 +1,71 @@
+{% extends "base_profiles.html" %}
+
+{% load thumbnail %}
+
+{% load datamyne_extras %}
+
+{% block title %}
+{% if user.first_name %}{{ user.first_name }}'s Home{% else %}Home Page{% endif %}
+{% endblock %}
+
+{% block sitesection %}home{% endblock %}
+
+{% block breadcrumbs %}
+Home
+{% endblock %}    
+                   
+{% block mainbody %}
+	<div id="workimages">
+    	{% for object,img in images %}
+		<div class="thumbnail">
+		{% if object.photo %}
+	        <a href="{% url profiles_view_person_profile object.id %}" alt="{{ object }}" title="{{ object }}">
+	        	{% if img %}<img src="{% thumbnail img 100x100 crop %}"/>{% endif %}
+	        </a>
+		{% endif %}
+		{% if object.image %}
+	        <a href="{% url profiles_view_work object.id %}" alt="{{ object.title }}" title="{{ object.title }}">
+	        	{% if img %}<img src="{% thumbnail img 100x100 crop %}"/>{% endif %}
+	        </a>
+		{% endif %}
+    	</div>
+    	{% endfor %}
+        <div class="imagetitle">
+            {% for object,img in images %}
+            <div class="singleimagetitle">
+				{% if object.photo %}
+	    	    	{{ object|truncatesmart:15 }}
+				{% else %}
+					{% if object.affiliations.all %}
+		    	    	{{ object.affiliations.all.0.person|truncatesmart:15 }}
+					{% endif %}
+				{% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <h2>Popular Interests</h2>
+    <div class="tagcloud">
+    	{% for t in cloud %}
+    	<span class="tag-{{t.font_size}}"><a href="{% url haystack_search %}?q={{ t.name }}">{{t}}</a></span>
+    	{% endfor %}
+    </div>
+    
+    <h2>Browse from Schools and Programs</h2>
+    <div id="SchoolsAndProgramsLeft">
+        <ul>
+            <li><a href="{% url haystack_search %}?q=The New School for General Studies">The New School for General Studies</a></li>
+            <li><a href="{% url haystack_search %}?q=The New School for Social Research">The New School for Social Research</a></li>
+            <li><a href="{% url haystack_search %}?q=Parsons The New School for Design">Parsons The New School for Design</a></li>
+            <li><a href="{% url haystack_search %}?q=Eugene Lang College The New School for Liberal Arts">Eugene Lang College The New School for Liberal Arts</a></li>
+        </ul>
+    </div> <!-- SchoolsAndProgramsLeft -->
+    <div id="SchoolsAndProgramsRight">
+        <ul>
+        	<li><a href="{% url haystack_search %}?q=Milano The New School for Management And Urban Policy">Milano The New School for Management And Urban Policy</a></li>
+            <li><a href="{% url haystack_search %}?q=Mannes College The New School for Music">Mannes College The New School for Music</a></li>
+            <li><a href="{% url haystack_search %}?q=The New School for Drama">The New School for Drama</a></li>
+            <li><a href="{% url haystack_search %}?q=The New School for Jazz and Contemporary Music">The New School for Jazz and Contemporary Music</a></li>
+        </ul>
+    </div> <!-- SchoolsAndProgramsRight -->
+{% endblock %}

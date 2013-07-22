@@ -1,0 +1,499 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Profiles: Forms &mdash; DataMYNE v1.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="DataMYNE v1.0.0 documentation" href="../index.html" />
+    <link rel="next" title="Profiles: Handlers" href="apps.profiles.handlers.html" />
+    <link rel="prev" title="Profiles: Fields" href="apps.profiles.fields.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.handlers.html" title="Profiles: Handlers"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.fields.html" title="Profiles: Fields"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">DataMYNE v1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-apps.profiles.forms">
+<span id="profiles-forms"></span><h1>Profiles: Forms<a class="headerlink" href="#module-apps.profiles.forms" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="apps.profiles.forms.AdminCourseForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">AdminCourseForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.AdminCourseForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.models.ModelForm</span></tt></p>
+<dl class="class">
+<dt id="apps.profiles.forms.AdminCourseForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#apps.profiles.forms.AdminCourseForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="apps.profiles.forms.AdminCourseForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.forms.AdminCourseForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Course</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.forms.AdminCourseForm.media">
+<tt class="descclassname">AdminCourseForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.AdminCourseForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.AdminFacultyForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">AdminFacultyForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.AdminFacultyForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.models.ModelForm</span></tt></p>
+<dl class="class">
+<dt id="apps.profiles.forms.AdminFacultyForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#apps.profiles.forms.AdminFacultyForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="apps.profiles.forms.AdminFacultyForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.forms.AdminFacultyForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">FacultyMember</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.forms.AdminFacultyForm.clean_bio">
+<tt class="descclassname">AdminFacultyForm.</tt><tt class="descname">clean_bio</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.forms.AdminFacultyForm.clean_bio" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.forms.AdminFacultyForm.clean_expertise">
+<tt class="descclassname">AdminFacultyForm.</tt><tt class="descname">clean_expertise</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.forms.AdminFacultyForm.clean_expertise" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.forms.AdminFacultyForm.media">
+<tt class="descclassname">AdminFacultyForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.AdminFacultyForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.AdminSectionForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">AdminSectionForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.AdminSectionForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.models.ModelForm</span></tt></p>
+<dl class="class">
+<dt id="apps.profiles.forms.AdminSectionForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#apps.profiles.forms.AdminSectionForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="apps.profiles.forms.AdminSectionForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.forms.AdminSectionForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Section</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.forms.AdminSectionForm.media">
+<tt class="descclassname">AdminSectionForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.AdminSectionForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.AdminStaffForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">AdminStaffForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.AdminStaffForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.models.ModelForm</span></tt></p>
+<dl class="class">
+<dt id="apps.profiles.forms.AdminStaffForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#apps.profiles.forms.AdminStaffForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="apps.profiles.forms.AdminStaffForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.forms.AdminStaffForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Staff</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.forms.AdminStaffForm.clean_bio">
+<tt class="descclassname">AdminStaffForm.</tt><tt class="descname">clean_bio</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.forms.AdminStaffForm.clean_bio" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.forms.AdminStaffForm.clean_expertise">
+<tt class="descclassname">AdminStaffForm.</tt><tt class="descname">clean_expertise</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.forms.AdminStaffForm.clean_expertise" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.forms.AdminStaffForm.media">
+<tt class="descclassname">AdminStaffForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.AdminStaffForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.AdminStudentForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">AdminStudentForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.AdminStudentForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.models.ModelForm</span></tt></p>
+<dl class="class">
+<dt id="apps.profiles.forms.AdminStudentForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#apps.profiles.forms.AdminStudentForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="apps.profiles.forms.AdminStudentForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.forms.AdminStudentForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Student</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.forms.AdminStudentForm.clean_bio">
+<tt class="descclassname">AdminStudentForm.</tt><tt class="descname">clean_bio</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.forms.AdminStudentForm.clean_bio" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.forms.AdminStudentForm.clean_expertise">
+<tt class="descclassname">AdminStudentForm.</tt><tt class="descname">clean_expertise</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.forms.AdminStudentForm.clean_expertise" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.forms.AdminStudentForm.media">
+<tt class="descclassname">AdminStudentForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.AdminStudentForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.ContactForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">ContactForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.ContactForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.forms.Form</span></tt></p>
+<dl class="attribute">
+<dt id="apps.profiles.forms.ContactForm.media">
+<tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.ContactForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.ContactStudentForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">ContactStudentForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.ContactStudentForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.forms.Form</span></tt></p>
+<dl class="attribute">
+<dt id="apps.profiles.forms.ContactStudentForm.media">
+<tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.ContactStudentForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.CourseForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">CourseForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.CourseForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.forms.AdminCourseForm" title="apps.profiles.forms.AdminCourseForm"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.forms.AdminCourseForm</span></tt></a></p>
+<dl class="class">
+<dt id="apps.profiles.forms.CourseForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#apps.profiles.forms.CourseForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.forms.Meta</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.forms.CourseForm.media">
+<tt class="descclassname">CourseForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.CourseForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.FacultyForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">FacultyForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.FacultyForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.forms.AdminFacultyForm" title="apps.profiles.forms.AdminFacultyForm"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.forms.AdminFacultyForm</span></tt></a></p>
+<dl class="class">
+<dt id="apps.profiles.forms.FacultyForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#apps.profiles.forms.FacultyForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.forms.Meta</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.forms.FacultyForm.media">
+<tt class="descclassname">FacultyForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.FacultyForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.FilterForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">FilterForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.FilterForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.forms.Form</span></tt></p>
+<dl class="attribute">
+<dt id="apps.profiles.forms.FilterForm.media">
+<tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.FilterForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.InvitationForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">InvitationForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.InvitationForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.forms.Form</span></tt></p>
+<dl class="attribute">
+<dt id="apps.profiles.forms.InvitationForm.media">
+<tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.InvitationForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.OrganizationForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">OrganizationForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.OrganizationForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.models.ModelForm</span></tt></p>
+<dl class="class">
+<dt id="apps.profiles.forms.OrganizationForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#apps.profiles.forms.OrganizationForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="apps.profiles.forms.OrganizationForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.forms.OrganizationForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Organization</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.forms.OrganizationForm.media">
+<tt class="descclassname">OrganizationForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.OrganizationForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.PersonActivateForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">PersonActivateForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.PersonActivateForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.forms.Form</span></tt></p>
+<dl class="attribute">
+<dt id="apps.profiles.forms.PersonActivateForm.media">
+<tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.PersonActivateForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.SearchForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">SearchForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.SearchForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.forms.Form</span></tt></p>
+<dl class="attribute">
+<dt id="apps.profiles.forms.SearchForm.media">
+<tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.SearchForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.SectionForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">SectionForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.SectionForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.forms.AdminSectionForm" title="apps.profiles.forms.AdminSectionForm"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.forms.AdminSectionForm</span></tt></a></p>
+<dl class="class">
+<dt id="apps.profiles.forms.SectionForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.SectionForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.forms.AdminSectionForm" title="apps.profiles.forms.AdminSectionForm"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.forms.AdminSectionForm</span></tt></a></p>
+<dl class="attribute">
+<dt id="apps.profiles.forms.SectionForm.Meta.media">
+<tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.SectionForm.Meta.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.forms.SectionForm.media">
+<tt class="descclassname">SectionForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.SectionForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.StaffForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">StaffForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.StaffForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.forms.AdminStaffForm" title="apps.profiles.forms.AdminStaffForm"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.forms.AdminStaffForm</span></tt></a></p>
+<dl class="class">
+<dt id="apps.profiles.forms.StaffForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#apps.profiles.forms.StaffForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.forms.Meta</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.forms.StaffForm.media">
+<tt class="descclassname">StaffForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.StaffForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.StudentForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">StudentForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.StudentForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.forms.AdminStudentForm" title="apps.profiles.forms.AdminStudentForm"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.forms.AdminStudentForm</span></tt></a></p>
+<dl class="class">
+<dt id="apps.profiles.forms.StudentForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#apps.profiles.forms.StudentForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.forms.Meta</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.forms.StudentForm.media">
+<tt class="descclassname">StudentForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.StudentForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.SyllabusForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">SyllabusForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.SyllabusForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.models.ModelForm</span></tt></p>
+<dl class="class">
+<dt id="apps.profiles.forms.SyllabusForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#apps.profiles.forms.SyllabusForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="apps.profiles.forms.SyllabusForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.forms.SyllabusForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Section</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.forms.SyllabusForm.media">
+<tt class="descclassname">SyllabusForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.SyllabusForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.WorkForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">WorkForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.WorkForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.models.ModelForm</span></tt></p>
+<dl class="class">
+<dt id="apps.profiles.forms.WorkForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#apps.profiles.forms.WorkForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="apps.profiles.forms.WorkForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.forms.WorkForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Work</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.forms.WorkForm.media">
+<tt class="descclassname">WorkForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.WorkForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.forms.WorkURLForm">
+<em class="property">class </em><tt class="descclassname">apps.profiles.forms.</tt><tt class="descname">WorkURLForm</tt><big>(</big><em>data=None</em>, <em>files=None</em>, <em>auto_id='id_%s'</em>, <em>prefix=None</em>, <em>initial=None</em>, <em>error_class=&lt;class 'django.forms.util.ErrorList'&gt;</em>, <em>label_suffix=':'</em>, <em>empty_permitted=False</em>, <em>instance=None</em><big>)</big><a class="headerlink" href="#apps.profiles.forms.WorkURLForm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.forms.models.ModelForm</span></tt></p>
+<dl class="class">
+<dt id="apps.profiles.forms.WorkURLForm.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#apps.profiles.forms.WorkURLForm.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="apps.profiles.forms.WorkURLForm.Meta.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.forms.WorkURLForm.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">WorkURL</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.forms.WorkURLForm.media">
+<tt class="descclassname">WorkURLForm.</tt><tt class="descname">media</tt><a class="headerlink" href="#apps.profiles.forms.WorkURLForm.media" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="apps.profiles.fields.html"
+                        title="previous chapter">Profiles: Fields</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="apps.profiles.handlers.html"
+                        title="next chapter">Profiles: Handlers</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/generated/apps.profiles.forms.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.handlers.html" title="Profiles: Handlers"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.fields.html" title="Profiles: Fields"
+             >previous</a> |</li>
+        <li><a href="../index.html">DataMYNE v1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, The New School.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+
+form label {
+    float: left;
+    clear: both;
+}
+
+form textarea {
+    float: left;
+    clear: both;
+}

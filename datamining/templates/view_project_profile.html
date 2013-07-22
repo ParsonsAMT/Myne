@@ -1,0 +1,51 @@
+{% extends "base_profiles.html" %}
+
+{% load tagging_tags %}
+
+{% load thumbnail %}
+
+{% block title %}Profile for {{ project.title }}{% endblock %}
+
+{% block sitesection %}profile{% endblock %}
+
+{% block breadcrumblinks %}
+{{ project.title }}
+{% endblock %}
+
+{% block mainbody %}
+
+<div id="ProfileTop">
+	<p class="fullname">
+    {{ project.title }}
+    </p>
+    <p>
+    by {{ creator.first_name }} {{ creator.last_name }} | {{ project.year }}
+    </p>
+    
+    {% if project.thumbnail %}
+    <div id="project-photo">
+      <img src="{{ project.thumbnail.url }}" />
+    </div>
+    {% endif %}
+</div>
+
+<p style="line-height:0;">&nbsp;</p>
+
+<div id="ProfileColumnLeft">
+	<div class="desc">
+	<h2>Description:</h2>
+    {{ project.specifications }}
+    </div>
+</div>
+
+<div id="ProfileColumnRight">
+	<h2>Tags:</h2>
+    <div class="tags">
+        {% for t in cloud %}
+    	    <span class="tag-{{t.font_size}}"><a href="{% url haystack_search %}?q={{ t.name }}">{{t}}</a>{% if not forloop.last %}, {% endif %}</span>
+    	{% endfor %}
+	</div>
+</div>
+
+{% endblock %}
+

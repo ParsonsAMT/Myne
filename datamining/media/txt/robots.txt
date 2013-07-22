@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /django/media/user/cv/
+Disallow: /media/user/cv/
+

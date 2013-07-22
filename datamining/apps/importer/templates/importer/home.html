@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Datamine Data Importer{% endblock %}
+
+{% block sitesection %}{% endblock %}
+
+{% block breadcrumbs %}
+Home
+{% endblock %}    
+                   
+{% block mainbody %}
+<h2>Data Importer</h2>
+
+<ul>
+  <li><a href="{% url import-home %}">list of past imports</a></li>
+  <li><a href="{% url add-sections-import %}">import sections and faculty</a></li>
+  <li><a href="{% url add-deactivations-import %}">deactivate faculty</a></li>
+</ul>
+{% endblock %}

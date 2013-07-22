@@ -1,0 +1,22 @@
+{% extends "base_profiles.html" %}
+
+{% block title %}
+Demo
+{% endblock %}
+
+{% block sitesection %}demo{% endblock %}
+
+{% block breadcrumbs %}
+Demo
+{% endblock %}
+
+{% block mainbody %}
+
+<h2>Search Visualization</h2>
+<div style="padding-top: 20px;">
+	<a href="{{MEDIA_URL}}images/sv01.jpg"><img src="{{MEDIA_URL}}images/sv01.jpg" style="width: 640px;"></a>
+    <a href="{{MEDIA_URL}}images/sv02.jpg"><img src="{{MEDIA_URL}}images/sv02.jpg" style="width: 640px;"></a>
+    <a href="{{MEDIA_URL}}images/sv03.jpg"><img src="{{MEDIA_URL}}images/sv03.jpg" style="width: 640px;"></a>
+</div>
+
+{% endblock %}

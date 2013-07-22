@@ -1,0 +1,188 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Reporting: Views &mdash; DataMYNE v1.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="DataMYNE v1.0.0 documentation" href="../index.html" />
+    <link rel="next" title="Reporting: Forms" href="apps.reporting.forms.html" />
+    <link rel="prev" title="Reporting: Models" href="apps.reporting.models.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apps.reporting.forms.html" title="Reporting: Forms"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="apps.reporting.models.html" title="Reporting: Models"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">DataMYNE v1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-apps.reporting.views">
+<span id="reporting-views"></span><h1>Reporting: Views<a class="headerlink" href="#module-apps.reporting.views" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="apps.reporting.views.edit_committee">
+<tt class="descclassname">apps.reporting.views.</tt><tt class="descname">edit_committee</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.reporting.views.edit_committee" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view edits a <tt class="docutils literal"><span class="pre">Committee</span></tt> object.  See the model documentation
+for a more complete description of what an organization represents.</p>
+<p>Along with the <tt class="docutils literal"><span class="pre">Organization</span></tt> model, committees represent one of the most
+complicated objects in terms of security.  This model should be refactored first
+as part of a general clean up to remove edittable from the view code and port
+it into the model code itself.</p>
+<p>Also note the use of the <tt class="docutils literal"><span class="pre">current</span></tt> and <tt class="docutils literal"><span class="pre">past</span></tt> managers for the member
+and chairperson affiliations.  This is one of the benefits of using the 
+<tt class="docutils literal"><span class="pre">Affiliation</span></tt> object over a <tt class="docutils literal"><span class="pre">ManyToManyField</span></tt>: we can retain historical
+information even after the connection is no longer active.  For example, 
+we can know all of the previous chairs of a committee while still allowing 
+the current ones to be the only recipients of security clearance, public display,
+etc.</p>
+<p>In addition, the <tt class="docutils literal"><span class="pre">Affiliation</span></tt> managers have the <tt class="docutils literal"><span class="pre">begin</span></tt> and <tt class="docutils literal"><span class="pre">retire</span></tt> methods
+that allow connections to see easily set to current or past without having to 
+rewrite complicated code.  &#8220;Retirement&#8221; is the preferred way for disposing of a current
+affiliation.  It has the same effect as a deletion, while still retaining the 
+connections for historical and data-mining purposes.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.reporting.views.edit_meeting">
+<tt class="descclassname">apps.reporting.views.</tt><tt class="descname">edit_meeting</tt><big>(</big><em>request</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.reporting.views.edit_meeting" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view edits a meeting.</p>
+<p>Note that meetings, currently, can be attached to any object, specifically the
+<tt class="docutils literal"><span class="pre">Organization</span></tt> and <tt class="docutils literal"><span class="pre">Committee</span></tt> objects.  This creates a rather complex security
+situation, in that the <tt class="docutils literal"><span class="pre">Meeting</span></tt> mode is not only capable of having permissions 
+assigned to it directly but, logically, is also subject to the admin permissions for
+the <tt class="docutils literal"><span class="pre">Organization</span></tt> and <tt class="docutils literal"><span class="pre">Committee</span></tt>.  As with other models, this should be 
+refactored, to as great an extent as possible, into the models themselves.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.reporting.views.list_committees_by_school">
+<tt class="descclassname">apps.reporting.views.</tt><tt class="descname">list_committees_by_school</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.reporting.views.list_committees_by_school" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view lists all of the committees of all the schools.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.reporting.views.view_committee">
+<tt class="descclassname">apps.reporting.views.</tt><tt class="descname">view_committee</tt><big>(</big><em>request</em>, <em>committee_id</em><big>)</big><a class="headerlink" href="#apps.reporting.views.view_committee" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view displays an <tt class="docutils literal"><span class="pre">Committee</span></tt> object.  See the model documentation
+for a more complete description of what an organization represents.</p>
+<p>Along with the <tt class="docutils literal"><span class="pre">Organization</span></tt> model, committees represent one of the most
+complicated objects in terms of security.  This model should be refactored first
+as part of a general clean up to remove edittable from the view code and port
+it into the model code itself.</p>
+<p>It would be good to add a &#8220;admin&#8221; role to the committees, in
+addition to the current &#8220;chairperson&#8221; and &#8220;member&#8221; roles.</p>
+<p>Also note the use of the <tt class="docutils literal"><span class="pre">current</span></tt> and <tt class="docutils literal"><span class="pre">past</span></tt> managers for the member
+and chairperson affiliations.  This is one of the benefits of using the 
+<tt class="docutils literal"><span class="pre">Affiliation</span></tt> object over a <tt class="docutils literal"><span class="pre">ManyToManyField</span></tt>: we can retain historical
+information even after the connection is no longer active.  For example, 
+we can know all of the previous chairs of a committee while still allowing 
+the current ones to be the only recipients of security clearance, public display,
+etc.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.reporting.views.view_meeting">
+<tt class="descclassname">apps.reporting.views.</tt><tt class="descname">view_meeting</tt><big>(</big><em>request</em>, <em>meeting_id</em><big>)</big><a class="headerlink" href="#apps.reporting.views.view_meeting" title="Permalink to this definition">¶</a></dt>
+<dd><p>This view displays a meeting.</p>
+<p>Note that meetings, currently, can be attached to any object, specifically the
+<tt class="docutils literal"><span class="pre">Organization</span></tt> and <tt class="docutils literal"><span class="pre">Committee</span></tt> objects.  This creates a rather complex security
+situation, in that the <tt class="docutils literal"><span class="pre">Meeting</span></tt> mode is not only capable of having permissions 
+assigned to it directly but, logically, is also subject to the admin permissions for
+the <tt class="docutils literal"><span class="pre">Organization</span></tt> and <tt class="docutils literal"><span class="pre">Committee</span></tt>.  As with other models, this should be 
+refactored, to as great an extent as possible, into the models themselves.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="apps.reporting.models.html"
+                        title="previous chapter">Reporting: Models</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="apps.reporting.forms.html"
+                        title="next chapter">Reporting: Forms</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/generated/apps.reporting.views.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apps.reporting.forms.html" title="Reporting: Forms"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="apps.reporting.models.html" title="Reporting: Models"
+             >previous</a> |</li>
+        <li><a href="../index.html">DataMYNE v1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, The New School.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

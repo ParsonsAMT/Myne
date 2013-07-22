@@ -1,0 +1,148 @@
+{% extends "base_profiles.html" %}
+
+{% load tagging_tags %}
+{% load thumbnail %}
+
+{% block title %}Profile for {{ student.first_name }} {{ student.last_name }}{% endblock %}
+
+{% block sitesection %}profile{% endblock %}
+
+{% block breadcrumblinks %}
+{{ student.first_name }} {{ student.last_name }}
+{% endblock %}
+
+{% block mainbody %}
+<div id="ProfileTop">
+	<div id="staff-links">
+      {% if edittable %}
+      <div class="button-edit-profile">
+          <a href="{% url profiles_edit_student_profile student.id %}">Edit profile</a>
+      </div>
+      {% endif %}
+    </div>
+
+    <div id="photo">
+    {% if student.photo %}
+      <img src="{% thumbnail student.photo 240x240 crop %}" />
+    {% else %}      
+      <img src="{{ MEDIA_URL }}images/defaults/240px/DataMyne_Icon_Student_240.jpg" width="240" height="240" />
+    {% endif %}      
+    </div>
+
+    <div class="basic-info">
+      <p class="fullname">
+        {{ student.first_name }} {{ student.last_name }}
+      </p>
+      <p>
+      	{% if student.homeprogram.fullname %}{{ student.homeprogram.fullname }} | {% endif %} 
+      	{% if student.year %} 
+      	Class of {{ student.year }} {% endif %}
+      </p>
+      <p>
+      	{{ student.get_school_name_display }}
+      </p>
+      <p>
+      	Parsons The New School for Design
+      </p>
+      <div class="title">
+        <p>
+          {{ student.get_academic_title_display }}
+        </p>
+      </div>
+      
+      <div id="contact">
+				<a href="{% url profiles_contact_student student.id %}">Contact</a>
+      </div>
+      
+      <h2>Areas of interest:</h2>
+      {% if student.expertise.all %}
+      {% for e in student.expertise.all %}
+      <a href="{% url list-tagged-profiles e %}">{{ e.name }}</a>{% if not forloop.last %},{% endif %} {% endfor %}
+      {% else %}
+      <em>No areas of interest yet.</em>
+      {% endif %}
+      
+      <div>
+        <h2>Portfolio Links:</h2>
+        <ul>
+          {% if student.workurl_set.all %}
+          {% for url in student.workurl_set.all %}
+          <li><a href="{{ url.url }}" target="_blank">{{ url.title }}</a> -- {{ url.description }}</li>
+          {% endfor %}
+          {% else %}
+          <li><em>No portfolio links yet.</em></li>
+          {% endif %}
+        </ul>
+      </div>
+      
+    </div>
+</div>
+
+<div>
+	<h2>Bio:</h2>
+	{% if student.bio %}
+	{{ student.bio|truncatewords_html:250|safe }}
+	{% else %}
+	<em>No bio yet.</em>
+	{% endif %}
+</div>
+
+<div id="ProfileColumnLeft">
+        {% if can_read_cv %}
+        <div>
+          <h2>Resume:</h2>
+          {% with student.get_cv_url as cv_url %}
+          {% if cv_url %}
+          <a href="{{ cv_url }}" title="Resume">Download PDF</a>
+          {% else %}
+          <em>No resume uploaded yet.</em>
+          {% endif %}
+          {% endwith %}
+        </div>
+        {% endif %}
+</div>
+
+
+<div id="ProfileColumnRight">
+        {% include "profiles/include/invitations_list.html" %}
+
+	<h2>Skills:</h2>
+	<div class="tags">
+        {% tags_for_object student as tag_list %}
+        {% if tag_list %}
+        {% for t in tag_list %}<a href="{% url haystack_search %}?q={{ t.name }}">{{ t }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
+        {% else %}
+        <em>No skills selected yet.</em>
+        {% endif %}
+	</div>
+        
+    {% include "profiles/include/works_list.html" %}
+          
+    {% include "profiles/include/mlt_list.html" %}
+
+<!--     {% if document.entities.all %}
+    <h2>Keywords:</h2>
+    <div id="calais-profile">
+        <ul>
+            {% for entity in document.entities.all %}
+                <li>{{ entity.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    {% if document.topics.all %}
+    <h2>Topics:</h2>
+    <div id="calais-profile">
+        <ul>
+            {% for topic in document.topics.all %}
+                <li>{{ topic }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+ -->      
+</div>
+
+{% endblock %}
+

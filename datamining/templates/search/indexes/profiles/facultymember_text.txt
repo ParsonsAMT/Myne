@@ -1,0 +1,35 @@
+{{ object.full_name  }}  
+
+{% if object.bio %}
+    {{ object.bio }}
+{% endif %}
+{% if object.expertise %}
+    {% for expertise in object.expertise.all %} 
+        {{ expertise }}
+    {% endfor %} 
+{% endif %}
+
+{% if object.tags %}
+    {{ object.tags }} 
+{% endif %}
+
+{% if object.cv_text %}
+    {{ object.cv_text }}
+{% endif %}
+
+{% if object.cv %}
+    {{ object.cv.basic_info}}
+    {{ object.cv.degrees}}
+    {{ object.cv.affiliations}}
+    {{ object.cv.clients}}
+    {{ object.cv.publications}}
+    {{ object.cv.press}}
+    {{ object.cv.presentations}}
+    {{ object.cv.exhibitions}}
+    {{ object.cv.discography}}
+    {{ object.cv.performances}}
+    {{ object.cv.awards}}
+    {{ object.cv.screenings}}
+    {{ object.cv.grants}}
+    {{ object.cv.collections}}                     
+{% endif %}    

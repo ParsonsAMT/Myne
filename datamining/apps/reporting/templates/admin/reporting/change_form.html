@@ -1,0 +1,25 @@
+{% extends "admin/change_form.html" %}
+
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/jquery.autocomplete.css" type="text/css" media="screen">
+
+    <link rel="stylesheet" href="{{ MEDIA_URL }}css/iconic.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/base/jquery-ui.css" type="text/css" media="all" />
+
+{% endblock %}
+
+{% block extrahead %}
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+    <script src="{{ MEDIA_URL }}js/jquery.autocomplete.js"></script>
+    <script src="{{ MEDIA_URL }}js/ajax-select.js"></script>
+
+ {{ block.super }}
+ {% load adminmedia %}
+<script type="text/javascript" src="{% admin_media_prefix %}js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="{% admin_media_prefix %}js/actions.min.js"></script>
+
+    <script src="{{ MEDIA_URL }}js/ajax-select.js"></script>
+{% endblock %}

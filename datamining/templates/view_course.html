@@ -1,0 +1,166 @@
+{% extends "base_profiles.html" %}
+
+{% load tagging_tags %}
+
+{% load thumbnail %}
+
+{% load adminmedia admin_list i18n %}
+
+{% block title %}Course {{ course.title }}{% endblock %}
+
+{% block sitesection %}{% endblock %}
+
+{% block breadcrumblinks %}
+{{ course.title }}
+{% endblock %}
+
+{% block mainbody %}
+<div id="CourseProfile">
+  <div id="staff-links">
+    {% if edittable %}
+    <div class="button-edit-profile">
+        <a href="{% url profiles_course_change course.id %}">Edit course</a>
+    </div>
+    {% endif %}
+  </div>
+
+  <h1>{{ course.title }}</h1>
+
+  <div class="basicinfo">
+    {{ course.subject.fullname}} ({{ course.subject.division }})<br>
+    {{ course.subject }} {{ course.coursenumber }} | 
+    Credits: {{course.minimum_credits}}
+    {% ifnotequal course.credit_range_type "no" %} {{course.credit_range_type}} {% endifnotequal %}
+    {% if course.maximum_credits %} {{course.maximum_credits}} {% endif %}
+    <p>
+    {% if course.dependents.all %}
+    Prerequisites:
+    	<ul>
+		{% for c in course.dependents.all %}
+        	<li>
+            <a href="{% url view-course c.id %}">{{ c.title }}</a> ({{c.subject}} {{c.coursenumber}})
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    </p>
+  </div>
+  <div class="moreinfoleft">
+    {% if course.description %}
+      <h2>Description</h2>
+      <div class="desc">
+      {{ course.description }}
+      </div>
+    {% endif %}
+    {% if course.learning_outcomes %}
+      <h2>Learning outcomes</h2>
+      <div class="learning">
+      <p style="font-style:italic; padding: 5px 0 5px 0;">At the completion of this course, students should be able to:</p>
+      {{ course.learning_outcomes|linebreaks }}
+      </div>
+    {% endif %}
+    {% if course.assessment %}
+      <h2>Assessment / Deliverables</h2>
+      <div class="assessment">            
+        {{ course.assessment|linebreaks }}
+      </div>
+    {% endif %}
+    
+    <div class="timelinefaculty">
+    {% if course.section_set.recent %}
+        {% for section in course.section_set.recent %}
+            <strong><a href="{% url view-section section.id %}">{{ section.semester }}</a></strong>
+            {% if section.title %}
+              <em>{{ section.title }}</em>
+            {% endif %}
+            {% if section.instructors.all %}
+              {% for instructor in section.instructors.all %}
+                {% if not forloop.first %},{% endif %} 
+                  <a href="{% url view-profile instructor.id %}">{{ instructor }}</a>
+              {% endfor %}
+            {% else %}
+              TBD
+            {% endif %}<br/>
+        {% endfor %}
+    {% else %}
+      No sections of this course have been taught recently.
+	{% endif %}
+    </div>
+    
+    {% if course.timeline %}
+      <div class="timeline">
+    	{{ course.timeline|linebreaks }}
+      </div>
+    {% endif %}
+  </div>
+  
+  <div class="moreinforight">
+    {% if tags %}
+      <h2>Tags</h2>
+      <div class="tags">  
+          {% for t in cloud %}
+      	    <span class="tag-{{t.font_size}}"><a href="{% url haystack_search %}?q={{ t.name }}">{{t}}</a>{% if not forloop.last %}, {% endif %}</span>
+      	{% endfor %}
+      </div>
+    {% endif %}
+
+    {% if courseimages %}
+      <h2>Work sample images</h2>
+      <div class="images">
+      <table>
+  		{% for img in courseimages %}
+              {% if img.image %}
+              <tr>
+                  <td class="thumbnail">
+                      <a href="{{ img.url }}" target="_blank"><img src="{% thumbnail img.image 100x100 crop %}" /></a>
+                  </td>
+                  <td class="info">
+                      <p style="font-weight:bold;"> {{ img.title }} </p>
+                      {% if img.author %}
+                      <p> {{ img.author }} </p>
+                      {% endif %}
+                      {% if img.type %}
+                      <p> {{ img.type }} </p>
+                      {% endif %}
+                      {% if img.year %}
+                      <p> {{ img.year }} </p>
+                      {% endif %}
+                  </td>
+              {% else %}
+              <td>&nbsp;</td>
+              </tr>
+              {% endif %}
+  		{% endfor %}
+      </table>
+      </div>
+    {% endif %}
+    
+    {% include "profiles/include/mlt_list.html" %}
+
+<!--     {% if document.entities.all %}
+    <h2>Keywords:</h2>
+    <div id="calais-profile">
+        <ul>
+            {% for entity in document.entities.all %}
+                <li>{{ entity.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    {% if document.topics.all %}
+    <h2>Topics:</h2>
+    <div id="calais-profile">
+        <ul>
+            {% for topic in document.topics.all %}
+                <li>{{ topic }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+ -->        
+  </div>
+
+</div>
+{% endblock %}
+

@@ -1,0 +1,48 @@
+{% extends "base_profiles.html" %}
+
+{% block title %}
+Contact
+{% endblock %}
+
+{% block sitesection %}contact{% endblock %}
+
+{% block breadcrumbs %}
+Contact
+{% endblock %}
+
+{% block mainbody %}
+
+<h2>Send us your comments</h2>
+
+<div>
+    <p>Please fill out the form below. Once you have finished, click the 'Submit' button at the bottom of the page.</p>
+</div>
+
+<form action="{% url profiles.views.contact %}" method="POST">
+{% csrf_token %}
+	<div class="thankyou">
+    	{{ thankyou }}
+    </div>
+	<div class="infofield">
+    	<p>Name</p>
+    	{{ form.name.errors }}
+        {{ form.name }}
+    </div>
+    <div class="infofield">
+    	<p>Email</p>
+    	{{ form.email.errors }}
+        {{ form.email }}
+    </div>
+    <div class="infofield">
+    	<p>Subject</p>
+    	{{ form.subject.errors }}
+        {{ form.subject }}
+    </div>
+    <div class="infofield">
+    	<p>Message</p>
+    	{{ form.message.errors }}
+        {{ form.message }}
+    </div>
+	<input type="submit" name="submit" value="Submit" />
+</form>
+{% endblock %}

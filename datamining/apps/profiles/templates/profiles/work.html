@@ -1,0 +1,118 @@
+{% extends "base_profiles.html" %}
+
+{% load tagging_tags %}
+
+{% load thumbnail %}
+
+{% load adminmedia admin_list i18n %}
+
+{% block title %}
+  {% if work.title %}
+    {{ work.title }}
+  {% else %}
+    A work  
+  {% endif %}
+  by {% for creator in work.affiliations.all %}{% if not forloop.first and not forloop.last %}, {% endif %}{% if not forloop.first and forloop.last %} and {% endif %}{{ creator.person }}{% endfor %}
+{% endblock %}
+
+{% block sitesection %}{% endblock %}
+
+{% block breadcrumblinks %}
+{{ title }}
+{% endblock %}
+
+{% block mainbody %}
+<div id="ProfileTop">
+  <div id="staff-links">
+    {% if edittable or can_invite %}
+      <div class="button-edit-profile">
+          {% spaceless %}
+            {% if edittable %}<a href="{% url profiles_edit_work work.id %}">Edit</a>{% endif %}
+          {% endspaceless %}
+      </div>
+    {% endif %}
+  </div>
+
+  <div id="photo">
+	  {% if work.image %}
+	    <img src="{% thumbnail work.image 240x240 crop %}" />
+	  {% else %}      
+	    <img src="{{ MEDIA_URL }}images/defaults/240px/DataMyne_Icon_Work_240.jpg" width="240" height="240" />
+	  {% endif %}      
+  </div>
+
+  <div class="basic-info">
+    <div class="fullname">
+    {% spaceless %}
+  {% if work.title %}
+    {{ work.title }}
+  {% else %}
+    A work by
+  {% endif %}
+  {% endspaceless %}</div>
+
+	 <div>by {% for creator in creators %}{% if not forloop.first and not forloop.last %}, {% endif %}{% if not forloop.first and forloop.last %} and {% endif %}<a href="{% url profiles_view_person_profile creator.person.id %}">{{ creator.person }}</a>{% endfor %}
+	 </div>
+	 
+    {% if work.type.all %}
+        {% for t in work.type.all %}
+            {% ifnotequal t.name "other" %}
+                <p><em>{{ t }}</em></p>
+            {% endifnotequal %}
+        {% endfor %}
+    {% endif %}
+    </div>
+
+	{% if work.date or work.year or work.location %}
+    <div id="work-metadata">
+	    {% if work.date %}
+			<p>created {{ work.date|date:"DATE_FORMAT" }}</p>
+		{% else %}
+		    {% if work.year %}
+				<p>created {{ work.year }}</p>
+			{% endif %}
+		{% endif %}
+	    {% if work.location %}
+			<p>{{ work.location }}</p>
+		{% endif %}
+	</div>
+	{% endif %}
+
+	{% if work.url %}
+	    <div id="work-url">
+	       <br>
+			<strong>See more at <a href="{{ work.url }}">{{ work.url|urlizetrunc:30 }}</strong></a>    	
+		</div>
+	{% endif %}
+
+    </div>
+</div>  
+	
+<div id="ProfileColumnLeft">
+    {% if work.description %}
+      <h2>Description</h2>
+      <div class="desc">
+        {{ work.description }}
+      </div>  
+    {% endif %}    
+
+    {% if work.tags %}
+      <h2>Tags</h2>
+      <div class="tags">  
+          {% tags_for_object work as tag_list %}
+          {% if tag_list %}
+          {% for t in tag_list %}<a href="{% url haystack_search %}?q={{ t.name }}">{{ t }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
+          {% else %}
+          <em>No tags yet.</em>
+          {% endif %}
+      </div>
+    {% endif %}
+</div>
+
+<div id="ProfileColumnRight">
+    {% include "profiles/include/mlt_list.html" %}
+</div>
+
+
+{% endblock %}
+

@@ -1,0 +1,48 @@
+{% extends "base_profiles.html" %}
+
+{% block title %} {{ page_title }} List {% endblock %}
+
+{% block sitesection %}faculty-list{% endblock %}
+
+{% block breadcrumblinks %}
+{{ page_title }} List
+{% endblock %}
+
+{% block mainbody %}   
+  {% if tag %}
+  <h2>{{ page_title }} tagged '{{ tag }}'</h2>
+  {% else %}{% if search %}
+  <h2>{{ page_title }} matching '{{ search }}'</h2>
+  {% else %}
+  <h2>{{ page_title }} List</h2>
+  {% endif %}{% endif %}
+
+  {% include "alpha_pagination.html" %}
+
+  {% for fm in page.object_list %}
+  
+    {% ifequal page_title "Group"%}
+    <p>
+    	<a href="{% url profiles_view_organization fm.id %}">{{ fm.title }}</a>
+      {% if user.is_staff %}
+      [<a href="{% url profiles_edit_organization fm.id %}">edit</a>]
+      {% endif %}
+    </p>
+    
+    {% else %}  
+    <p>
+      <a href="{% url profiles_view_person_profile fm.id %}">{{ fm.first_name }} {{ fm.last_name }}</a>
+      {% if user.is_staff %}
+      [<a href="{% url profiles_edit_person_profile fm.id %}">edit</a>]
+      {% if not fm.user_account %}
+      [<a href="{% url profiles.views.activate fm.id %}">activate</a>]
+      {% endif %}
+      {% endif %}
+    </p>
+    {% endifequal %}
+  
+  {% endfor %}
+
+  {% include "alpha_pagination.html" %}
+
+{% endblock %}

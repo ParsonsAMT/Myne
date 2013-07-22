@@ -1,0 +1,1062 @@
+/* @override http://127.0.0.1:8000/media/css/main.css */
+
+/*
+	main.css
+	----------
+*/
+
+/* @group Vendor Reset */
+input.ui-button  {
+	padding:  0.3em;
+	text-transform: uppercase;
+	font-size:  8pt;
+}
+
+div.ui-state-highlight {
+	margin: 1em 0;
+	padding:  1em;
+}
+
+div.ui-state-error {
+	width: 634px;
+	height: 44px;
+	border-width: 0px;
+	margin: 10px 0 10px 0;
+	background:url(../images/loginerror.png)
+}
+
+/* @end */
+
+/* @group Main Layout */
+
+/* ---------- main layout ---------- */
+
+#Container {
+    width: 910px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100%;
+}
+
+#Header {
+    padding-bottom: 3px;
+}
+
+#Header-top {
+	width: 910px;
+	height: 94px;
+	background:url(../images/header.jpg);
+}
+
+#Header-bottom {
+	width: 910px;
+	height: 31px;
+	background:url(../images/header-bar.jpg);
+}
+
+#Org-logo {
+    width: 223px;
+    height: 15px;
+    float: right;
+    padding: 5px 12px 0 0;
+}
+
+#Logo {
+    float: left;
+	width: 251px;
+	height: 52px;
+	background:url(../images/header-logo.png);
+	margin-top: 25px;
+	margin-left: 30px;
+}
+
+#Search {
+	width: 432px;
+	float: left;
+	margin-top: 45px;
+	margin-left: 47px;
+}
+
+#Login {
+	margin-top: -27px;
+	margin-right: 36px;
+	float:right;
+	color:#FFFFFF;
+}
+
+#Login .text {
+	padding-top:5px;
+}
+
+#Utility {
+    float: right;
+    padding-right: 12px;
+    padding-top: 10px;
+}
+
+#nav-top {
+    float: left;
+    height: 31px;
+    width: 100%;
+}
+
+#Main {
+}
+
+#LeftNav {
+	float:left;
+	width:193px; /* 223-30 */
+    padding: 15px 0px 0px 30px;
+}
+
+#LeftNav .recent-updates a {
+	line-height:15pt;
+	color:#0797c4;
+}
+#LeftNav .recent-updates a:hover {
+	color:#ffa800;
+    text-decoration: underline;
+}
+
+#LeftNav .recent-updates {
+    padding: 0px 0px 30px 0px;
+}
+
+#LeftNav hr {
+	background-color: #b4b4b4;
+	float:left;
+	height: 1px;
+	width:165px;
+	border:0;
+	color:#b4b4b4;
+}
+
+#MainBody{
+	width:637px; /* 687-40-10 */
+    padding: 10px 40px 0px 10px;
+	margin-left:223px;
+}
+
+#ProfileTop{
+	float:left;
+	padding-bottom:30px;
+	width:637px;
+}
+
+#SchoolsAndProgramsLeft {
+	width:300px;
+    padding: 15px 0px 50px 0px;
+	float:left;
+	line-height:15pt;
+}
+#SchoolsAndProgramsRight {
+	margin-left:310px;
+	width:300px;
+    padding: 15px 0px 50px 20px;
+	line-height:15pt;
+}
+#SchoolsAndProgramsLeft  a, #SchoolsAndProgramsRight a {
+	color:#0797c4;
+}
+#SchoolsAndProgramsLeft  a:hover, #SchoolsAndProgramsRight  a:hover {
+	color:#ffa800;
+    text-decoration: underline;
+}
+
+#ProfileColumnLeft {
+	float:left;
+	width:300px;
+    padding: 15px 0px 30px 0px;
+	line-height:15pt;
+}
+#ProfileColumnLeft .desc {
+	text-align:justify;
+	line-height: 120%;
+}
+
+#ProfileColumnRight {
+	width:300px;
+    padding: 15px 0px 30px 20px;
+	line-height:15pt;
+    margin-left: 300px;
+}
+#ProfileColumnRight .tags {
+	line-height: 120%;
+	padding-bottom: 30px;
+}
+
+#ProfileListView {
+	width:637px; /* 687-40-10 */
+    padding: 10px 40px 0px 10px;
+	margin-left:223px;
+}
+
+#Footer {
+	width:910px;
+	height:96px;
+	background:url(../images/footer.jpg);
+}
+
+#TextBox {
+	width:637px; /* 687-40-10 */
+    padding: 10px 40px 0px 10px;
+	margin-left:223px;
+}
+
+#nav-bottom {
+    float: left;
+}
+
+#copyright {
+    float: right;
+}
+
+/* @end */
+
+/* @group Appearance */
+
+/* ---------- appearance ----------- */
+
+/* --- gen'l --- */
+
+a:hover{
+    text-decoration: underline;
+}
+
+body {
+    font-family: Verdana, Arial, 'Liberation Sans', FreeSans, sans-serif;
+    font-size: 11px;
+}
+
+#Container {
+    background:url(../images/left-bg.jpg);
+}
+
+#Header {
+}
+
+#Org-logo {
+    background: url(../images/logo.parsons.jpg);
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+}
+
+#Logo h1 a {
+    display: block;
+    overflow: hidden;
+    height: 45px;
+    width: 170px;
+    background: url(../images/logo.datamining.jpg);
+    background-repeat: no-repeat;
+    text-indent: -9999px;    
+}
+
+#Logo #tagline {
+    margin: 0 0 5px 12px;
+}
+
+#Utility,
+#Utility a {
+    color: #555;
+    font-style: italic;
+}
+#Utility a:hover {
+    text-decoration: underline;
+}
+
+.messagelist {
+    margin: 5px;
+    padding: 5px;
+    background-color: #CCF;
+}
+
+#Main {
+    padding: 10px;
+    line-height: 18px;
+}
+
+#Main h2 {
+    font-size: 14px;
+}
+
+#Main h2.login {
+    overflow: hidden;
+    background-image: url(../images/login.gif);
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    height: 28px;
+    padding: 0;
+    margin: 10px 0 2px 0;
+}
+
+.errorlist {
+    font-weight: bold;
+    color: red;
+}
+
+.recent-updates {
+    padding: 15px 15px 5px 15px;
+}
+
+/* - tag cloud - */
+
+.tagcloud {
+    padding: 15px;
+    text-align: justify;
+}
+.tagcloud span {
+    padding: 3px;
+}
+.tagcloud .tag- {
+    font-size: 50%;
+}
+.tagcloud .tag- a {
+    color:#c9c9c9;
+}
+.tagcloud .tag-1 {
+    font-size: 50%;
+}
+.tagcloud .tag-1 a {
+    color:#c9c9c9;
+}
+.tagcloud .tag-2 {
+    font-size: 75%;
+}
+.tagcloud .tag-2 a {
+    color:#c9c9c9;
+}
+.tagcloud .tag-3 {
+    font-size: 100%;
+}
+.tagcloud .tag-3 a {
+    color:#c9c9c9;
+}
+.tagcloud .tag-4 {
+    font-size: 150%;
+}
+.tagcloud .tag-4 a {
+    color:#a1a1a1;
+}
+.tagcloud .tag-5 {
+    font-size: 250%;
+}
+.tagcloud .tag-5 a {
+    color:#6c6c6c;
+}
+.tagcloud a:hover {
+    color: #ffa800;
+    text-decoration: underline;
+}
+a, a:visited {
+    color: #369;
+}
+
+/* --- sectional --- */
+
+/* - home - */
+
+.home h2 {
+    padding-top: 15px;
+}
+
+.home #intro p {
+    padding: 5px;
+}
+
+.home #intro ul {
+    list-style: disc;
+    padding-left: 25px;
+}
+
+.home a {
+	color: #0797c4;
+}
+
+/* - profile view - */
+
+.profile #staff-links, #ProfileTop #staff-links {
+    float: right;
+}
+
+.profile #photo, #ProfileTop #photo {
+    float: left;
+    margin-right: 15px;
+}
+.profile #photo img, #ProfileTop #photo img {
+    height: 242px;
+    width: 242px;
+    border: 1px solid #000;
+}
+.profile #project-photo {
+	text-align: center;
+	padding: 10px 0 0 0;
+}
+.profile #project-photo img {
+	width: 480px;
+    border: 1px solid #000;
+}
+
+.profile .basic-info, #ProfileTop .basic-info {
+    float: right;
+    padding: 5px 0 5px 0;
+    width: 360px;
+}
+
+.profile .fullname, #ProfileTop .fullname {
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+.profile .title {
+    color: #555;    
+}
+
+#contact {
+	margin: 5px 0;
+}
+
+.profile .curriculum-vitae a:hover{
+    text-decoration: underline;
+}
+
+.profile h2 {
+    font-family: Arial, 'Liberation Sans', FreeSans, sans-serif;
+    padding-top: 10px;
+}
+
+div#workimages {
+    width: 657px;
+	height: 330px;
+    margin: 0 auto;
+    padding-top: 5px;
+}
+
+div#workimages .thumbnail {
+	width: 100px;
+	height: 100px;
+}
+
+div#workimages .imagetitle {
+    width: 657px;
+    height: 0px;
+	border: hidden;
+}
+
+div#workimages .imagetitle .singleimagetitle {
+    background: url(../images/FrameTranslucent.png);
+    color: #FFFFFF;
+    position: relative;
+    top: -313px;
+	left: -1px;
+	margin-top: 83px;
+    width: 100px;
+    height: 18px;
+	font-size: 9px;
+}
+
+div#workimages-narrow {
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 5px;
+}
+
+div#workimages-narrow table {
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 5px;
+}
+
+div#workimages-narrow .thumbnail{
+	height: 100px;
+	width: 100px;
+	padding: 0px;
+	vertical-align:top;
+	text-align:left;
+}
+
+div#workimages-narrow .thumbnail img{
+    border: 1px solid #000;
+}
+
+div#workimages-narrow td.info{
+	vertical-align:top;
+	padding: 0 0 0 10px;
+	line-height: 120%;
+	text-align:left;
+	width: 100px;
+}
+
+div.buttons-work, div.button-add-work {
+    margin: 10px 0px;
+}
+
+.home div#workimages {
+    width: 630px;
+}
+div#workimages div {
+    width: 100px;
+    height: 100px;
+    margin: 1px;
+    float: left;
+    border: 1px solid #000;
+}
+div#workimages img {
+    width: 100px;
+    height: 100px;
+}
+div#workimages .empty {
+    background-color: #CCC;
+}
+
+div#presentations {
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 5px;
+}
+div#presentations .thumbnail{
+	height: 100px;
+	width: 100px;
+	padding: 0px;
+	vertical-align:top;
+	text-align:left;
+}
+div#presentations .info{
+	vertical-align:top;
+	padding: 0 0 0 10px;
+	line-height: 120%;
+	text-align:left;
+}
+
+/* - profile edit - */
+
+.profile form label {
+    width: 110px;
+    float: left;
+}
+
+.profile form #photo {
+    padding: 5px 0 0 0;
+    width: 240px;
+}
+
+.profile form textarea {
+    width: 400px;
+    height: 75px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.profile form .expertise {
+    border: none;
+    margin-left: 3px;
+    margin-right: 3px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.profile form .expertise.hover {
+    border: solid 1px; 
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.profile form .expertise.selected {
+    background-color: #CCC;
+}
+
+.profile form .submit {
+    margin-top: 30px;
+}
+
+.profile table {
+    table-layout: fixed;
+    width: 600px;
+    margin-bottom: 15px;
+}
+.profile table td { 
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px;
+}
+.profile table tr.odd {
+    background-color: #CCF;
+}
+.profile table .url {
+}
+.profile table .title {
+}
+.profile table .type {
+}
+.profile table .year {
+}
+.profile table .delete {
+}
+
+.profile table#workimages label {
+	width: 50px;
+}
+
+.profile table#workimages tbody tr {
+    height: auto;
+}
+
+.profile table#workimages img {
+    border: 1px solid #000;
+}
+
+.profile table#workimages tbody td {
+    text-align: left;
+}
+
+.profile table#presentations img {
+    border: 1px solid #000;
+}
+
+.profile table#presentations label {
+	width: 50px;
+}
+
+.profile table#presentations tbody tr {
+    height: auto;
+}
+
+.profile table#presentations tbody td {
+    text-align: left;
+}
+
+
+.profile table#workurls tr.odd {
+	background-color: #ccc;
+}
+
+/* - profile view/edit section title - */
+li.section-title {
+    clear: both;
+	margin-bottom: 1.0em; line-height: 1.0em;
+}
+.section-title .text-input,
+.section-title .inputs input {
+    float: left;
+    width: 200px;
+}
+.section-title .inputs.hide { display: none; }
+
+/* - faculty list - */
+
+.faculty-list h2 {
+    margin-bottom: 20px;
+}
+
+.faculty-list a {
+	color: #0797c4;
+}
+
+.faculty-list .expertise {
+    border: none;
+    margin-left: 2px;
+    margin-right: 2px;
+    white-space: nowrap;
+}
+
+.pagination {
+    margin: 0 20px 20px 20px;
+    text-align:center;
+    width:100%;
+}
+.pagination .selected {
+    text-decoration: underline;
+}
+
+#faculty-search {
+    margin: 10px 10px 10px 0px;
+}
+
+/* - about - */
+
+.about #Main p {
+    padding-bottom: 5px;
+}
+
+/* - help - */
+
+.help #Main p {
+    padding-bottom: 5px;
+}
+
+.help a {
+	color: #0797c4;
+}
+
+/* - admin - */
+
+.site-admin #Main a {
+    text-decoration: underline;
+}
+
+.site-admin #Main h2 {
+    padding-top: 15px;
+}
+
+.site-admin a {
+	color: #0797c4;
+}
+
+/* @end */
+
+/* @group Navigation Bars */
+
+/* ---------- navigation bars ------ */
+
+/* gen'l */
+
+ul.nav-list {
+    margin-left: 32px;
+}
+
+ul.nav-list li {
+    float: left;
+}
+
+/* top */
+
+ul#nav-top a {
+    display: block;
+    overflow: hidden;
+	height: 31px;
+	color: #FFFFFF;
+	padding: 10px;
+}
+
+div#Container.home ul#nav-top li.home a,
+ul#nav-top li.home a:hover {
+	background-image:url(../images/nav.triangle_gray.png);
+	background-repeat: no-repeat;
+	background-position: 10px 0px;
+	text-decoration: none;
+}
+div#Container.profile ul#nav-top li.profile a,
+ul#nav-top li.profile a:hover {
+	background-image:url(../images/nav.triangle_gray.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	text-decoration: none;
+}
+div#Container.faculty-list ul#nav-top li.faculty-list a,
+ul#nav-top li.faculty-list a:hover {
+	background-image:url(../images/nav.triangle_gray.png);
+	background-repeat: no-repeat;
+	background-position: 15px 0px;
+	text-decoration: none;
+}
+div#Container.about ul#nav-top li.about a,
+ul#nav-top li.about a:hover {
+	background-image:url(../images/nav.triangle_gray.png);
+	background-repeat: no-repeat;
+	background-position: 10px 0px;
+	text-decoration: none;
+}
+div#Container.help ul#nav-top li.help a,
+ul#nav-top li.help a:hover {
+	background-image:url(../images/nav.triangle_gray.png);
+	background-repeat: no-repeat;
+	background-position: 7px 0px;
+	text-decoration: none;
+}
+div#Container.contact ul#nav-top li.contact a,
+ul#nav-top li.contact a:hover {
+	background-image:url(../images/nav.triangle_white.png);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	text-decoration: none;
+}
+div#Container.site-admin ul#nav-top li.site-admin a,
+ul#nav-top li.site-admin a:hover {
+	background-image:url(../images/nav.triangle_white.png);
+	background-repeat: no-repeat;
+	background-position: 24px 0px;
+	text-decoration: none;
+}
+
+/* bottom */
+
+ul#nav-bottom li {
+    border-right: 1px solid;
+    padding: 0 4px;
+    line-height: 12px;
+}
+ul#nav-bottom li.last {
+    border-right: none;
+}
+
+ul#nav-bottom a {
+    color: #369;
+}
+
+ul#nav-bottom a:hover,
+.home ul#nav-bottom li.home a,
+.profile ul#nav-bottom li.profile a,
+.faculty-list ul#nav-bottom li.faculty-list a,
+.about ul#nav-bottom li.about a,
+.help ul#nav-bottom li.help a,
+.contact ul#nav-bottom li.contact a,
+.site-admin ul#nav-bottom li.site-admin a
+{
+    text-decoration: underline;
+}
+
+/* ---- breadcrumb ---- */
+
+#Main .breadcrumb {
+    height: 25px;
+    padding: 5px 0 5px 10px;
+    color: #369;
+    font-weight: bold;
+}
+
+#Main .breadcrumb a {
+    color: #69c;
+    background: transparent url(../images/breadcrumb.arrow.png) no-repeat center right;
+    padding-right: 14px;
+}
+#Main .breadcrumb a:hover{
+    text-decoration: underline;
+}
+
+/* - filter - */
+.filter form .expertise {
+    border: none;
+    margin-left: 3px;
+    margin-right: 3px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.filter form .expertise.hover {
+    border: solid 1px; 
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.filter form .expertise.selected {
+    background-color: #CCC;
+}
+
+/* - contact - */
+.contact form .infofield {
+	padding: 5px 0 5px 0;
+}
+
+.contact form .thankyou {
+	color: #00FF00;
+	font-size: 14px;
+	padding: 5px 0 5px 0;
+}
+
+/* - area of study profile - */
+#AosProfile {
+	float:left;
+	padding-bottom:30px;
+	width:637px;
+}
+#AosProfile h1 {
+	padding: 10px 0 10px 0;
+}
+#AosProfile .basicinfo {
+	width:637px;
+	padding-bottom: 20px;
+	font-weight:bold;
+}
+#AosProfile .icon {
+	float: left;
+	margin-right: 15px;
+	padding-bottom: 30px;
+}
+#AosProfile .icon-info {
+	float: left;
+	padding: 15px 15px 15px 0;
+}
+#AosProfile .icon-info .fullname {
+	font-size: 18px;
+	padding-bottom: 5px;
+}
+#AosProfile .moreinfoleft {
+	float: left;
+	padding: 20px 0;
+	width: 300px;
+}
+#AosProfile .moreinfoleft .programs,
+#AosProfile .moreinfoleft .blog,
+#AosProfile .moreinfoleft .groups,
+#AosProfile .moreinfoleft .faculty,
+#AosProfile .moreinfoleft .website,
+#AosProfile .moreinfoleft .curriculum {
+	padding-bottom: 20px;
+}
+#AosProfile .moreinforight {
+	margin-left:310px;
+	width:320px;
+	padding: 20px 0;
+}
+#AosProfile .moreinforight a img {
+	padding-right: 3px;
+	padding-bottom: 3px;
+}
+
+/* - course profile - */
+#CourseProfile{
+	float:left;
+	padding-bottom:30px;
+	width:637px;
+}
+
+#CourseProfile h1 {
+	padding: 10px 0 10px 0;
+}
+
+#CourseProfile .basicinfo {
+	width:637px;
+	padding-bottom: 20px;
+	font-weight:bold;
+}
+
+#CourseProfile .moreinfoleft {
+	width:300px;
+    padding: 15px 0px 20px 0px;
+	float:left;
+}
+#CourseProfile .moreinfoleft .desc {
+	line-height: 120%;
+	text-align: left;
+	padding-bottom: 30px;
+}
+#CourseProfile .moreinfoleft .learning {
+	line-height: 120%;
+	padding-bottom: 30px;
+}
+#CourseProfile .moreinfoleft .syllabus{
+	padding-bottom: 30px;
+}
+#CourseProfile .moreinfoleft .timeline{
+	line-height: 120%;
+	padding-bottom: 30px;
+}
+#CourseProfile .moreinfoleft .timelinefaculty{
+	padding: 10px 0 10px 0;
+}
+
+#CourseProfile .moreinforight {
+	margin-left:310px;
+	width:300px;
+    padding: 15px 0px 20px 20px;
+}
+#CourseProfile .moreinforight .images{
+	padding: 10px 0 30px 0;
+}
+#CourseProfile .moreinforight .images .thumbnail{
+	border:1px solid #000000;
+	height: 100px;
+	width: 100px;
+}
+#CourseProfile .moreinforight .images .info{
+	vertical-align:top;
+	padding: 0 0 0 10px;
+	line-height: 120%;
+}
+#CourseProfile .moreinforight .tags{
+	line-height: 120%;
+	padding-bottom: 30px;
+}
+#CourseProfile .moreinforight .tags *{
+	color:#0797c4;
+}
+/* - end course profile - */
+
+/* - section profile - */
+#SectionProfile{
+	float:left;
+	padding-bottom:30px;
+	width:637px;
+}
+
+#SectionProfile h1 {
+	padding: 10px 0 10px 0;
+}
+
+#SectionProfile .basicinfo {
+	width:637px;
+	padding-bottom: 20px;
+	font-weight:bold;
+}
+
+#SectionProfile .moreinfoleft {
+	width:300px;
+    padding: 15px 0px 20px 0px;
+	float:left;
+}
+#SectionProfile .moreinfoleft .desc {
+	line-height: 120%;
+	text-align: left;
+	padding-bottom: 30px;
+}
+#SectionProfile .moreinfoleft .learning {
+	line-height: 120%;
+	padding-bottom: 30px;
+}
+#SectionProfile .moreinfoleft .syllabus{
+	padding-bottom: 30px;
+}
+#SectionProfile .moreinfoleft .timeline{
+	line-height: 120%;
+	padding-bottom: 30px;
+}
+#SectionProfile .moreinfoleft .timelinefaculty{
+	padding: 10px 0 10px 0;
+}
+
+#SectionProfile .moreinforight {
+	margin-left:310px;
+	width:300px;
+    padding: 15px 0px 20px 20px;
+}
+#SectionProfile .moreinforight .images{
+	padding: 10px 0 30px 0;
+}
+#SectionProfile .moreinforight .images .thumbnail{
+	border:1px solid #000000;
+	height: 100px;
+	width: 100px;
+}
+#SectionProfile .moreinforight .images .info{
+	vertical-align:top;
+	padding: 0 0 0 10px;
+	line-height: 120%;
+}
+#SectionProfile .moreinforight .tags{
+	line-height: 120%;
+	padding-bottom: 30px;
+}
+#SectionProfile .moreinforight .tags *{
+	color:#0797c4;
+}
+/* - end section profile - */
+
+.Blog p {
+    padding-bottom: 10px;
+}
+
+/* - meetings - */
+
+#meetings-container h2 {
+    margin-bottom: 20px;
+}
+
+div.meetings dt {
+    font-size: 1.2em;
+    border-bottom: 1px solid #000;
+    margin-top: 20px;
+}
+
+div.meetings dd {
+    margin-bottom: 10px;
+}
+
+/* - end meetings - */
+
+/* @end */

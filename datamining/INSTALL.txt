@@ -1,0 +1,9 @@
+== DEPENDENCIES ==                      
+* Python (2.5+)     <http://www.python.org/>
+* Django            <http://www.djangoproject.com/>
+* MySQL             <http://mysql.com>
+* PIL               <http://www.pythonware.com/products/pil/>
+* sorl-thumbnail    <http://code.google.com/p/sorl-thumbnail/>
+* django-tagging    <http://code.google.com/p/django-tagging/>
+* django-haystack   <http://haystacksearch.org>
+* pysolr            <http://code.google.com/p/pysolr/>

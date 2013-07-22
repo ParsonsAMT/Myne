@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Profiles: Handlers &mdash; DataMYNE v1.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="DataMYNE v1.0.0 documentation" href="../index.html" />
+    <link rel="next" title="Profiles: Lookups" href="apps.profiles.lookups.html" />
+    <link rel="prev" title="Profiles: Forms" href="apps.profiles.forms.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.lookups.html" title="Profiles: Lookups"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.forms.html" title="Profiles: Forms"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">DataMYNE v1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-apps.profiles.handlers">
+<span id="profiles-handlers"></span><h1>Profiles: Handlers<a class="headerlink" href="#module-apps.profiles.handlers" title="Permalink to this headline">¶</a></h1>
+<p>Created on Aug 18, 2010</p>
+<p>&#64;author: edwards</p>
+<dl class="class">
+<dt id="apps.profiles.handlers.CourseHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">CourseHandler</tt><a class="headerlink" href="#apps.profiles.handlers.CourseHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">piston.handler.BaseHandler</span></tt></p>
+<p>This handler returns courses.</p>
+<dl class="attribute">
+<dt id="apps.profiles.handlers.CourseHandler.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.handlers.CourseHandler.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Course</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.handlers.CourseHandler.queryset">
+<tt class="descname">queryset</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.handlers.CourseHandler.queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.handlers.ExpertiseHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">ExpertiseHandler</tt><a class="headerlink" href="#apps.profiles.handlers.ExpertiseHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">piston.handler.BaseHandler</span></tt></p>
+<p>This handler returns areas of expertise.</p>
+<dl class="attribute">
+<dt id="apps.profiles.handlers.ExpertiseHandler.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.handlers.ExpertiseHandler.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Expertise</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.handlers.ExpertiseHandler.queryset">
+<tt class="descname">queryset</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.handlers.ExpertiseHandler.queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.handlers.FacultyHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">FacultyHandler</tt><a class="headerlink" href="#apps.profiles.handlers.FacultyHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">piston.handler.BaseHandler</span></tt></p>
+<p>This handler returns faculty members.</p>
+<dl class="attribute">
+<dt id="apps.profiles.handlers.FacultyHandler.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.handlers.FacultyHandler.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">FacultyMember</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.handlers.FacultyHandler.queryset">
+<tt class="descname">queryset</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.handlers.FacultyHandler.queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.handlers.FacultyResultHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">FacultyResultHandler</tt><a class="headerlink" href="#apps.profiles.handlers.FacultyResultHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.handlers.ResultHandler" title="apps.profiles.handlers.ResultHandler"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.handlers.ResultHandler</span></tt></a></p>
+<p>This <tt class="docutils literal"><span class="pre">ResultHandler</span></tt> allows for searches to be faceted to just return the faculty
+members within a search result set.</p>
+<dl class="method">
+<dt id="apps.profiles.handlers.FacultyResultHandler.read">
+<tt class="descname">read</tt><big>(</big><em>request</em>, <em>model=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.handlers.FacultyResultHandler.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.handlers.OrganizationHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">OrganizationHandler</tt><a class="headerlink" href="#apps.profiles.handlers.OrganizationHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">piston.handler.BaseHandler</span></tt></p>
+<p>This handler returns organizations.</p>
+<dl class="attribute">
+<dt id="apps.profiles.handlers.OrganizationHandler.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.handlers.OrganizationHandler.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Organization</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.handlers.OrganizationHandler.queryset">
+<tt class="descname">queryset</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.handlers.OrganizationHandler.queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.handlers.PersonHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">PersonHandler</tt><a class="headerlink" href="#apps.profiles.handlers.PersonHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">piston.handler.BaseHandler</span></tt></p>
+<p>This handler is a generic handler for all people.  It&#8217;s most useful in
+queries like with affiliations where people of multiple roles could be 
+returned (e.g. FacultyMember, Student, Staff)</p>
+<dl class="attribute">
+<dt id="apps.profiles.handlers.PersonHandler.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.handlers.PersonHandler.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Person</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.handlers.PersonHandler.queryset">
+<tt class="descname">queryset</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.handlers.PersonHandler.queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.handlers.ProjectHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">ProjectHandler</tt><a class="headerlink" href="#apps.profiles.handlers.ProjectHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">piston.handler.BaseHandler</span></tt></p>
+<dl class="attribute">
+<dt id="apps.profiles.handlers.ProjectHandler.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.handlers.ProjectHandler.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Project</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.handlers.ProjectHandler.queryset">
+<tt class="descname">queryset</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.handlers.ProjectHandler.queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.handlers.RecentFacultyHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">RecentFacultyHandler</tt><a class="headerlink" href="#apps.profiles.handlers.RecentFacultyHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.handlers.FacultyHandler" title="apps.profiles.handlers.FacultyHandler"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.handlers.FacultyHandler</span></tt></a></p>
+<p>This handler returns the 50 most recently updated faculty members.</p>
+<dl class="method">
+<dt id="apps.profiles.handlers.RecentFacultyHandler.queryset">
+<tt class="descname">queryset</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.handlers.RecentFacultyHandler.queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.handlers.RecentStudentHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">RecentStudentHandler</tt><a class="headerlink" href="#apps.profiles.handlers.RecentStudentHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.handlers.StudentHandler" title="apps.profiles.handlers.StudentHandler"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.handlers.StudentHandler</span></tt></a></p>
+<p>This handler returns the 50 most recently updated students.</p>
+<dl class="method">
+<dt id="apps.profiles.handlers.RecentStudentHandler.queryset">
+<tt class="descname">queryset</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.handlers.RecentStudentHandler.queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.handlers.RecentWorkHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">RecentWorkHandler</tt><a class="headerlink" href="#apps.profiles.handlers.RecentWorkHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.handlers.WorkHandler" title="apps.profiles.handlers.WorkHandler"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.handlers.WorkHandler</span></tt></a></p>
+<p>This handler returns the 50 most recently updated works.</p>
+<dl class="method">
+<dt id="apps.profiles.handlers.RecentWorkHandler.queryset">
+<tt class="descname">queryset</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.handlers.RecentWorkHandler.queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.handlers.ResultHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">ResultHandler</tt><a class="headerlink" href="#apps.profiles.handlers.ResultHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">piston.handler.BaseHandler</span></tt></p>
+<p>This handler is unique in that is uses a <tt class="docutils literal"><span class="pre">SearchQuerySet</span></tt> from <tt class="docutils literal"><span class="pre">haystack</span></tt>
+rather than the typical Django <tt class="docutils literal"><span class="pre">QuerySet</span></tt>.  This requires a bit of customization
+with the read output, but allows us to treat <tt class="docutils literal"><span class="pre">haystack</span></tt> search results the
+same way as any other set coming out of the <tt class="docutils literal"><span class="pre">piston</span></tt> API application.</p>
+<dl class="method">
+<dt id="apps.profiles.handlers.ResultHandler.convert_search_queryset">
+<tt class="descname">convert_search_queryset</tt><big>(</big><em>queryset</em>, <em>mlt=False</em><big>)</big><a class="headerlink" href="#apps.profiles.handlers.ResultHandler.convert_search_queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.handlers.ResultHandler.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.handlers.ResultHandler.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">SearchResult</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.handlers.ResultHandler.read">
+<tt class="descname">read</tt><big>(</big><em>request</em>, <em>model=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.handlers.ResultHandler.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.handlers.StudentHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">StudentHandler</tt><a class="headerlink" href="#apps.profiles.handlers.StudentHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">piston.handler.BaseHandler</span></tt></p>
+<p>This handler returns students.</p>
+<dl class="attribute">
+<dt id="apps.profiles.handlers.StudentHandler.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.handlers.StudentHandler.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Student</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.handlers.StudentHandler.queryset">
+<tt class="descname">queryset</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.handlers.StudentHandler.queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.handlers.StudentResultHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">StudentResultHandler</tt><a class="headerlink" href="#apps.profiles.handlers.StudentResultHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.handlers.ResultHandler" title="apps.profiles.handlers.ResultHandler"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.handlers.ResultHandler</span></tt></a></p>
+<p>This <tt class="docutils literal"><span class="pre">ResultHandler</span></tt> allows for searches to be faceted to just return the students
+within a search result set.</p>
+<dl class="method">
+<dt id="apps.profiles.handlers.StudentResultHandler.read">
+<tt class="descname">read</tt><big>(</big><em>request</em>, <em>model=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.handlers.StudentResultHandler.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.handlers.TagHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">TagHandler</tt><a class="headerlink" href="#apps.profiles.handlers.TagHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">piston.handler.BaseHandler</span></tt></p>
+<p>This handler returns tags.</p>
+<dl class="attribute">
+<dt id="apps.profiles.handlers.TagHandler.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.handlers.TagHandler.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Tag</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.handlers.TaggedPersonHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">TaggedPersonHandler</tt><a class="headerlink" href="#apps.profiles.handlers.TaggedPersonHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">piston.handler.BaseHandler</span></tt></p>
+<p>This handler returns tagged items, but restricts the results to <tt class="docutils literal"><span class="pre">Student</span></tt> and <tt class="docutils literal"><span class="pre">FacultyMember</span></tt> objects.</p>
+<dl class="attribute">
+<dt id="apps.profiles.handlers.TaggedPersonHandler.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.handlers.TaggedPersonHandler.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">TaggedItem</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.handlers.TaggedPersonHandler.queryset">
+<tt class="descname">queryset</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.handlers.TaggedPersonHandler.queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.handlers.TaggedWorkHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">TaggedWorkHandler</tt><a class="headerlink" href="#apps.profiles.handlers.TaggedWorkHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">piston.handler.BaseHandler</span></tt></p>
+<p>This handler returns tagged items, but restricts the results to <tt class="docutils literal"><span class="pre">Work</span></tt> objects.</p>
+<dl class="attribute">
+<dt id="apps.profiles.handlers.TaggedWorkHandler.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.handlers.TaggedWorkHandler.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">TaggedItem</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.handlers.TaggedWorkHandler.queryset">
+<tt class="descname">queryset</tt><big>(</big><em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.handlers.TaggedWorkHandler.queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.handlers.WorkHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">WorkHandler</tt><a class="headerlink" href="#apps.profiles.handlers.WorkHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">piston.handler.BaseHandler</span></tt></p>
+<p>This handler returns works.</p>
+<dl class="attribute">
+<dt id="apps.profiles.handlers.WorkHandler.model">
+<tt class="descname">model</tt><a class="headerlink" href="#apps.profiles.handlers.WorkHandler.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <tt class="xref py py-class docutils literal"><span class="pre">Work</span></tt></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.handlers.WorkResultHandler">
+<em class="property">class </em><tt class="descclassname">apps.profiles.handlers.</tt><tt class="descname">WorkResultHandler</tt><a class="headerlink" href="#apps.profiles.handlers.WorkResultHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.handlers.ResultHandler" title="apps.profiles.handlers.ResultHandler"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.handlers.ResultHandler</span></tt></a></p>
+<p>This <tt class="docutils literal"><span class="pre">ResultHandler</span></tt> allows for searches to be faceted to just return the works
+within a search result set.</p>
+<dl class="method">
+<dt id="apps.profiles.handlers.WorkResultHandler.read">
+<tt class="descname">read</tt><big>(</big><em>request</em>, <em>model=None</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.handlers.WorkResultHandler.read" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="apps.profiles.forms.html"
+                        title="previous chapter">Profiles: Forms</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="apps.profiles.lookups.html"
+                        title="next chapter">Profiles: Lookups</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/generated/apps.profiles.handlers.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.lookups.html" title="Profiles: Lookups"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.forms.html" title="Profiles: Forms"
+             >previous</a> |</li>
+        <li><a href="../index.html">DataMYNE v1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, The New School.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

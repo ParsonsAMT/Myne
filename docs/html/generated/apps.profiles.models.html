@@ -1,0 +1,2607 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Profiles: Models &mdash; DataMYNE v1.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="DataMYNE v1.0.0 documentation" href="../index.html" />
+    <link rel="next" title="Profiles: Views" href="apps.profiles.views.html" />
+    <link rel="prev" title="Mobile: Views" href="apps.mobile.views.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.views.html" title="Profiles: Views"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="apps.mobile.views.html" title="Mobile: Views"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">DataMYNE v1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-apps.profiles.models">
+<span id="profiles-models"></span><h1>Profiles: Models<a class="headerlink" href="#module-apps.profiles.models" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="apps.profiles.models.ActiveFacultyManager">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">ActiveFacultyManager</tt><a class="headerlink" href="#apps.profiles.models.ActiveFacultyManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.db.models.manager.Manager</span></tt></p>
+<dl class="method">
+<dt id="apps.profiles.models.ActiveFacultyManager.get_query_set">
+<tt class="descname">get_query_set</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.ActiveFacultyManager.get_query_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.ActivePersonManager">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">ActivePersonManager</tt><a class="headerlink" href="#apps.profiles.models.ActivePersonManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.db.models.manager.Manager</span></tt></p>
+<p>The <tt class="docutils literal"><span class="pre">ActivePersonManager</span></tt> supports the <tt class="docutils literal"><span class="pre">Person</span></tt> class by restricting
+queries to only those people who have active user accounts.</p>
+<dl class="method">
+<dt id="apps.profiles.models.ActivePersonManager.get_query_set">
+<tt class="descname">get_query_set</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.ActivePersonManager.get_query_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.ArchivedCourseManager">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">ArchivedCourseManager</tt><a class="headerlink" href="#apps.profiles.models.ArchivedCourseManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.db.models.manager.Manager</span></tt></p>
+<dl class="method">
+<dt id="apps.profiles.models.ArchivedCourseManager.get_query_set">
+<tt class="descname">get_query_set</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.ArchivedCourseManager.get_query_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.AreaOfStudy">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">AreaOfStudy</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.AreaOfStudy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>An <tt class="docutils literal"><span class="pre">AreaOfStudy</span></tt> is a more amorphous grouping of courses that are not
+necessarily organized under the traditional hierarchy.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.AreaOfStudy.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.AreaOfStudy.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.AreaOfStudy.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">AreaOfStudy.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.AreaOfStudy.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.AreaOfStudy.courses">
+<tt class="descclassname">AreaOfStudy.</tt><tt class="descname">courses</tt><a class="headerlink" href="#apps.profiles.models.AreaOfStudy.courses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.AreaOfStudy.created_by">
+<tt class="descclassname">AreaOfStudy.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.AreaOfStudy.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.AreaOfStudy.get_next_by_created_at">
+<tt class="descclassname">AreaOfStudy.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.AreaOfStudy.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.AreaOfStudy.get_next_by_updated_at">
+<tt class="descclassname">AreaOfStudy.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.AreaOfStudy.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.AreaOfStudy.get_previous_by_created_at">
+<tt class="descclassname">AreaOfStudy.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.AreaOfStudy.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.AreaOfStudy.get_previous_by_updated_at">
+<tt class="descclassname">AreaOfStudy.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.AreaOfStudy.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.AreaOfStudy.unit_permissions">
+<tt class="descclassname">AreaOfStudy.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.AreaOfStudy.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.BaseModel">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">BaseModel</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.BaseModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></tt></p>
+<p>BaseModel is the root of almost all other objects within the DataMYNE
+system. It establishes the creation and modification date fields, as well 
+as indicating which user last changed the given model.  It also stubs out
+the permissions for a <tt class="docutils literal"><span class="pre">auth.User</span></tt> and other objects based upon their 
+associations within the university&#8217;s hierarchy of &#8220;units&#8221; 
+(e.g. <tt class="docutils literal"><span class="pre">profiles.Division</span></tt>, <tt class="docutils literal"><span class="pre">profiles.School</span></tt>, etc.)</p>
+<dl class="class">
+<dt id="apps.profiles.models.BaseModel.Meta">
+<em class="property">class </em><tt class="descname">Meta</tt><a class="headerlink" href="#apps.profiles.models.BaseModel.Meta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.BaseModel.created_by">
+<tt class="descclassname">BaseModel.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.BaseModel.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.BaseModel.get_next_by_created_at">
+<tt class="descclassname">BaseModel.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.BaseModel.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.BaseModel.get_next_by_updated_at">
+<tt class="descclassname">BaseModel.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.BaseModel.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.BaseModel.get_previous_by_created_at">
+<tt class="descclassname">BaseModel.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.BaseModel.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.BaseModel.get_previous_by_updated_at">
+<tt class="descclassname">BaseModel.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.BaseModel.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.BaseModel.get_unit">
+<tt class="descclassname">BaseModel.</tt><tt class="descname">get_unit</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.BaseModel.get_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>get_unit returns the organizational unit that hold responsibility
+for this object.  For example, a committee executing get_unit could
+return the division that has authority over it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.BaseModel.has_unit_permission">
+<tt class="descclassname">BaseModel.</tt><tt class="descname">has_unit_permission</tt><big>(</big><em>user</em><big>)</big><a class="headerlink" href="#apps.profiles.models.BaseModel.has_unit_permission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a user, this method will check to see if that user is
+attached to the appropriate organizational unit to have access
+to edit this object.  This allows people in higher levels of
+the university&#8217;s hierarchy the ability to edit a greater number
+of objects, while restricting those lower down to objects that
+only affect their unit.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.BaseModel.save">
+<tt class="descclassname">BaseModel.</tt><tt class="descname">save</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.BaseModel.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Every DataMyne object has a <tt class="docutils literal"><span class="pre">created_by</span></tt> field that contains the <tt class="docutils literal"><span class="pre">User</span></tt>
+object of the user who was logged in when the system created the
+object.  The method uses the datamining.middleware module to access
+another thread and check on the current user.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.BaseModel.unit_permissions">
+<tt class="descclassname">BaseModel.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.BaseModel.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.ContactEmail">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">ContactEmail</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.ContactEmail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p><tt class="docutils literal"><span class="pre">ContactEmail</span></tt> is legacy code that needs to be refactored out``</p>
+<dl class="exception">
+<dt id="apps.profiles.models.ContactEmail.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.ContactEmail.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.ContactEmail.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">ContactEmail.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.ContactEmail.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.ContactEmail.created_by">
+<tt class="descclassname">ContactEmail.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.ContactEmail.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.ContactEmail.get_next_by_created_at">
+<tt class="descclassname">ContactEmail.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.ContactEmail.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.ContactEmail.get_next_by_updated_at">
+<tt class="descclassname">ContactEmail.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.ContactEmail.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.ContactEmail.get_previous_by_created_at">
+<tt class="descclassname">ContactEmail.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.ContactEmail.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.ContactEmail.get_previous_by_updated_at">
+<tt class="descclassname">ContactEmail.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.ContactEmail.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.ContactEmail.get_subject_display">
+<tt class="descclassname">ContactEmail.</tt><tt class="descname">get_subject_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.ContactEmail.get_subject_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.ContactEmail.unit_permissions">
+<tt class="descclassname">ContactEmail.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.ContactEmail.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Course">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Course</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Course" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">Course</span></tt> is an object that contains course information across time. A
+<tt class="docutils literal"><span class="pre">Section</span></tt> object is connected to a course and shows only the information
+that is specific to a particular semester and set of faculty.</p>
+<p>The distinction between <tt class="docutils literal"><span class="pre">Course</span></tt> and <tt class="docutils literal"><span class="pre">Section</span></tt> is subtle but crucial.
+A course effectively lives outside of time.  Faculty are never associated
+with a course.  Nor are semesters.  A section, by contrast, has associated
+with it a particular <tt class="docutils literal"><span class="pre">Semester</span></tt> as well as zero or many <tt class="docutils literal"><span class="pre">FacultyMember</span></tt>
+objects (it is possible to have zero faculty for a <tt class="docutils literal"><span class="pre">Section</span></tt> in cases 
+where the faculty assignments are TBD.)</p>
+<p>It is Mike Edwards&#8217;s <strong>strong</strong> recommendation that the <tt class="docutils literal"><span class="pre">taken</span></tt> field
+by replaced with code that defines an <tt class="docutils literal"><span class="pre">Affiliation</span></tt>.  See the documentation
+of the <tt class="docutils literal"><span class="pre">reporting</span></tt> app for a complete explanation of the design decision
+to favor <tt class="docutils literal"><span class="pre">Affiliation</span></tt> objects over simple ManyToManyField fields.</p>
+<p>Also, the <tt class="docutils literal"><span class="pre">projects</span></tt> field should be refactored and removed, since the 
+<tt class="docutils literal"><span class="pre">Project</span></tt> model is deprecated.  It should be replaced with code that
+relates to <tt class="docutils literal"><span class="pre">Work</span></tt> objects instead, either as a ManyToMany or something
+similar to what the <tt class="docutils literal"><span class="pre">Affiliation</span></tt> object seeks to achieve between
+<tt class="docutils literal"><span class="pre">Person</span></tt> objects and every other DataMYNE class.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.Course.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Course.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Course.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Course.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Course.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Course.areas_of_study">
+<tt class="descclassname">Course.</tt><tt class="descname">areas_of_study</tt><a class="headerlink" href="#apps.profiles.models.Course.areas_of_study" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Course.courseimage_set">
+<tt class="descclassname">Course.</tt><tt class="descname">courseimage_set</tt><a class="headerlink" href="#apps.profiles.models.Course.courseimage_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Course.created_by">
+<tt class="descclassname">Course.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.Course.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Course.demo_section">
+<tt class="descclassname">Course.</tt><tt class="descname">demo_section</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.Course.demo_section" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Course.dependents">
+<tt class="descclassname">Course.</tt><tt class="descname">dependents</tt><a class="headerlink" href="#apps.profiles.models.Course.dependents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Course.display_subject_number">
+<tt class="descclassname">Course.</tt><tt class="descname">display_subject_number</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.Course.display_subject_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Course.fulfils_requirements">
+<tt class="descclassname">Course.</tt><tt class="descname">fulfils_requirements</tt><a class="headerlink" href="#apps.profiles.models.Course.fulfils_requirements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Course.get_absolute_url">
+<tt class="descclassname">Course.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Course.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Course.get_credit_range_type_display">
+<tt class="descclassname">Course.</tt><tt class="descname">get_credit_range_type_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Course.get_credit_range_type_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Course.get_format_display">
+<tt class="descclassname">Course.</tt><tt class="descname">get_format_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Course.get_format_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Course.get_levels_display">
+<tt class="descclassname">Course.</tt><tt class="descname">get_levels_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Course.get_levels_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Course.get_method_display">
+<tt class="descclassname">Course.</tt><tt class="descname">get_method_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Course.get_method_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Course.get_next_by_created_at">
+<tt class="descclassname">Course.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Course.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Course.get_next_by_updated_at">
+<tt class="descclassname">Course.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Course.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Course.get_previous_by_created_at">
+<tt class="descclassname">Course.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Course.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Course.get_previous_by_updated_at">
+<tt class="descclassname">Course.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Course.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Course.get_status_display">
+<tt class="descclassname">Course.</tt><tt class="descname">get_status_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Course.get_status_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Course.get_type_display">
+<tt class="descclassname">Course.</tt><tt class="descname">get_type_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Course.get_type_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Course.get_unit">
+<tt class="descclassname">Course.</tt><tt class="descname">get_unit</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.Course.get_unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <tt class="docutils literal"><span class="pre">Course</span></tt> is assumed to be under the authority of whatever
+organizational unit manages the course&#8217;s <tt class="docutils literal"><span class="pre">Subject</span></tt> object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Course.org_courses">
+<tt class="descclassname">Course.</tt><tt class="descname">org_courses</tt><a class="headerlink" href="#apps.profiles.models.Course.org_courses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Course.prerequisites">
+<tt class="descclassname">Course.</tt><tt class="descname">prerequisites</tt><a class="headerlink" href="#apps.profiles.models.Course.prerequisites" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Course.project_set">
+<tt class="descclassname">Course.</tt><tt class="descname">project_set</tt><a class="headerlink" href="#apps.profiles.models.Course.project_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Course.projects">
+<tt class="descclassname">Course.</tt><tt class="descname">projects</tt><a class="headerlink" href="#apps.profiles.models.Course.projects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Course.section_set">
+<tt class="descclassname">Course.</tt><tt class="descname">section_set</tt><a class="headerlink" href="#apps.profiles.models.Course.section_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Course.subject">
+<tt class="descclassname">Course.</tt><tt class="descname">subject</tt><a class="headerlink" href="#apps.profiles.models.Course.subject" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Course.taken">
+<tt class="descclassname">Course.</tt><tt class="descname">taken</tt><a class="headerlink" href="#apps.profiles.models.Course.taken" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Course.unit_permissions">
+<tt class="descclassname">Course.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.Course.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.CourseImage">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">CourseImage</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.CourseImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">CourseImage</span></tt> connects a <tt class="docutils literal"><span class="pre">Course</span></tt> to an image file and associated metadata.</p>
+<p>It is Mike Edwards&#8217;s <strong>strong</strong> recommendation that this be refactored and
+migrated into a generic <tt class="docutils literal"><span class="pre">Image</span></tt> class that can relate the same data to a
+GenericForeignKey.  This would allow images to decorate any other object within
+the DataMYNE system, allowing for a common set of code to handle image assets,
+rather than duplicating the effort.  In addition, it may also be worth considering
+how a generic <tt class="docutils literal"><span class="pre">Image</span></tt> object could inherit from a generic <tt class="docutils literal"><span class="pre">Media</span></tt> object, 
+leaving open the possibility of achieving similar efficiency for video, audio, 
+and other unforeseen media.</p>
+<p>Of course, some of this addresses issues at the heart of what DataMYNE is and
+what it ought to be.  The degree to which this system stores (or references)
+other data depends largely on how much data needs to be internally understood
+by the system (for the purposes of searching, cross-referencing, etc.) and how
+much ought to be offloaded to the rest of the Web (e.g. Flickr, YouTube, etc.)
+At the time of writing, this issue is still very much in flux.  As such,
+designing for flexibility (instead of performance or simplicity) is paramount.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.CourseImage.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.CourseImage.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.CourseImage.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">CourseImage.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.CourseImage.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.CourseImage.course">
+<tt class="descclassname">CourseImage.</tt><tt class="descname">course</tt><a class="headerlink" href="#apps.profiles.models.CourseImage.course" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.CourseImage.created_by">
+<tt class="descclassname">CourseImage.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.CourseImage.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.CourseImage.get_next_by_created_at">
+<tt class="descclassname">CourseImage.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.CourseImage.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.CourseImage.get_next_by_updated_at">
+<tt class="descclassname">CourseImage.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.CourseImage.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.CourseImage.get_previous_by_created_at">
+<tt class="descclassname">CourseImage.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.CourseImage.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.CourseImage.get_previous_by_updated_at">
+<tt class="descclassname">CourseImage.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.CourseImage.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.CourseImage.image_filename">
+<tt class="descclassname">CourseImage.</tt><tt class="descname">image_filename</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#apps.profiles.models.CourseImage.image_filename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.CourseImage.unit_permissions">
+<tt class="descclassname">CourseImage.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.CourseImage.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.CurrentCourseManager">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">CurrentCourseManager</tt><a class="headerlink" href="#apps.profiles.models.CurrentCourseManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.db.models.manager.Manager</span></tt></p>
+<dl class="method">
+<dt id="apps.profiles.models.CurrentCourseManager.get_query_set">
+<tt class="descname">get_query_set</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.CurrentCourseManager.get_query_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Department">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Department</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Department" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">Department</span></tt> is one of the the highest &#8220;units&#8221; within the university.  
+Below it are programs.  It sits at the same level as a <tt class="docutils literal"><span class="pre">Department</span></tt></p>
+<p>Historically, all divisions except Parsons the New School for Design 
+have Departments.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.Department.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Department.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Department.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Department.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Department.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Department.authorities">
+<tt class="descclassname">Department.</tt><tt class="descname">authorities</tt><a class="headerlink" href="#apps.profiles.models.Department.authorities" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Department.created_by">
+<tt class="descclassname">Department.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.Department.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Department.division">
+<tt class="descclassname">Department.</tt><tt class="descname">division</tt><a class="headerlink" href="#apps.profiles.models.Department.division" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Department.facultymember_set">
+<tt class="descclassname">Department.</tt><tt class="descname">facultymember_set</tt><a class="headerlink" href="#apps.profiles.models.Department.facultymember_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Department.get_next_by_created_at">
+<tt class="descclassname">Department.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Department.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Department.get_next_by_updated_at">
+<tt class="descclassname">Department.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Department.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Department.get_previous_by_created_at">
+<tt class="descclassname">Department.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Department.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Department.get_previous_by_updated_at">
+<tt class="descclassname">Department.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Department.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Department.get_unit">
+<tt class="descclassname">Department.</tt><tt class="descname">get_unit</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.Department.get_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Department.program_set">
+<tt class="descclassname">Department.</tt><tt class="descname">program_set</tt><a class="headerlink" href="#apps.profiles.models.Department.program_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Department.unit_permissions">
+<tt class="descclassname">Department.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.Department.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Division">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Division</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Division" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">Division</span></tt> is the highest &#8220;unit&#8221; within the university.  Below it
+are <tt class="docutils literal"><span class="pre">Department</span></tt> , <tt class="docutils literal"><span class="pre">School</span></tt>, etc.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.Division.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Division.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Division.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Division.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Division.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Division.authorities">
+<tt class="descclassname">Division.</tt><tt class="descname">authorities</tt><a class="headerlink" href="#apps.profiles.models.Division.authorities" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Division.created_by">
+<tt class="descclassname">Division.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.Division.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Division.department_set">
+<tt class="descclassname">Division.</tt><tt class="descname">department_set</tt><a class="headerlink" href="#apps.profiles.models.Division.department_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Division.facultymember_set">
+<tt class="descclassname">Division.</tt><tt class="descname">facultymember_set</tt><a class="headerlink" href="#apps.profiles.models.Division.facultymember_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Division.get_next_by_created_at">
+<tt class="descclassname">Division.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Division.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Division.get_next_by_updated_at">
+<tt class="descclassname">Division.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Division.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Division.get_previous_by_created_at">
+<tt class="descclassname">Division.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Division.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Division.get_previous_by_updated_at">
+<tt class="descclassname">Division.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Division.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Division.school_set">
+<tt class="descclassname">Division.</tt><tt class="descname">school_set</tt><a class="headerlink" href="#apps.profiles.models.Division.school_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Division.staff_set">
+<tt class="descclassname">Division.</tt><tt class="descname">staff_set</tt><a class="headerlink" href="#apps.profiles.models.Division.staff_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Division.unit_permissions">
+<tt class="descclassname">Division.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.Division.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Expertise">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Expertise</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Expertise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>An <tt class="docutils literal"><span class="pre">Expertise</span></tt> (sometimes called an area of expertise) is a canonical
+keyword that users can select to describe them in their profiles.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.Expertise.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Expertise.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Expertise.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Expertise.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Expertise.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Expertise.created_by">
+<tt class="descclassname">Expertise.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.Expertise.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Expertise.get_next_by_created_at">
+<tt class="descclassname">Expertise.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Expertise.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Expertise.get_next_by_updated_at">
+<tt class="descclassname">Expertise.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Expertise.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Expertise.get_previous_by_created_at">
+<tt class="descclassname">Expertise.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Expertise.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Expertise.get_previous_by_updated_at">
+<tt class="descclassname">Expertise.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Expertise.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Expertise.person_set">
+<tt class="descclassname">Expertise.</tt><tt class="descname">person_set</tt><a class="headerlink" href="#apps.profiles.models.Expertise.person_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Expertise.unit_permissions">
+<tt class="descclassname">Expertise.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.Expertise.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.FacultyMember">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">FacultyMember</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.FacultyMember" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.Person" title="apps.profiles.models.Person"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.Person</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">FacultyMember</span></tt> is a <tt class="docutils literal"><span class="pre">Person</span></tt> (believe it or not) that teaches one or more
+<tt class="docutils literal"><span class="pre">Section</span></tt> objects of a <tt class="docutils literal"><span class="pre">Course</span></tt> object.  Their association with a <tt class="docutils literal"><span class="pre">Section</span></tt>
+is their key distinction with other <tt class="docutils literal"><span class="pre">Person</span></tt> objects.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.FacultyMember.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.FacultyMember.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.DoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.FacultyMember.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">FacultyMember.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.FacultyMember.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.FacultyMember.get_absolute_url">
+<tt class="descclassname">FacultyMember.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.FacultyMember.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.FacultyMember.get_academic_title_display">
+<tt class="descclassname">FacultyMember.</tt><tt class="descname">get_academic_title_display</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.FacultyMember.get_academic_title_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.FacultyMember.get_short_title_display">
+<tt class="descclassname">FacultyMember.</tt><tt class="descname">get_short_title_display</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.FacultyMember.get_short_title_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.FacultyMember.get_status_display">
+<tt class="descclassname">FacultyMember.</tt><tt class="descname">get_status_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.FacultyMember.get_status_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.FacultyMember.get_unit">
+<tt class="descclassname">FacultyMember.</tt><tt class="descname">get_unit</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.FacultyMember.get_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.FacultyMember.homedepartment">
+<tt class="descclassname">FacultyMember.</tt><tt class="descname">homedepartment</tt><a class="headerlink" href="#apps.profiles.models.FacultyMember.homedepartment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.FacultyMember.homedivision">
+<tt class="descclassname">FacultyMember.</tt><tt class="descname">homedivision</tt><a class="headerlink" href="#apps.profiles.models.FacultyMember.homedivision" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.FacultyMember.homeprogram">
+<tt class="descclassname">FacultyMember.</tt><tt class="descname">homeprogram</tt><a class="headerlink" href="#apps.profiles.models.FacultyMember.homeprogram" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.FacultyMember.homeschool">
+<tt class="descclassname">FacultyMember.</tt><tt class="descname">homeschool</tt><a class="headerlink" href="#apps.profiles.models.FacultyMember.homeschool" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.FacultyMember.person_ptr">
+<tt class="descclassname">FacultyMember.</tt><tt class="descname">person_ptr</tt><a class="headerlink" href="#apps.profiles.models.FacultyMember.person_ptr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.FacultyMember.project">
+<tt class="descclassname">FacultyMember.</tt><tt class="descname">project</tt><a class="headerlink" href="#apps.profiles.models.FacultyMember.project" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.FacultyMember.save">
+<tt class="descclassname">FacultyMember.</tt><tt class="descname">save</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.FacultyMember.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.FacultyMember.section_set">
+<tt class="descclassname">FacultyMember.</tt><tt class="descname">section_set</tt><a class="headerlink" href="#apps.profiles.models.FacultyMember.section_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Invitation">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Invitation</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Invitation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></tt></p>
+<p>An <tt class="docutils literal"><span class="pre">Invitation</span></tt> object allows a <tt class="docutils literal"><span class="pre">host</span></tt> user to invite a <tt class="docutils literal"><span class="pre">guest</span></tt> user
+to be part of another object within the DataMYNE system.  The guest can either 
+be a registered user or someone with an email address outside of the university.</p>
+<p>Once a guest receives his or her invitation email, they are directed to follow
+a url (composed of a unique <tt class="docutils literal"><span class="pre">slug</span></tt>) that will do one of the following:</p>
+<ul class="simple">
+<li>if the user is a member of DataMYNE and is signed in, he or she will be taken
+directly to the object in question</li>
+<li>if the user is a member of DataMYNE and is not signed it, he or she will be
+taken first to a login screen</li>
+<li>if the user is not yet a member of DataMYNE, he or she will still be directed
+to the login screen.<ul>
+<li>If he or she is able to join (e.g. has a listing within LDAP), a profile will
+automatically be created.</li>
+<li>If he or shee is not able to join, at this point, tough luck.</li>
+</ul>
+</li>
+</ul>
+<p>This last case is an interesting one, since DataMYNE still represents a closed
+community.  The best way to deal with this is most likely best handled within
+the <tt class="docutils literal"><span class="pre">profiles.backends</span></tt> module.  This will be most important for alumni who
+no longer can authenticate through LDAP, as well as incoming students who are
+not yet established within LDAP.  In any case, the <tt class="docutils literal"><span class="pre">Invitation</span></tt> model should
+remain more or less agnostic to this.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.Invitation.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Invitation.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Invitation.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Invitation.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Invitation.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Invitation.content_object">
+<tt class="descclassname">Invitation.</tt><tt class="descname">content_object</tt><a class="headerlink" href="#apps.profiles.models.Invitation.content_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides a generic relation to any object through content-type/object-id
+fields.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Invitation.content_type">
+<tt class="descclassname">Invitation.</tt><tt class="descname">content_type</tt><a class="headerlink" href="#apps.profiles.models.Invitation.content_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Invitation.get_absolute_url">
+<tt class="descclassname">Invitation.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Invitation.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Invitation.get_next_by_created_at">
+<tt class="descclassname">Invitation.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Invitation.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Invitation.get_next_by_updated_at">
+<tt class="descclassname">Invitation.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Invitation.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Invitation.get_previous_by_created_at">
+<tt class="descclassname">Invitation.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Invitation.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Invitation.get_previous_by_updated_at">
+<tt class="descclassname">Invitation.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Invitation.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Invitation.guest">
+<tt class="descclassname">Invitation.</tt><tt class="descname">guest</tt><a class="headerlink" href="#apps.profiles.models.Invitation.guest" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Invitation.host">
+<tt class="descclassname">Invitation.</tt><tt class="descname">host</tt><a class="headerlink" href="#apps.profiles.models.Invitation.host" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Link">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Link</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">Link</span></tt> allows for adding a URL, plus description and other metadata,
+to any object in the system.</p>
+<p>It should succeed <tt class="docutils literal"><span class="pre">WorkURL</span></tt> for <tt class="docutils literal"><span class="pre">Person</span></tt> links and be used for other
+DataMyne objects should links become useful with them.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.Link.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Link.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Link.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Link.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Link.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Link.content_object">
+<tt class="descclassname">Link.</tt><tt class="descname">content_object</tt><a class="headerlink" href="#apps.profiles.models.Link.content_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides a generic relation to any object through content-type/object-id
+fields.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Link.content_type">
+<tt class="descclassname">Link.</tt><tt class="descname">content_type</tt><a class="headerlink" href="#apps.profiles.models.Link.content_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Link.created_by">
+<tt class="descclassname">Link.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.Link.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Link.get_next_by_created_at">
+<tt class="descclassname">Link.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Link.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Link.get_next_by_updated_at">
+<tt class="descclassname">Link.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Link.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Link.get_previous_by_created_at">
+<tt class="descclassname">Link.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Link.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Link.get_previous_by_updated_at">
+<tt class="descclassname">Link.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Link.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Link.unit_permissions">
+<tt class="descclassname">Link.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.Link.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Organization">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Organization</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Organization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>An <tt class="docutils literal"><span class="pre">Organization</span></tt> is an object that represents any number of kinds of groups
+that may appear within the university.  It comprises everything from officially
+designated labs to ad hoc student groups.</p>
+<p>The <tt class="docutils literal"><span class="pre">projects</span></tt> field should be refactored out and, most likely, replaced with
+some kind of relationship to the <tt class="docutils literal"><span class="pre">Work</span></tt> model (either via a new ManyToMany field
+or something akin to how the <tt class="docutils literal"><span class="pre">Person</span></tt> models relates to other objects via the
+<tt class="docutils literal"><span class="pre">Affiliation</span></tt></p>
+<dl class="exception">
+<dt id="apps.profiles.models.Organization.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Organization.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Organization.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Organization.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Organization.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Organization.affiliations">
+<tt class="descclassname">Organization.</tt><tt class="descname">affiliations</tt><a class="headerlink" href="#apps.profiles.models.Organization.affiliations" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Organization.courses">
+<tt class="descclassname">Organization.</tt><tt class="descname">courses</tt><a class="headerlink" href="#apps.profiles.models.Organization.courses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Organization.created_by">
+<tt class="descclassname">Organization.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.Organization.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Organization.get_absolute_url">
+<tt class="descclassname">Organization.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Organization.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Organization.get_next_by_created_at">
+<tt class="descclassname">Organization.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Organization.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Organization.get_next_by_updated_at">
+<tt class="descclassname">Organization.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Organization.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Organization.get_previous_by_created_at">
+<tt class="descclassname">Organization.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Organization.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Organization.get_previous_by_updated_at">
+<tt class="descclassname">Organization.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Organization.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Organization.has_unit_permission">
+<tt class="descclassname">Organization.</tt><tt class="descname">has_unit_permission</tt><big>(</big><em>user</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Organization.has_unit_permission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Organization models don&#8217;t have a parent unit, therefore there are no unit 
+restrictions on this.  This situation may change if the <tt class="docutils literal"><span class="pre">Sponsorship</span></tt>
+object becomes more widely used.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Organization.meetings">
+<tt class="descclassname">Organization.</tt><tt class="descname">meetings</tt><a class="headerlink" href="#apps.profiles.models.Organization.meetings" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Organization.photo_filename">
+<tt class="descclassname">Organization.</tt><tt class="descname">photo_filename</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Organization.photo_filename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Organization.projects">
+<tt class="descclassname">Organization.</tt><tt class="descname">projects</tt><a class="headerlink" href="#apps.profiles.models.Organization.projects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Organization.sponsorships">
+<tt class="descclassname">Organization.</tt><tt class="descname">sponsorships</tt><a class="headerlink" href="#apps.profiles.models.Organization.sponsorships" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Organization.type">
+<tt class="descclassname">Organization.</tt><tt class="descname">type</tt><a class="headerlink" href="#apps.profiles.models.Organization.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Organization.unit_permissions">
+<tt class="descclassname">Organization.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.Organization.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.OrganizationType">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">OrganizationType</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.OrganizationType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>An <tt class="docutils literal"><span class="pre">OrganizationType</span></tt> defines a canonical category for <tt class="docutils literal"><span class="pre">Organization</span></tt>
+objects (e.g. lab, center, institute, etc.)</p>
+<dl class="exception">
+<dt id="apps.profiles.models.OrganizationType.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.OrganizationType.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.OrganizationType.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">OrganizationType.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.OrganizationType.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.OrganizationType.created_by">
+<tt class="descclassname">OrganizationType.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.OrganizationType.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.OrganizationType.get_next_by_created_at">
+<tt class="descclassname">OrganizationType.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.OrganizationType.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.OrganizationType.get_next_by_updated_at">
+<tt class="descclassname">OrganizationType.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.OrganizationType.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.OrganizationType.get_previous_by_created_at">
+<tt class="descclassname">OrganizationType.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.OrganizationType.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.OrganizationType.get_previous_by_updated_at">
+<tt class="descclassname">OrganizationType.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.OrganizationType.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.OrganizationType.organizations">
+<tt class="descclassname">OrganizationType.</tt><tt class="descname">organizations</tt><a class="headerlink" href="#apps.profiles.models.OrganizationType.organizations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.OrganizationType.unit_permissions">
+<tt class="descclassname">OrganizationType.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.OrganizationType.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Person">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Person</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Person" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">Person</span></tt> represents any number of roles within the university, but
+provides a unifying class for dealing with all of them.  The <tt class="docutils literal"><span class="pre">Person</span></tt>
+has fields for first and last name, N Number, etc. as well as several
+crucial class and object methods that pertain to all members of the
+university.</p>
+<p>A <tt class="docutils literal"><span class="pre">Student</span></tt>, <tt class="docutils literal"><span class="pre">Staff</span></tt>, and <tt class="docutils literal"><span class="pre">FacultyMember</span></tt> object are all of 
+the <tt class="docutils literal"><span class="pre">Person</span></tt> type.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.Person.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Person.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Person.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Person.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Person.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Person.activate">
+<tt class="descclassname">Person.</tt><tt class="descname">activate</tt><big>(</big><em>email</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Person.activate" title="Permalink to this definition">¶</a></dt>
+<dd><p>An email-based activation method.  This is deprecated since the 
+introduction of the LDAP authentication</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.affiliations">
+<tt class="descclassname">Person.</tt><tt class="descname">affiliations</tt><a class="headerlink" href="#apps.profiles.models.Person.affiliations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.created_by">
+<tt class="descclassname">Person.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.Person.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Person.cv_filename">
+<tt class="descclassname">Person.</tt><tt class="descname">cv_filename</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Person.cv_filename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.cv_text">
+<tt class="descclassname">Person.</tt><tt class="descname">cv_text</tt><a class="headerlink" href="#apps.profiles.models.Person.cv_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Docstring</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Person.deactivate">
+<tt class="descclassname">Person.</tt><tt class="descname">deactivate</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.Person.deactivate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deactivates a person&#8217;s user account</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Person.default_username">
+<tt class="descclassname">Person.</tt><tt class="descname">default_username</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.Person.default_username" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="apps.profiles.models.Person.does_person_exist_for_user">
+<em class="property">static </em><tt class="descclassname">Person.</tt><tt class="descname">does_person_exist_for_user</tt><big>(</big><em>user</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Person.does_person_exist_for_user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.expertise">
+<tt class="descclassname">Person.</tt><tt class="descname">expertise</tt><a class="headerlink" href="#apps.profiles.models.Person.expertise" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.facultymember">
+<tt class="descclassname">Person.</tt><tt class="descname">facultymember</tt><a class="headerlink" href="#apps.profiles.models.Person.facultymember" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.feeds">
+<tt class="descclassname">Person.</tt><tt class="descname">feeds</tt><a class="headerlink" href="#apps.profiles.models.Person.feeds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Person.full_name">
+<tt class="descclassname">Person.</tt><tt class="descname">full_name</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.Person.full_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.generated_cv">
+<tt class="descclassname">Person.</tt><tt class="descname">generated_cv</tt><a class="headerlink" href="#apps.profiles.models.Person.generated_cv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Person.get_absolute_url">
+<tt class="descclassname">Person.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Person.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Person.get_academic_title_display">
+<tt class="descclassname">Person.</tt><tt class="descname">get_academic_title_display</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Person.get_academic_title_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Person.get_cv_url">
+<tt class="descclassname">Person.</tt><tt class="descname">get_cv_url</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.Person.get_cv_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Person.get_next_by_created_at">
+<tt class="descclassname">Person.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Person.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Person.get_next_by_updated_at">
+<tt class="descclassname">Person.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Person.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Person.get_previous_by_created_at">
+<tt class="descclassname">Person.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Person.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Person.get_previous_by_updated_at">
+<tt class="descclassname">Person.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Person.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Person.get_use_which_cv_display">
+<tt class="descclassname">Person.</tt><tt class="descname">get_use_which_cv_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Person.get_use_which_cv_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.group_perms_set">
+<tt class="descclassname">Person.</tt><tt class="descname">group_perms_set</tt><a class="headerlink" href="#apps.profiles.models.Person.group_perms_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.invitations_received">
+<tt class="descclassname">Person.</tt><tt class="descname">invitations_received</tt><a class="headerlink" href="#apps.profiles.models.Person.invitations_received" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.invitations_sent">
+<tt class="descclassname">Person.</tt><tt class="descname">invitations_sent</tt><a class="headerlink" href="#apps.profiles.models.Person.invitations_sent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Person.photo_filename">
+<tt class="descclassname">Person.</tt><tt class="descname">photo_filename</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Person.photo_filename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.project_set">
+<tt class="descclassname">Person.</tt><tt class="descname">project_set</tt><a class="headerlink" href="#apps.profiles.models.Person.project_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.projects">
+<tt class="descclassname">Person.</tt><tt class="descname">projects</tt><a class="headerlink" href="#apps.profiles.models.Person.projects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.staff">
+<tt class="descclassname">Person.</tt><tt class="descname">staff</tt><a class="headerlink" href="#apps.profiles.models.Person.staff" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.student">
+<tt class="descclassname">Person.</tt><tt class="descname">student</tt><a class="headerlink" href="#apps.profiles.models.Person.student" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.unit_permissions">
+<tt class="descclassname">Person.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.Person.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.user_account">
+<tt class="descclassname">Person.</tt><tt class="descname">user_account</tt><a class="headerlink" href="#apps.profiles.models.Person.user_account" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.user_perms_set">
+<tt class="descclassname">Person.</tt><tt class="descname">user_perms_set</tt><a class="headerlink" href="#apps.profiles.models.Person.user_perms_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Person.workurl_set">
+<tt class="descclassname">Person.</tt><tt class="descname">workurl_set</tt><a class="headerlink" href="#apps.profiles.models.Person.workurl_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Program">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Program</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Program" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">Program</span></tt> is typically the lowest organizational unit in the university.
+It sits below either a <tt class="docutils literal"><span class="pre">School</span></tt> or a <tt class="docutils literal"><span class="pre">Department</span></tt>.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.Program.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Program.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Program.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Program.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Program.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Program.affiliations">
+<tt class="descclassname">Program.</tt><tt class="descname">affiliations</tt><a class="headerlink" href="#apps.profiles.models.Program.affiliations" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Program.authorities">
+<tt class="descclassname">Program.</tt><tt class="descname">authorities</tt><a class="headerlink" href="#apps.profiles.models.Program.authorities" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Program.created_by">
+<tt class="descclassname">Program.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.Program.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Program.department">
+<tt class="descclassname">Program.</tt><tt class="descname">department</tt><a class="headerlink" href="#apps.profiles.models.Program.department" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Program.facultymember_set">
+<tt class="descclassname">Program.</tt><tt class="descname">facultymember_set</tt><a class="headerlink" href="#apps.profiles.models.Program.facultymember_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Program.get_absolute_url">
+<tt class="descclassname">Program.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Program.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Program.get_next_by_created_at">
+<tt class="descclassname">Program.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Program.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Program.get_next_by_updated_at">
+<tt class="descclassname">Program.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Program.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Program.get_parent">
+<tt class="descclassname">Program.</tt><tt class="descname">get_parent</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.Program.get_parent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Program.get_previous_by_created_at">
+<tt class="descclassname">Program.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Program.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Program.get_previous_by_updated_at">
+<tt class="descclassname">Program.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Program.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Program.get_unit">
+<tt class="descclassname">Program.</tt><tt class="descname">get_unit</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.Program.get_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Program.requirements">
+<tt class="descclassname">Program.</tt><tt class="descname">requirements</tt><a class="headerlink" href="#apps.profiles.models.Program.requirements" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Program.school">
+<tt class="descclassname">Program.</tt><tt class="descname">school</tt><a class="headerlink" href="#apps.profiles.models.Program.school" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Program.student_set">
+<tt class="descclassname">Program.</tt><tt class="descname">student_set</tt><a class="headerlink" href="#apps.profiles.models.Program.student_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Program.subject_set">
+<tt class="descclassname">Program.</tt><tt class="descname">subject_set</tt><a class="headerlink" href="#apps.profiles.models.Program.subject_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Program.unit_permissions">
+<tt class="descclassname">Program.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.Program.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Project">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Project</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>Project is a now defunct way of expressing what we now use Organizations
+and Works to accomplish.  This should be retired.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.Project.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Project.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Project.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Project.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Project.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Project.course_set">
+<tt class="descclassname">Project.</tt><tt class="descname">course_set</tt><a class="headerlink" href="#apps.profiles.models.Project.course_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Project.created_by">
+<tt class="descclassname">Project.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.Project.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Project.creator">
+<tt class="descclassname">Project.</tt><tt class="descname">creator</tt><a class="headerlink" href="#apps.profiles.models.Project.creator" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Project.for_course">
+<tt class="descclassname">Project.</tt><tt class="descname">for_course</tt><a class="headerlink" href="#apps.profiles.models.Project.for_course" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Project.get_creator_type_display">
+<tt class="descclassname">Project.</tt><tt class="descname">get_creator_type_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Project.get_creator_type_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Project.get_next_by_created_at">
+<tt class="descclassname">Project.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Project.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Project.get_next_by_updated_at">
+<tt class="descclassname">Project.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Project.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Project.get_previous_by_created_at">
+<tt class="descclassname">Project.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Project.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Project.get_previous_by_updated_at">
+<tt class="descclassname">Project.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Project.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Project.get_ref_type_display">
+<tt class="descclassname">Project.</tt><tt class="descname">get_ref_type_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Project.get_ref_type_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Project.get_scope_type_display">
+<tt class="descclassname">Project.</tt><tt class="descname">get_scope_type_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Project.get_scope_type_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Project.org_projects">
+<tt class="descclassname">Project.</tt><tt class="descname">org_projects</tt><a class="headerlink" href="#apps.profiles.models.Project.org_projects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Project.participating_faculty">
+<tt class="descclassname">Project.</tt><tt class="descname">participating_faculty</tt><a class="headerlink" href="#apps.profiles.models.Project.participating_faculty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Project.person_set">
+<tt class="descclassname">Project.</tt><tt class="descname">person_set</tt><a class="headerlink" href="#apps.profiles.models.Project.person_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Project.section_set">
+<tt class="descclassname">Project.</tt><tt class="descname">section_set</tt><a class="headerlink" href="#apps.profiles.models.Project.section_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Project.unit_permissions">
+<tt class="descclassname">Project.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.Project.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.RemoveISManager">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">RemoveISManager</tt><a class="headerlink" href="#apps.profiles.models.RemoveISManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.db.models.manager.Manager</span></tt></p>
+<dl class="method">
+<dt id="apps.profiles.models.RemoveISManager.get_query_set">
+<tt class="descname">get_query_set</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.RemoveISManager.get_query_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.RemoveISManager.recent">
+<tt class="descname">recent</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.RemoveISManager.recent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Requirement">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Requirement</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Requirement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">Requirement</span></tt> connects a <tt class="docutils literal"><span class="pre">Program</span></tt> to zero or more <tt class="docutils literal"><span class="pre">Course</span></tt> objects
+in order to define a program&#8217;s requirements.</p>
+<p>Although this relationship exists in the model code, there are currently
+no tools to manage this outside of the admin tool.  Considerable thought and
+planning needs to go into how to manage this, as well as other models such
+as <tt class="docutils literal"><span class="pre">AreaOfStudy</span></tt>, etc.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.Requirement.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Requirement.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Requirement.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Requirement.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Requirement.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Requirement.courses">
+<tt class="descclassname">Requirement.</tt><tt class="descname">courses</tt><a class="headerlink" href="#apps.profiles.models.Requirement.courses" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Requirement.created_by">
+<tt class="descclassname">Requirement.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.Requirement.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Requirement.get_next_by_created_at">
+<tt class="descclassname">Requirement.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Requirement.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Requirement.get_next_by_updated_at">
+<tt class="descclassname">Requirement.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Requirement.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Requirement.get_previous_by_created_at">
+<tt class="descclassname">Requirement.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Requirement.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Requirement.get_previous_by_updated_at">
+<tt class="descclassname">Requirement.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Requirement.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Requirement.program">
+<tt class="descclassname">Requirement.</tt><tt class="descname">program</tt><a class="headerlink" href="#apps.profiles.models.Requirement.program" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Requirement.unit_permissions">
+<tt class="descclassname">Requirement.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.Requirement.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.School">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">School</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.School" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">School</span></tt> is one of the the highest &#8220;units&#8221; within the university.  
+Below it are programs.  It sits at the same level as a <tt class="docutils literal"><span class="pre">Department</span></tt></p>
+<p>Historically, only Parsons the New School for Design has Schools.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.School.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.School.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.School.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">School.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.School.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.School.authorities">
+<tt class="descclassname">School.</tt><tt class="descname">authorities</tt><a class="headerlink" href="#apps.profiles.models.School.authorities" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.School.created_by">
+<tt class="descclassname">School.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.School.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.School.division">
+<tt class="descclassname">School.</tt><tt class="descname">division</tt><a class="headerlink" href="#apps.profiles.models.School.division" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.School.facultymember_set">
+<tt class="descclassname">School.</tt><tt class="descname">facultymember_set</tt><a class="headerlink" href="#apps.profiles.models.School.facultymember_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.School.get_next_by_created_at">
+<tt class="descclassname">School.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.School.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.School.get_next_by_updated_at">
+<tt class="descclassname">School.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.School.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.School.get_previous_by_created_at">
+<tt class="descclassname">School.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.School.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.School.get_previous_by_updated_at">
+<tt class="descclassname">School.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.School.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.School.get_unit">
+<tt class="descclassname">School.</tt><tt class="descname">get_unit</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.School.get_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.School.program_set">
+<tt class="descclassname">School.</tt><tt class="descname">program_set</tt><a class="headerlink" href="#apps.profiles.models.School.program_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.School.student_set">
+<tt class="descclassname">School.</tt><tt class="descname">student_set</tt><a class="headerlink" href="#apps.profiles.models.School.student_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.School.unit_permissions">
+<tt class="descclassname">School.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.School.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Section">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Section</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Section" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">Section</span></tt> object is connected to a course and shows only the information
+that is specific to a particular semester and set of faculty. A <tt class="docutils literal"><span class="pre">Course</span></tt> is 
+an object that contains course information across time.</p>
+<p>Refer to the <tt class="docutils literal"><span class="pre">Course</span></tt> documentation for a more complete explanation of this
+distinction.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.Section.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Section.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Section.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Section.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Section.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Section.course">
+<tt class="descclassname">Section.</tt><tt class="descname">course</tt><a class="headerlink" href="#apps.profiles.models.Section.course" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Section.created_by">
+<tt class="descclassname">Section.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.Section.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Section.feeds">
+<tt class="descclassname">Section.</tt><tt class="descname">feeds</tt><a class="headerlink" href="#apps.profiles.models.Section.feeds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Section.get_absolute_url">
+<tt class="descclassname">Section.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Section.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Section.get_display_title">
+<tt class="descclassname">Section.</tt><tt class="descname">get_display_title</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.Section.get_display_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Not all sections need to have their own title, but there are enough cases
+where the section of a course has a meaningfully different title that
+this ought to be shown instead (e.g. Parsons AMT Collab studios)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Section.get_next_by_created_at">
+<tt class="descclassname">Section.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Section.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Section.get_next_by_updated_at">
+<tt class="descclassname">Section.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Section.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Section.get_previous_by_created_at">
+<tt class="descclassname">Section.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Section.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Section.get_previous_by_updated_at">
+<tt class="descclassname">Section.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Section.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Section.get_syllabus_filename">
+<tt class="descclassname">Section.</tt><tt class="descname">get_syllabus_filename</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Section.get_syllabus_filename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Section.get_unit">
+<tt class="descclassname">Section.</tt><tt class="descname">get_unit</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.Section.get_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Section.instructors">
+<tt class="descclassname">Section.</tt><tt class="descname">instructors</tt><a class="headerlink" href="#apps.profiles.models.Section.instructors" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Section.projects">
+<tt class="descclassname">Section.</tt><tt class="descname">projects</tt><a class="headerlink" href="#apps.profiles.models.Section.projects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Section.semester">
+<tt class="descclassname">Section.</tt><tt class="descname">semester</tt><a class="headerlink" href="#apps.profiles.models.Section.semester" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Section.syllabus_text">
+<tt class="descclassname">Section.</tt><tt class="descname">syllabus_text</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.Section.syllabus_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Section.unit_permissions">
+<tt class="descclassname">Section.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.Section.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Semester">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Semester</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Semester" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">Semester</span></tt> object represents the season and year in which a <tt class="docutils literal"><span class="pre">Section</span></tt>
+of a <tt class="docutils literal"><span class="pre">Course</span></tt> is held.  Note that, in Banner exports, spring and summer
+semesters are list as part of the previous year.  For example:</p>
+<ul class="simple">
+<li>201010 is the fall semester of 2010</li>
+<li>201030 is the spring semester of 2011</li>
+</ul>
+<p>For simplicity&#8217;s sake, however, we convert the banner code to the correct
+calendar year.  Therefore, fall 2010 has the term &#8220;fa&#8221; and the year &#8220;2010&#8221;
+while spring 2011 has the term &#8220;sp&#8221; and the year &#8220;2011&#8221;.  All the conversions
+for this are done in the import script and should never need to be
+considered outside of that.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.Semester.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Semester.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Semester.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Semester.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Semester.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Semester.created_by">
+<tt class="descclassname">Semester.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.Semester.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Semester.get_next_by_created_at">
+<tt class="descclassname">Semester.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Semester.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Semester.get_next_by_end_date">
+<tt class="descclassname">Semester.</tt><tt class="descname">get_next_by_end_date</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Semester.get_next_by_end_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Semester.get_next_by_start_date">
+<tt class="descclassname">Semester.</tt><tt class="descname">get_next_by_start_date</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Semester.get_next_by_start_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Semester.get_next_by_updated_at">
+<tt class="descclassname">Semester.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Semester.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Semester.get_previous_by_created_at">
+<tt class="descclassname">Semester.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Semester.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Semester.get_previous_by_end_date">
+<tt class="descclassname">Semester.</tt><tt class="descname">get_previous_by_end_date</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Semester.get_previous_by_end_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Semester.get_previous_by_start_date">
+<tt class="descclassname">Semester.</tt><tt class="descname">get_previous_by_start_date</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Semester.get_previous_by_start_date" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Semester.get_previous_by_updated_at">
+<tt class="descclassname">Semester.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Semester.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Semester.get_term_display">
+<tt class="descclassname">Semester.</tt><tt class="descname">get_term_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Semester.get_term_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Semester.section_set">
+<tt class="descclassname">Semester.</tt><tt class="descname">section_set</tt><a class="headerlink" href="#apps.profiles.models.Semester.section_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Semester.unit_permissions">
+<tt class="descclassname">Semester.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.Semester.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Sponsorship">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Sponsorship</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Sponsorship" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">Sponsorship</span></tt> ties an organization to a bureaucratic unit, etc.</p>
+<p>At the time of writing, this relationship exists only in the model code.
+The necessity of an organization&#8217;s sponsorship will need to be determined
+as the <tt class="docutils literal"><span class="pre">Organization</span></tt> use cases and code achieve more maturity.</p>
+<p>See the <tt class="docutils literal"><span class="pre">Authority</span></tt> class within the <tt class="docutils literal"><span class="pre">reporting</span></tt> documentation for
+an analog to this between <tt class="docutils literal"><span class="pre">Committee</span></tt> objects and organizational units.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.Sponsorship.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Sponsorship.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Sponsorship.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Sponsorship.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Sponsorship.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Sponsorship.content_object">
+<tt class="descclassname">Sponsorship.</tt><tt class="descname">content_object</tt><a class="headerlink" href="#apps.profiles.models.Sponsorship.content_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides a generic relation to any object through content-type/object-id
+fields.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Sponsorship.content_type">
+<tt class="descclassname">Sponsorship.</tt><tt class="descname">content_type</tt><a class="headerlink" href="#apps.profiles.models.Sponsorship.content_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Sponsorship.created_by">
+<tt class="descclassname">Sponsorship.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.Sponsorship.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Sponsorship.get_next_by_created_at">
+<tt class="descclassname">Sponsorship.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Sponsorship.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Sponsorship.get_next_by_updated_at">
+<tt class="descclassname">Sponsorship.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Sponsorship.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Sponsorship.get_previous_by_created_at">
+<tt class="descclassname">Sponsorship.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Sponsorship.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Sponsorship.get_previous_by_updated_at">
+<tt class="descclassname">Sponsorship.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Sponsorship.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Sponsorship.organization">
+<tt class="descclassname">Sponsorship.</tt><tt class="descname">organization</tt><a class="headerlink" href="#apps.profiles.models.Sponsorship.organization" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Sponsorship.unit_permissions">
+<tt class="descclassname">Sponsorship.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.Sponsorship.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Staff">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Staff</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Staff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.Person" title="apps.profiles.models.Person"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.Person</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">Staff</span></tt> member is a <tt class="docutils literal"><span class="pre">Person</span></tt> that works for the university in a role
+other than faculty.  They are assigned to a <tt class="docutils literal"><span class="pre">Division</span></tt> and have a 
+job description.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.Staff.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Staff.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.DoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Staff.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Staff.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Staff.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Staff.division">
+<tt class="descclassname">Staff.</tt><tt class="descname">division</tt><a class="headerlink" href="#apps.profiles.models.Staff.division" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Staff.get_absolute_url">
+<tt class="descclassname">Staff.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Staff.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Staff.get_status_display">
+<tt class="descclassname">Staff.</tt><tt class="descname">get_status_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Staff.get_status_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Staff.person_ptr">
+<tt class="descclassname">Staff.</tt><tt class="descname">person_ptr</tt><a class="headerlink" href="#apps.profiles.models.Staff.person_ptr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Student">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Student</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Student" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.Person" title="apps.profiles.models.Person"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.Person</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">Student</span></tt> is a <tt class="docutils literal"><span class="pre">Person</span></tt> that has a graduation year and home program.</p>
+<p>Students need to be addressed with the utmost sensitivity and security, since
+we must follow FERPA guidelines and cannot divulge any more data than is
+absolutely necessary (i.e. directory information).  See:</p>
+<p><a class="reference external" href="http://www2.ed.gov/policy/gen/guid/fpco/ferpa/mndirectoryinfo.html">http://www2.ed.gov/policy/gen/guid/fpco/ferpa/mndirectoryinfo.html</a></p>
+<dl class="exception">
+<dt id="apps.profiles.models.Student.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Student.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.DoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Student.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Student.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Student.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Student.course_set">
+<tt class="descclassname">Student.</tt><tt class="descname">course_set</tt><a class="headerlink" href="#apps.profiles.models.Student.course_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Student.get_absolute_url">
+<tt class="descclassname">Student.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Student.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Student.get_academic_title_display">
+<tt class="descclassname">Student.</tt><tt class="descname">get_academic_title_display</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Student.get_academic_title_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Student.get_school_name_display">
+<tt class="descclassname">Student.</tt><tt class="descname">get_school_name_display</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Student.get_school_name_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Student.get_status_display">
+<tt class="descclassname">Student.</tt><tt class="descname">get_status_display</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Student.get_status_display" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Student.homeprogram">
+<tt class="descclassname">Student.</tt><tt class="descname">homeprogram</tt><a class="headerlink" href="#apps.profiles.models.Student.homeprogram" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Student.homeschool">
+<tt class="descclassname">Student.</tt><tt class="descname">homeschool</tt><a class="headerlink" href="#apps.profiles.models.Student.homeschool" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Student.person_ptr">
+<tt class="descclassname">Student.</tt><tt class="descname">person_ptr</tt><a class="headerlink" href="#apps.profiles.models.Student.person_ptr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Subject">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Subject</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Subject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">Subject</span></tt> typically represents a group of <tt class="docutils literal"><span class="pre">Course</span></tt> objects below a
+<tt class="docutils literal"><span class="pre">Program</span></tt>.  Recent changes in the way courses are constructed, though,
+may require this simple relationship to be expanded somewhat.  A <tt class="docutils literal"><span class="pre">Subject</span></tt>
+also contains the four-letter abbreviation that precedes a couse number
+in the course directories.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.Subject.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Subject.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Subject.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Subject.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Subject.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Subject.course_set">
+<tt class="descclassname">Subject.</tt><tt class="descname">course_set</tt><a class="headerlink" href="#apps.profiles.models.Subject.course_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Subject.created_by">
+<tt class="descclassname">Subject.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.Subject.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Subject.get_next_by_created_at">
+<tt class="descclassname">Subject.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Subject.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Subject.get_next_by_updated_at">
+<tt class="descclassname">Subject.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Subject.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Subject.get_previous_by_created_at">
+<tt class="descclassname">Subject.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Subject.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Subject.get_previous_by_updated_at">
+<tt class="descclassname">Subject.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Subject.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Subject.get_unit">
+<tt class="descclassname">Subject.</tt><tt class="descname">get_unit</tt><big>(</big><big>)</big><a class="headerlink" href="#apps.profiles.models.Subject.get_unit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Subject.program">
+<tt class="descclassname">Subject.</tt><tt class="descname">program</tt><a class="headerlink" href="#apps.profiles.models.Subject.program" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Subject.unit_permissions">
+<tt class="descclassname">Subject.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.Subject.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.UnitPermission">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">UnitPermission</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.UnitPermission" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></tt></p>
+<p>A <tt class="docutils literal"><span class="pre">UnitPermission</span></tt> object attaches itself to a user and another DataMYNE
+object, most suitably an organizational unit (e.g. <tt class="docutils literal"><span class="pre">Division</span></tt>, <tt class="docutils literal"><span class="pre">Program</span></tt>).</p>
+<p>Unit permissions allow for an expanded authorization framework that goes
+beyond the stock permissions built into Django which are based solely on
+<tt class="docutils literal"><span class="pre">ContentType</span></tt>.  For example, a user may:</p>
+<ul class="simple">
+<li>have permission to change only <tt class="docutils literal"><span class="pre">Course</span></tt> objects</li>
+<li>have permission to change only objects that falls under the Parsons <tt class="docutils literal"><span class="pre">Division</span></tt></li>
+</ul>
+<p>The effect of this is to create a matrix that constrains administrators to
+only edit certain kind of objects and only object that fall under their
+purview.</p>
+<p>At the time of writing, this can be managed from within the admin tool by
+DataMYNE administrators.  The administrator need to go to a unit&#8217;s admin
+page (e.g. Parsons) and, under the Unit Permissions section, add only those
+users who are able to act on behalf of the unit (e.g. an operations manager
+for Parsons, a program director of Communication Design, etc.)</p>
+<p>While this addresses the problem of how to restrict editorial permissions
+to both object (via Django&#8217;s system) and unit, more work needs to be done
+on creating an effective set of admin interfaces that could allow the 
+assignment of unit permissions by people within the university, rather
+than the rather rough way DataMYNE administrators need to work now
+within the admin tool.  This will become especially important as the
+system expands to cover the entire university.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.UnitPermission.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.UnitPermission.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.UnitPermission.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">UnitPermission.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.UnitPermission.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.UnitPermission.content_object">
+<tt class="descclassname">UnitPermission.</tt><tt class="descname">content_object</tt><a class="headerlink" href="#apps.profiles.models.UnitPermission.content_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides a generic relation to any object through content-type/object-id
+fields.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.UnitPermission.content_type">
+<tt class="descclassname">UnitPermission.</tt><tt class="descname">content_type</tt><a class="headerlink" href="#apps.profiles.models.UnitPermission.content_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.UnitPermission.user">
+<tt class="descclassname">UnitPermission.</tt><tt class="descname">user</tt><a class="headerlink" href="#apps.profiles.models.UnitPermission.user" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.Work">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">Work</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Work" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">Work</span></tt> represents any work of art or any other product/document/etc.
+created within the system.  We do NOT associate these with a <tt class="docutils literal"><span class="pre">Person</span></tt>
+directly.  Instead, these relationships are managed with the 
+<tt class="docutils literal"><span class="pre">Affiliation</span></tt> class from the <tt class="docutils literal"><span class="pre">reporting</span></tt> application.  The allows for
+many-to-many relationships, as well as providing subtle variations in the
+role, date of participation, etc.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.Work.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.Work.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.Work.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">Work.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.Work.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Work.affiliations">
+<tt class="descclassname">Work.</tt><tt class="descname">affiliations</tt><a class="headerlink" href="#apps.profiles.models.Work.affiliations" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Work.created_by">
+<tt class="descclassname">Work.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.Work.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Work.get_absolute_url">
+<tt class="descclassname">Work.</tt><tt class="descname">get_absolute_url</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Work.get_absolute_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Work.get_next_by_created_at">
+<tt class="descclassname">Work.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Work.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Work.get_next_by_updated_at">
+<tt class="descclassname">Work.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Work.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Work.get_previous_by_created_at">
+<tt class="descclassname">Work.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Work.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Work.get_previous_by_updated_at">
+<tt class="descclassname">Work.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Work.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.Work.image_filename">
+<tt class="descclassname">Work.</tt><tt class="descname">image_filename</tt><big>(</big><em>filename</em><big>)</big><a class="headerlink" href="#apps.profiles.models.Work.image_filename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.Work.unit_permissions">
+<tt class="descclassname">Work.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.Work.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.models.WorkURL">
+<em class="property">class </em><tt class="descclassname">apps.profiles.models.</tt><tt class="descname">WorkURL</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.WorkURL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#apps.profiles.models.BaseModel" title="apps.profiles.models.BaseModel"><tt class="xref py py-class docutils literal"><span class="pre">apps.profiles.models.BaseModel</span></tt></a></p>
+<p>A <tt class="docutils literal"><span class="pre">WorkURL</span></tt> provides a URL associated with a persons work
+(e.g. portfolio links, etc.).</p>
+<p>This should be deprecated in favor of the more flexible
+<tt class="docutils literal"><span class="pre">Link</span></tt> class.</p>
+<dl class="exception">
+<dt id="apps.profiles.models.WorkURL.DoesNotExist">
+<em class="property">exception </em><tt class="descname">DoesNotExist</tt><a class="headerlink" href="#apps.profiles.models.WorkURL.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></tt></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="apps.profiles.models.WorkURL.MultipleObjectsReturned">
+<em class="property">exception </em><tt class="descclassname">WorkURL.</tt><tt class="descname">MultipleObjectsReturned</tt><a class="headerlink" href="#apps.profiles.models.WorkURL.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></tt></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.WorkURL.created_by">
+<tt class="descclassname">WorkURL.</tt><tt class="descname">created_by</tt><a class="headerlink" href="#apps.profiles.models.WorkURL.created_by" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.WorkURL.get_next_by_created_at">
+<tt class="descclassname">WorkURL.</tt><tt class="descname">get_next_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.WorkURL.get_next_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.WorkURL.get_next_by_updated_at">
+<tt class="descclassname">WorkURL.</tt><tt class="descname">get_next_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.WorkURL.get_next_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.WorkURL.get_previous_by_created_at">
+<tt class="descclassname">WorkURL.</tt><tt class="descname">get_previous_by_created_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.WorkURL.get_previous_by_created_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.models.WorkURL.get_previous_by_updated_at">
+<tt class="descclassname">WorkURL.</tt><tt class="descname">get_previous_by_updated_at</tt><big>(</big><em>*moreargs</em>, <em>**morekwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.WorkURL.get_previous_by_updated_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.WorkURL.person">
+<tt class="descclassname">WorkURL.</tt><tt class="descname">person</tt><a class="headerlink" href="#apps.profiles.models.WorkURL.person" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apps.profiles.models.WorkURL.unit_permissions">
+<tt class="descclassname">WorkURL.</tt><tt class="descname">unit_permissions</tt><a class="headerlink" href="#apps.profiles.models.WorkURL.unit_permissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides the functionality that makes the related-object
+managers available as attributes on a model class, for fields that have
+multiple &#8220;remote&#8221; values and have a GenericRelation defined in their model
+(rather than having another model pointed <em>at</em> them). In the example
+&#8220;article.publications&#8221;, the publications attribute is a
+ReverseGenericRelatedObjectsDescriptor instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.models.delete_work_affiliations">
+<tt class="descclassname">apps.profiles.models.</tt><tt class="descname">delete_work_affiliations</tt><big>(</big><em>sender</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.delete_work_affiliations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.models.index_course">
+<tt class="descclassname">apps.profiles.models.</tt><tt class="descname">index_course</tt><big>(</big><em>sender</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.index_course" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.models.index_faculty_member">
+<tt class="descclassname">apps.profiles.models.</tt><tt class="descname">index_faculty_member</tt><big>(</big><em>sender</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.index_faculty_member" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.models.index_organization">
+<tt class="descclassname">apps.profiles.models.</tt><tt class="descname">index_organization</tt><big>(</big><em>sender</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.index_organization" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.models.index_staff">
+<tt class="descclassname">apps.profiles.models.</tt><tt class="descname">index_staff</tt><big>(</big><em>sender</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.index_staff" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.models.index_student">
+<tt class="descclassname">apps.profiles.models.</tt><tt class="descname">index_student</tt><big>(</big><em>sender</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.index_student" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="apps.profiles.models.index_work">
+<tt class="descclassname">apps.profiles.models.</tt><tt class="descname">index_work</tt><big>(</big><em>sender</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#apps.profiles.models.index_work" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="apps.mobile.views.html"
+                        title="previous chapter">Mobile: Views</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="apps.profiles.views.html"
+                        title="next chapter">Profiles: Views</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/generated/apps.profiles.models.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.views.html" title="Profiles: Views"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="apps.mobile.views.html" title="Mobile: Views"
+             >previous</a> |</li>
+        <li><a href="../index.html">DataMYNE v1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, The New School.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

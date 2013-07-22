@@ -1,0 +1,68 @@
+{% extends "base_profiles.html" %}
+
+{% block title %}
+Admin Stats
+{% endblock %}
+
+{% block sitesection %}site-admin{% endblock %}
+
+{% block breadcrumbs %}
+Admin
+{% endblock %}
+
+{% block mainbody %}
+
+<h2>Stats Report</h2>
+
+<p>Number of profiles: {{ num_profiles }}</p>
+<p>Number of faculty with active logins: {{ num_active_faculty }}</p>
+
+<div style="margin: 10px 0;">
+  <p>Number of entered bios: {{ num_bios }}</p>
+  <p>Number of faculty with photos: {{ num_faculty_with_photos }}</p>
+  <p>Number of faculty with tags: {{ num_faculty_with_tags }}</p>
+  <p>Number of faculty with expertise: {{ num_faculty_with_expertise }}</p>
+</div>
+
+<div style="margin: 5px 0;">
+  <p>Number of syllabi: {{ num_syllabi }}</p>
+  <p>
+    Leading syllabi submitters:
+    <ul style="list-style: disc; margin-left: 25px;">
+      {% for sl in syllabi_leaders %}
+      <li>{{ sl.1 }} ({{ sl.0 }})</li>
+      {% endfor %}
+  </ul>
+  </p>
+</div>
+
+<div style="margin: 10px 0;">
+  <p>Number of portfolio URLs: {{ num_portfolio_urls }}</p>
+  <p>Number of work images: {{ num_work_images }}</p>
+</div>
+
+<div style="margin: 10px 0;">
+  <p>Number of tags: {{ num_tags }}</p>
+  <p>
+    Leading tags:
+    <ul style="list-style: disc; margin-left: 25px;">
+      {% for tl in tag_leaders %}
+      <li>{{ tl.1 }} ({{ tl.0 }})</li>
+      {% endfor %}
+    </ul>
+  </p>
+</div>
+
+<div style="margin: 10px 0;">
+  <p>Number of selected areas of expertise: {{ num_selected_expertise }}</p>
+  <p>
+    Leading areas of expertise:
+    <ul style="list-style: disc; margin-left: 25px;">
+      {% for el in expertise_leaders %}
+      <li>{{ el.1 }} ({{ el.0 }})</li>
+      {% endfor %}
+    </ul>
+  </p>
+</div>
+
+{% endblock %}

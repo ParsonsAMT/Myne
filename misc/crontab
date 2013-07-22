@@ -1,0 +1,3 @@
+0 2 * * * /opt/Projects/datamining/bin/django import_banner_faculty 2>&1 >> /var/log/mining-cronjob.import-banner.prod.log
+0 3 * * * /opt/Projects/datamining/bin/django import_banner_course 2>&1 >> /var/log/mining-cronjob.import-banner.prod.log
+

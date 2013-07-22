@@ -1,0 +1,38 @@
+{% extends "base_profiles.html" %}
+
+{% load tagging_tags %}
+
+{% load thumbnail %}
+
+{% block title %}Profile for {{ person.first_name }} {{ person.last_name }}{% endblock %}
+
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/cv.css" />
+<style>
+  form textarea {float: none; clear:none;}
+  form p {clear: both; float: left; margin-top: 10px;}
+  form label {width: 200px; clear: both; float: left;}
+</style>
+{% endblock %}
+
+{% block breadcrumblinks %}
+delete {{ person.first_name }} {{ person.last_name }}'s CV
+{% endblock %}
+
+{% block sitesection %}delete cv{% endblock %}
+
+{% block mainbody %}
+<div id="ProfileTop">
+  <h1>Edit Your CV</h1>
+  
+  <form method="POST" action="{% url datamining.apps.cv.views.edit person.id %}" method="POST" >
+    {{ cv_form.as_p }}
+    <p style="clear: both;">
+    <input type="submit" value="Save and Generate PDF"/>
+    {% csrf_token %}
+    </p>
+  </form>
+  
+  <p style="clear: both;"/>
+</div>
+{% endblock %}

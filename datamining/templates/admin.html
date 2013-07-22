@@ -1,0 +1,90 @@
+{% extends "base_profiles.html" %}
+
+{% block title %}
+Admin Stats
+{% endblock %}
+
+{% block sitesection %}site-admin{% endblock %}
+
+{% block breadcrumbs %}
+Admin
+{% endblock %}
+
+{% block mainbody %}
+
+<h2>Data Importer</h2>
+
+<ul>
+  <li><a href="{% url add-sections-import %}">Import Sections and Teaching Assigments</a></li>
+  <li><a href="{% url add-deactivations-import %}">Import Faculty Deactivations</a></li>
+  <li><a href="{% url add-course-import %}">Import Course Data</a></li>
+</ul>
+
+<h2>Real-time Stats Report</h2>
+
+<ul>
+  <li><a href="{% url stats-report %}">stats reports</a></li>
+</ul>
+
+<h2>Logged in today</h2>
+<ol>
+  {% if logged_in_today %}
+  {% for f in logged_in_today %}
+  <li>
+    <a href="{% url profiles.views.view_profile f.id %}">{{ f }}</a> (at {{f.user_account.last_login}})
+  </li>
+  {% endfor %}
+  <em>Total: {{ logged_in_today.count }}</em>
+  {% else %}
+  <em>None</em>
+  {% endif %}
+</ol>
+
+<h2>Logged in ever</h2>
+<ol>
+  {% if logged_in_ever %}
+  {% for f in logged_in_ever %}
+  <li>
+    <a href="{% url profiles.views.view_profile f.id %}">{{ f }}</a> (at {{f.user_account.last_login}})
+  </li>
+  {% endfor %}
+  <em>Total: {{ logged_in_ever.count }}</em>
+  {% else %}
+  <em>None</em>
+  {% endif %}
+</ol>
+
+<h2>Modified profiles today</h2>
+<ol>
+  {% if modified_today %}
+  {% for f in modified_today %}
+  <li>
+    <a href="{% url profiles.views.view_profile f.id %}">{{ f }}</a> (at {{f.updated_at}})
+  </li>
+  {% endfor %}
+  <em>Total: {{ modified_today.count }}</em>
+  {% else %}
+  <em>None</em>
+  {% endif %}
+</ol>
+
+<h2>Modified profiles ever</h2>
+<ol>
+  {% if modified_ever %}
+  {% for f in modified_ever %}
+  <li>
+    <a href="{% url profiles.views.view_profile f.id %}">{{ f }}</a> (at {{f.updated_at}})
+  </li>
+  {% endfor %}
+  <em>Total: {{ modified_ever.count }}</em>
+  {% else %}
+  <em>None</em>
+  {% endif %}
+</ol>
+
+<h2>
+  Note:
+</h2>
+"ever" means since 5/12/2009
+
+{% endblock %}

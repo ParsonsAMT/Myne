@@ -1,0 +1,64 @@
+{% extends "base_profiles.html" %}
+
+{% block title %}
+Filter
+{% endblock %}
+
+{% block extrahead %}                      
+  <script src="{{ MEDIA_URL }}js/filter.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var selected_areas = [ {{ selected_areas }} ]; // for filter.js
+  </script>
+{% endblock %}
+
+{% block sitesection %}filter{% endblock %}
+
+{% block breadcrumbs %}
+Filter
+{% endblock %}
+
+{% block mainbody %}
+
+  <h2>Filter Faculty</h2>
+
+  <form action="{% url profiles.views.filter %}" method="POST">
+{% csrf_token %}
+    <div>
+      <h2>Status</h2>
+      {{ form.status.errors }}
+      {{ form.status }}
+    </div>
+
+    <div id="">
+      <h2>Areas of Expertise</h2>
+      {{ form.expertise.errors }}
+      <p><em>{{ form.expertise.help_text }}</em></p>
+      {% for a in areas_of_expertise %}
+      <span class="expertise" id="expertise-{{ a.id }}">{{ a }}</span>
+      {% endfor %}
+    </div>
+    
+    <div style="padding: 10px 0px 10px 0px">
+      {{ form.filteroption.errors }}
+      {{ form.filteroption }}
+    </div>
+    
+    <input type="submit" name="refresh" value="refresh" />
+  
+
+  <h2>Matching Faculty</h2>
+  {% if faculty_list %}
+  <ul>
+    {% for f in faculty_list %}
+    <li><input type="checkbox" name="checkemail" value="{{f.user_account.username}}" checked><a href="{% url profiles.views.view_profile f.id %}" target="_blank">{{ f.first_name }} {{ f.last_name }}</a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  none selected
+  {% endif %}
+  
+  <div>
+    <input type="button" id="emailgroup" value="Send email" />
+  </div>
+  </form>
+{% endblock %}

@@ -1,0 +1,9 @@
+<div id="faculty-search">
+  <form action="{% url haystack_search %}" method="GET">
+  {% csrf_token %}
+    <input type="text" name="q" value="{{ search }}" size="40"/> 
+    <input type="hidden" name="models" value="profiles.facultymember" size="40"/>
+    <input type="submit" value="Search Faculty" />              
+  </form>
+</div>
+                                                                    

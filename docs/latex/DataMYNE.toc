@@ -1,0 +1,15 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Profiles: Models}{3}{chapter.1}
+\contentsline {chapter}{\numberline {2}Profiles: Views}{13}{chapter.2}
+\contentsline {chapter}{\numberline {3}Profiles: Fields}{19}{chapter.3}
+\contentsline {chapter}{\numberline {4}Profiles: Forms}{21}{chapter.4}
+\contentsline {chapter}{\numberline {5}Profiles: Handlers}{27}{chapter.5}
+\contentsline {chapter}{\numberline {6}Profiles: Lookups}{31}{chapter.6}
+\contentsline {chapter}{\numberline {7}Profiles: Backends}{33}{chapter.7}
+\contentsline {chapter}{\numberline {8}Reporting: Models}{35}{chapter.8}
+\contentsline {chapter}{\numberline {9}Reporting: Views}{41}{chapter.9}
+\contentsline {chapter}{\numberline {10}Reporting: Forms}{43}{chapter.10}
+\contentsline {chapter}{\numberline {11}Reporting: Handlers}{45}{chapter.11}
+\contentsline {chapter}{\numberline {12}Mobile: Views}{47}{chapter.12}
+\contentsline {chapter}{\numberline {13}Indices and tables}{49}{chapter.13}
+\contentsline {chapter}{Python Module Index}{51}{section*.392}

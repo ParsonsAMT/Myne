@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Profiles: Lookups &mdash; DataMYNE v1.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="DataMYNE v1.0.0 documentation" href="../index.html" />
+    <link rel="next" title="Profiles: Backends" href="apps.profiles.backends.html" />
+    <link rel="prev" title="Profiles: Handlers" href="apps.profiles.handlers.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.backends.html" title="Profiles: Backends"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.handlers.html" title="Profiles: Handlers"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">DataMYNE v1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-apps.profiles.lookups">
+<span id="profiles-lookups"></span><h1>Profiles: Lookups<a class="headerlink" href="#module-apps.profiles.lookups" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="apps.profiles.lookups.CourseLookup">
+<em class="property">class </em><tt class="descclassname">apps.profiles.lookups.</tt><tt class="descname">CourseLookup</tt><a class="headerlink" href="#apps.profiles.lookups.CourseLookup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>This lookup pulls in <tt class="docutils literal"><span class="pre">Course</span></tt> objects to complete ajax-powered form fields.</p>
+<dl class="method">
+<dt id="apps.profiles.lookups.CourseLookup.format_item">
+<tt class="descname">format_item</tt><big>(</big><em>course</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.CourseLookup.format_item" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.CourseLookup.format_result">
+<tt class="descname">format_result</tt><big>(</big><em>course</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.CourseLookup.format_result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.CourseLookup.get_objects">
+<tt class="descname">get_objects</tt><big>(</big><em>ids</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.CourseLookup.get_objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.CourseLookup.get_query">
+<tt class="descname">get_query</tt><big>(</big><em>q</em>, <em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.CourseLookup.get_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.lookups.DepartmentLookup">
+<em class="property">class </em><tt class="descclassname">apps.profiles.lookups.</tt><tt class="descname">DepartmentLookup</tt><a class="headerlink" href="#apps.profiles.lookups.DepartmentLookup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>This lookup pulls in <tt class="docutils literal"><span class="pre">Department</span></tt> objects to complete ajax-powered form fields.</p>
+<dl class="method">
+<dt id="apps.profiles.lookups.DepartmentLookup.format_item">
+<tt class="descname">format_item</tt><big>(</big><em>object</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.DepartmentLookup.format_item" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.DepartmentLookup.format_result">
+<tt class="descname">format_result</tt><big>(</big><em>object</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.DepartmentLookup.format_result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.DepartmentLookup.get_objects">
+<tt class="descname">get_objects</tt><big>(</big><em>ids</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.DepartmentLookup.get_objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.DepartmentLookup.get_query">
+<tt class="descname">get_query</tt><big>(</big><em>q</em>, <em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.DepartmentLookup.get_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.lookups.DivisionLookup">
+<em class="property">class </em><tt class="descclassname">apps.profiles.lookups.</tt><tt class="descname">DivisionLookup</tt><a class="headerlink" href="#apps.profiles.lookups.DivisionLookup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>This lookup pulls in <tt class="docutils literal"><span class="pre">Division</span></tt> objects to complete ajax-powered form fields.</p>
+<dl class="method">
+<dt id="apps.profiles.lookups.DivisionLookup.format_item">
+<tt class="descname">format_item</tt><big>(</big><em>object</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.DivisionLookup.format_item" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.DivisionLookup.format_result">
+<tt class="descname">format_result</tt><big>(</big><em>object</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.DivisionLookup.format_result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.DivisionLookup.get_objects">
+<tt class="descname">get_objects</tt><big>(</big><em>ids</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.DivisionLookup.get_objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.DivisionLookup.get_query">
+<tt class="descname">get_query</tt><big>(</big><em>q</em>, <em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.DivisionLookup.get_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.lookups.PersonLookup">
+<em class="property">class </em><tt class="descclassname">apps.profiles.lookups.</tt><tt class="descname">PersonLookup</tt><a class="headerlink" href="#apps.profiles.lookups.PersonLookup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>This lookup pulls in <tt class="docutils literal"><span class="pre">Person</span></tt> objects to complete ajax-powered form fields.</p>
+<dl class="method">
+<dt id="apps.profiles.lookups.PersonLookup.format_item">
+<tt class="descname">format_item</tt><big>(</big><em>person</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.PersonLookup.format_item" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.PersonLookup.format_result">
+<tt class="descname">format_result</tt><big>(</big><em>person</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.PersonLookup.format_result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.PersonLookup.get_objects">
+<tt class="descname">get_objects</tt><big>(</big><em>ids</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.PersonLookup.get_objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.PersonLookup.get_query">
+<tt class="descname">get_query</tt><big>(</big><em>q</em>, <em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.PersonLookup.get_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.lookups.ProgramLookup">
+<em class="property">class </em><tt class="descclassname">apps.profiles.lookups.</tt><tt class="descname">ProgramLookup</tt><a class="headerlink" href="#apps.profiles.lookups.ProgramLookup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>This lookup pulls in <tt class="docutils literal"><span class="pre">Program</span></tt> objects to complete ajax-powered form fields.</p>
+<dl class="method">
+<dt id="apps.profiles.lookups.ProgramLookup.format_item">
+<tt class="descname">format_item</tt><big>(</big><em>object</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.ProgramLookup.format_item" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.ProgramLookup.format_result">
+<tt class="descname">format_result</tt><big>(</big><em>object</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.ProgramLookup.format_result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.ProgramLookup.get_objects">
+<tt class="descname">get_objects</tt><big>(</big><em>ids</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.ProgramLookup.get_objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.ProgramLookup.get_query">
+<tt class="descname">get_query</tt><big>(</big><em>q</em>, <em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.ProgramLookup.get_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.lookups.SchoolLookup">
+<em class="property">class </em><tt class="descclassname">apps.profiles.lookups.</tt><tt class="descname">SchoolLookup</tt><a class="headerlink" href="#apps.profiles.lookups.SchoolLookup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>This lookup pulls in <tt class="docutils literal"><span class="pre">School</span></tt> objects to complete ajax-powered form fields.</p>
+<dl class="method">
+<dt id="apps.profiles.lookups.SchoolLookup.format_item">
+<tt class="descname">format_item</tt><big>(</big><em>object</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.SchoolLookup.format_item" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.SchoolLookup.format_result">
+<tt class="descname">format_result</tt><big>(</big><em>object</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.SchoolLookup.format_result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.SchoolLookup.get_objects">
+<tt class="descname">get_objects</tt><big>(</big><em>ids</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.SchoolLookup.get_objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.SchoolLookup.get_query">
+<tt class="descname">get_query</tt><big>(</big><em>q</em>, <em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.SchoolLookup.get_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="apps.profiles.lookups.WorkLookup">
+<em class="property">class </em><tt class="descclassname">apps.profiles.lookups.</tt><tt class="descname">WorkLookup</tt><a class="headerlink" href="#apps.profiles.lookups.WorkLookup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>This lookup pulls in <tt class="docutils literal"><span class="pre">Work</span></tt> objects to complete ajax-powered form fields.</p>
+<dl class="method">
+<dt id="apps.profiles.lookups.WorkLookup.format_item">
+<tt class="descname">format_item</tt><big>(</big><em>object</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.WorkLookup.format_item" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.WorkLookup.format_result">
+<tt class="descname">format_result</tt><big>(</big><em>object</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.WorkLookup.format_result" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.WorkLookup.get_objects">
+<tt class="descname">get_objects</tt><big>(</big><em>ids</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.WorkLookup.get_objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apps.profiles.lookups.WorkLookup.get_query">
+<tt class="descname">get_query</tt><big>(</big><em>q</em>, <em>request</em><big>)</big><a class="headerlink" href="#apps.profiles.lookups.WorkLookup.get_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="apps.profiles.handlers.html"
+                        title="previous chapter">Profiles: Handlers</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="apps.profiles.backends.html"
+                        title="next chapter">Profiles: Backends</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/generated/apps.profiles.lookups.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.backends.html" title="Profiles: Backends"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="apps.profiles.handlers.html" title="Profiles: Handlers"
+             >previous</a> |</li>
+        <li><a href="../index.html">DataMYNE v1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, The New School.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+{% if page.paginator %}
+  <div class="pagination">
+    [ {% for p in page.paginator.pages %}
+      {% ifequal p page %}
+          <span class="selected">{{ p }}</span>
+      {% else %}
+          <a href="?page={{ p.number }}">{{ p }}</a>
+      {% endifequal %}
+    {% endfor %} ]
+  </div>
+{% endif %}

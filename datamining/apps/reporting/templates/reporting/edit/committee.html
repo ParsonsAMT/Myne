@@ -1,0 +1,110 @@
+{% extends "base_profiles.html" %}
+{% load thumbnail %}
+{% load adminmedia %}
+{% block title %}
+	{% if committee %}
+    Edit {{ committee.title }}
+	{% else %}
+    Create a new committee
+	{% endif %}
+{% endblock %}
+
+{% block extrahead %}   
+{{ block.super }}          
+  <script src="{{ MEDIA_URL }}js/jquery.autocomplete.js"></script>
+    <script src="{{ MEDIA_URL }}js/ajax-select.js"></script>
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/jquery.autocomplete.css" type="text/css" media="screen">
+{% endblock %}
+
+{% block sitesection %}profile{% endblock %}
+
+{% block breadcrumblinks %}
+{% if committee %}
+<a href="{% url reporting.views.edit_committee committee.id %}">Edit {{ committee.title }}</a>
+{% else %}
+<a href="{% url reporting.views.add_committee %}">Create a new committee</a>
+{% endif %}
+{% endblock %}
+
+{% block mainbody %}
+
+{% if committee %}
+<form action="{% url reporting_edit_committee committee.id %}" method="POST" enctype="multipart/form-data">
+{% else %}
+<form action="{% url reporting_add_committee %}" method="POST" enctype="multipart/form-data">
+{% endif %}
+
+{% csrf_token %}
+    {% if committee_form.errors %}
+  <div class="errorlist">
+    Please fix errors below.
+  </div>
+  {% endif %}
+
+    <div id="ProfileTop">
+        {% if committee %}
+        <h1>Edit {{ committee.title }}</h1>
+        {% else %}
+        <h1>Create New Committee</h1>
+        {% endif %}
+    
+    <div class="basic-info">
+        <h4>Basic Info</h4>
+      {{ committee_form.title.errors }}
+      <p>
+        <label for="id_title">Committee Name</label>
+        {{ committee_form.title }}
+      </p>
+<!-- 
+      {{ committee_form.divisions.errors }}
+      <p>
+        <label for="id_divisions">Division (optional)</label>
+        {{ committee_form.divisions }}
+      </p>
+      {{ committee_form.schools.errors }}
+      <p>
+        <label for="id_schools">School (optional)</label>
+        {{ committee_form.schools }}
+      </p>
+      {{ committee_form.departments.errors }}
+      <p>
+        <label for="id_departments">Department (optional)</label>
+        {{ committee_form.departments }}
+      </p>
+      {{ committee_form.type.errors }}
+ -->    </div>
+  </div>
+  
+  <div>
+    <h4>Mandate</h4>
+    {{ committee_form.mandate.errors }}
+    {{ committee_form.mandate }}
+  </div>
+  
+  <div>
+    <h4>Chairpersons</h4>
+    {{ committee_form.chairpersons.errors }}
+        {{ committee_form.chairpersons }}
+  </div>
+  
+  <div>
+    <h4>Members</h4>
+    {{ committee_form.members.errors }}
+        {{ committee_form.members }}
+  </div>
+  
+  <div>
+    <h4>Invite New Members</h4>
+    {{ invitation_form.invites }}
+    <h4>Message (optional)</h4>
+    {{ invitation_form.message }}
+  </div>
+
+{% if committee %}
+  <input class="submit" type="submit" value="Update" />
+{% else %}
+  <input class="submit" type="submit" value="Create" />
+{% endif %}
+
+</form>
+{% endblock %}

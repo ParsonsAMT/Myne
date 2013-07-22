@@ -1,0 +1,102 @@
+{% extends "base_profiles.html" %}
+
+{% load tagging_tags %}
+
+{% load thumbnail %}
+
+{% load adminmedia admin_list i18n %}
+
+{% block title %}
+Meeting {{ title }}
+{% endblock %}
+
+{% block sitesection %}{% endblock %}
+
+{% block breadcrumblinks %}
+{{ title }}
+{% endblock %}
+
+{% block mainbody %}
+<div id="ProfileTop">
+  <div id="staff-links">
+    {% if edittable or can_invite %}
+      <div class="button-edit-profile">
+          {% spaceless %}
+            {% if edittable %}<a href="{% url reporting_edit_meeting meeting.id %}">Edit meeting</a>{% endif %}
+            {% if can_invite %}<a href="{% url reporting_edit_meeting meeting.id %}">Invite people</a>{% endif %}
+          {% endspaceless %}
+      </div>
+    {% endif %}
+  </div>
+
+  <div id="photo">
+    {% if meeting.logo %}
+      <img src="{% thumbnail meeting.logo 240x240 crop %}" />
+    {% else %}      
+      <img src="{{ MEDIA_URL }}images/defaults/240px/DataMyne_Icon_Committee_240.jpg" width="240" height="240" />
+    {% endif %}      
+  </div>
+  
+  <div class="basic-info">
+    <div>
+    {% if meeting.content_object %}
+        <h1><a href="{{ meeting.content_object.get_absolute_url }}">{{ meeting.content_object }}</a> Meeting</h1>
+    {% endif %}
+    {% if meeting.start_time %}
+        <h2>{{ meeting.start_time }}</h2>
+    {% endif %}
+    {% if duration %}
+        <h3>{{ duration }} minutes</h3>
+    {% endif %}
+    </div>
+    
+    {% if meeting.location %}
+    <h4>Location:</h4>
+    {{ meeting.location|linebreaks }}
+    {% endif %}
+  </div>
+</div>
+
+<div id="ProfileColumnLeft">
+    {% if meeting.agenda %}
+    <div id="meeting-agenda">
+        <h4>Agenda</h4>
+      {{ meeting.agenda|linebreaks }}
+    </div>
+    {% endif %}
+    
+    {% if current_invitees and can_view_invitees %}
+    <div>
+        <h4>Invited Guests</h4>
+      {% for invitee in current_invitees %}
+        <a href="{% url profiles_view_person_profile invitee.person.id %}">{%spaceless%}{{ invitee.person }}{% endspaceless%}</a>{% if not forloop.last %},{% endif %}
+      {% endfor %}
+    </div>
+    {% endif %}
+            
+</div>
+
+<div id="ProfileColumnRight">   
+    {% include "profiles/include/invitations_list.html" %}
+    
+    {% if meeting.minutes %}
+    <div id="meeting-minutes">
+        <h4>Minutes</h4>
+      {{ meeting.minutes }}
+    </div>
+    {% endif %}
+    
+    {% if mlt %}
+    <div id="mlt-profile">
+        <h4>Related:</h2>
+        <ul>
+            {% for result in mlt %}
+                <li><a href="{{ result.object.get_absolute_url }}">{{ result.object }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}
+

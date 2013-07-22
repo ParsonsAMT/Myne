@@ -1,0 +1,117 @@
+{% extends "base_profiles.html" %}
+
+{% load tagging_tags %}
+
+{% load thumbnail %}
+
+{% block title %}Profile for {{ staff.first_name }} {{ staff.last_name }}{% endblock %}
+
+{% block sitesection %}profile{% endblock %}
+
+{% block breadcrumblinks %}
+{{ staff.first_name }} {{ staff.last_name }}
+{% endblock %}
+
+{% block mainbody %}
+<div id="ProfileTop">
+	<div id="staff-links">
+      {% if edittable %}
+      <div class="button-edit-profile">
+          <a href="{% url profiles_edit_staff_profile staff.id %}">Edit profile</a>
+      </div>
+      {% endif %}
+    </div>
+
+    <div id="photo">
+    {% if staff.photo %}
+      <img src="{% thumbnail staff.photo 240x240 crop %}" />
+    {% else %}      
+      <img src="{{ MEDIA_URL }}images/defaults/240px/DataMyne_Icon_Staff_240.jpg" width="240" height="240" />
+    {% endif %}      
+    </div>
+
+    <div class="basic-info">
+      <p class="fullname">
+        {{ staff.first_name }} {{ staff.last_name }}
+      </p>
+      {% if staff.division %}
+      <p>
+      	{{ staff.division }} 
+      </p>
+      {% endif %}
+      <div class="title">
+        <p>
+          {{ staff.admin_title }}
+        </p>
+      </div>
+      
+      <h2>Areas of interest:</h2>
+      {% if staff.expertise.all %}
+      {% for e in staff.expertise.all %}
+      <a href="{% url list-tagged-profiles e %}">{{ e.name }}</a>{% if not forloop.last %},{% endif %} {% endfor %}
+      {% else %}
+      <em>No areas of interest yet.</em>
+      {% endif %}
+      
+      <div>
+        <h2>Portfolio Links:</h2>
+        <ul>
+          {% if staff.workurl_set.all %}
+          {% for url in staff.workurl_set.all %}
+          <li><a href="{{ url.url }}" target="_blank">{{ url.title }}</a> -- {{ url.description }}</li>
+          {% endfor %}
+          {% else %}
+          <li><em>No portfolio links yet.</em></li>
+          {% endif %}
+        </ul>
+      </div>
+      
+    </div>
+</div>
+
+<div>
+	<h2>Bio:</h2>
+	{% if staff.bio %}
+	{{ staff.bio|truncatewords_html:250|safe }}
+	{% else %}
+	<em>No bio yet.</em>
+	{% endif %}
+</div>
+
+<div id="ProfileColumnLeft">
+        {% if can_read_cv %}
+        <div>
+          <h2>Resume:</h2>
+          {% with staff.get_cv_url as cv_url %}
+          {% if cv_url %}
+          <a href="{{ cv_url }}" title="Resume">Download PDF</a>
+          {% else %}
+          <em>No resume uploaded yet.</em>
+          {% endif %}
+          {% endwith %}
+        </div>
+        {% endif %}
+</div>
+
+
+<div id="ProfileColumnRight">
+    {% include "profiles/include/invitations_list.html" %}
+
+	<h2>Skills:</h2>
+	<div class="tags">
+        {% tags_for_object staff as tag_list %}
+        {% if tag_list %}
+        {% for t in tag_list %}<a href="{% url haystack_search %}?q={{ t.name }}">{{ t }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
+        {% else %}
+        <em>No skills selected yet.</em>
+        {% endif %}
+	</div>
+        
+    {% include "profiles/include/works_list.html" %}
+
+    {% include "profiles/include/mlt_list.html" %}
+
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,57 @@
+{% extends "pdfreader/base.html" %}
+{% block title %}PDF Reader{% endblock %}
+{% block script %}
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+    $(document).ready(function(){
+
+      // install the event handler for #debug #output
+      $('#resume_area').keydown(update).keyup(update).mousedown(update).mouseup(update).mousemove(update);
+
+    });
+
+    /*
+      this function handles #debug #output
+     */
+
+    function update() {
+
+      // here we fetch our text range object
+      var range = $(this).getSelection();
+      {% for segment_type in segment_types %}
+      if ($('#segment{{segment_type.id}}_radio').get(0).checked)
+      {
+        $('#id_segment{{segment_type.id}}_area').html(range.text);
+      }      
+      {% endfor %}
+    }
+</script>
+<style>
+  #segments {float:left;width:400px;padding:10px;}
+  #segments p {display:block;width:400px;}
+  #segments textarea {width:400px;white-space:pre;}
+</style>
+{% endblock %}
+{% block content %}
+      <form method="post" action="/pdf/read/{{document.id}}">
+        <div class="info">Select a section below, then highlight the text that belongs to it</div>
+        <ul>
+          {% for segment_type in segment_types %}
+          <li><label for="segment{{segment_type.id}}_radio">{{segment_type}}</label><input type="radio" id="segment{{segment_type.id}}_radio" name="segment_choice"/></li>
+          {% endfor %}
+        </ul>
+
+        <div style="float:left;">
+          <input style="float:left;clear:both;" type="submit" value="Post Your CV"/>
+          <div style="clear:left;float:left;width:400px;padding:10px;">
+            <label for="resume_area">CV:</label><textarea style="width:400px;" id="resume_area" name="resume" wrap="on" style="white-space:pre;" rows="40"> {{document.contents}}</textarea>
+          </div>
+          <div id="segments">
+            {{form.as_p}}
+          </div>
+          <input style="float:left;clear:both;" type="submit" value="Post Your CV"/>
+        </div>
+        <div style="clear:both;"></div>
+      </form>
+        
+{% endblock %}

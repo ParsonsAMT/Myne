@@ -1,0 +1,131 @@
+{% extends "base_profiles.html" %}
+
+{% load tagging_tags %}
+
+{% load thumbnail %}
+
+{% load adminmedia admin_list i18n %}
+
+{% block title %}
+Section {{ title }}
+{% endblock %}
+
+{% block extrahead %}
+<script src="{{ MEDIA_URL }}js/jquery-1.3.2.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block sitesection %}{% endblock %}
+
+{% block breadcrumblinks %}
+{{ title }}
+{% endblock %}
+
+{% block mainbody %}
+<div id="SectionProfile">
+  <h1>{% spaceless %}
+  {% if section.title %}
+    {{ section.title }}
+  {% else %}
+    {{ course.title }}
+  {% endif %}
+  {% endspaceless %}</h1>
+
+  <div class="basicinfo">
+    {{ course.subject }} {{ course.coursenumber }} | 
+    Credits: {{course.minimum_credits}}
+    {% ifnotequal course.credit_range_type "no" %} {{course.credit_range_type}} {% endifnotequal %}
+    {% if course.maximum_credits %} {{course.maximum_credits}} {% endif %}
+    {% if course_edittable %}
+      | <a href="{% url profiles_course_change course.id %}">Edit Course</a>
+    {% endif %}
+    {% if edittable %}
+      | <a href="{% url profiles_section_change section.id %}">Edit Section</a>
+    {% endif %}
+    <em><a href="{% url view-course course.id %}">(see more sections)</a></em>
+  </div>
+  <div class="moreinfoleft">
+    <h2>{{ section.semester }}</h2>
+    <div class="timelinefaculty">
+      {% for instructor in section.instructors.all %}
+        {% if not forloop.first %},{% endif %} <a href="{% url view-profile instructor.id %}">{{ instructor }}</a>
+      {% endfor %}<br/>
+    </div>
+    {% if course.description %}
+      <h2>Description</h2>
+      <div class="desc">
+      {{ course.description }}
+      </div>
+    {% endif %}
+    {% if course.learning_outcomes %}
+      <h2>Learning outcomes</h2>
+      <div class="learning">
+      <p style="font-style:italic; padding: 5px 0 5px 0;">At the completion of this course, students should be able to:</p>
+      {{ course.learning_outcomes|linebreaks }}
+      </div>
+    {% endif %}
+    {% comment %}TODO: This needs to correspond to the faculty member's permissions{% endcomment %}
+    {% if can_read_syllabi and section.syllabus %}
+      <h2>Syllabus</h2>
+      <div class="syllabus">            
+           <a href="{{ section.syllabus.url }}">view syllabus</a>      
+      </div>
+    {% endif %}
+    {% if course.assessment %}
+      <h2>Assessment / Deliverables</h2>
+      <div class="assessment">            
+        {{ course.assessment|linebreaks }}
+      </div>
+    {% endif %}
+    
+    
+    {% if course.timeline %}
+      <div class="timeline">
+      {{ course.timeline|linebreaks }}
+      </div>
+    {% endif %}
+  </div>
+  
+  <div class="moreinforight">
+    {% if tags %}
+      <h2>Tags</h2>
+      <div class="tags">  
+        {% for t in cloud %}
+          <span class="tag-{{t.font_size}}"><a href="{% url haystack_search %}?q={{ t.name }}">{{t}}</a>{% if not forloop.last %}, {% endif %}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% if section_images %}
+      <h2>Work sample images</h2>
+      <div class="images">
+      <table>
+      {% for img in section_images %}
+              {% if img.image %}
+              <tr>
+                  <td class="thumbnail">
+                      <a href="{{ img.url }}" target="_blank"><img src="{% thumbnail img.image 100x100 crop %}" /></a>
+                  </td>
+                  <td class="info">
+                      <p style="font-weight:bold;"> {{ img.title }} </p>
+                      {% if img.author %}
+                      <p> {{ img.author }} </p>
+                      {% endif %}
+                      {% if img.type %}
+                      <p> {{ img.type }} </p>
+                      {% endif %}
+                      {% if img.year %}
+                      <p> {{ img.year }} </p>
+                      {% endif %}
+                  </td>
+              {% else %}
+              <td>&nbsp;</td>
+              </tr>
+              {% endif %}
+      {% endfor %}
+      </table>
+      </div>
+    {% endif %}
+  </div>
+
+</div>
+{% endblock %}
+

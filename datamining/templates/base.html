@@ -1,0 +1,229 @@
+{% load datamyne_extras %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ LANGUAGE_CODE }}" xml:lang="{{ LANGUAGE_CODE }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}><head>
+
+  <title>{% if debug %}{{ stage_name }}: {% endif %}{% block title %}{% endblock %} | Parsons Datamining</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/iconic.css" />
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/reset.css" />
+
+
+   <!-- jQuery UI --> 
+   <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}jquery-ui/css/cupertino/jquery-ui-1.8.1.custom.css" />
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+
+
+      
+   <script type="text/javascript">                                  
+       $(function() {   
+             $('input[type="submit"], button').button();
+             $('#contact').button();
+             $('.button-misc').button();
+             $('.messagelist').show("slide", {direction: "down"}, 1000).effect("highlight", {}, 3000);
+						 $('.download').button();
+     });
+   </script>
+   
+  
+   <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/main.css" />
+   <!-- [if IE]> 
+        <style type="text/css"> 
+ 	 #Container {height: 100%;} 
+        </style> 
+   <![endif]-->
+  
+  
+  
+  {% block extrastyle %}{% endblock %}
+
+  {% block extrahead %}{% endblock %}
+
+  {% block blockbots %}
+
+<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
+</head>
+
+{% load i18n %}
+
+<body>
+
+<div id="Container" class="{% block sitesection %}{% endblock %}">
+
+	<div id="Header">
+    	<div id="Header-top">
+        	<a href="{% url profiles.views.home %}"><span id="Logo"></span></a>
+            
+            <div id="Search">              
+                
+                <div>
+                    <form id="search" method="get" action="{{ subdir_prefix }}search/">
+                        <input id="searchfield" name="q" maxlength="30" type="text" size="40" {% if request.GET.q %}value="{{ request.GET.q }}" {% endif %} />
+                        <input value="Search" type="submit">    
+                    </form>
+                </div>
+                        
+      		</div>
+        </div>
+
+		<p style="clear: both;"/>
+      
+        <div id="Header-bottom">
+            <ul id="nav-top" class="nav-list">
+                <li class="home"><a href="{% url profiles.views.home %}">Home</a></li>
+                {% if current_person %}
+	                <li class="profile"><a href="{% url profiles_view_person_profile current_person.id %}">Profile</a></li>
+	            {% else %}
+					{% if not is_secure %}
+	                <li class="profile"><a href="{% url django.contrib.auth.views.login %}">Login</a></li>
+	                {% endif %}
+				{% endif %}
+                <li class="about"><a href="{% url about %}">About</a></li>
+                <li class="help{% if not user.is_staff %} last{% endif %}"><a href="{% url help %}">Help</a></li>
+                {% if user.is_staff %}<li class="site-admin"><a href="{% url profiles.views.admin %}">Site Admin</a></li>{% endif %}
+             </ul>
+            
+            <div id="Login">
+            {% if current_person %}
+                <div class="text">
+                You are logged in as <a href="{% url profiles_view_person_profile current_person.id %}">{{ user }}</a>. &nbsp
+                {% comment %}<a href="NOT_YET_IMPLEMENTED">Change password</a> / {% endcomment %}<a href="{% url django.contrib.auth.views.logout %}">Logout</a>
+                </div>
+            {% else %}
+				{% if is_secure %}
+                <form method="post" action="{% url django.contrib.auth.views.login %}">
+					{% csrf_token %}
+                      &nbsp Username &nbsp
+                      <input id="id_username" type="text" name="username" maxlength="30" size="10"/>
+                      &nbsp Password &nbsp
+                      <input type="password" name="password" id="id_password" size="10"/>
+                      <input type="submit" value="login" />
+                </form>
+                {% endif %}
+            {% endif %}
+            </div>
+            
+        </div>
+
+	    <p style="clear: both;"></p>
+
+    </div> <!-- header -->
+
+    <div id="Main">
+
+      {% comment %}<!--
+      <p class="breadcrumb">
+	{% block breadcrumblinks %}{% endblock %}
+      </p>
+      -->{% endcomment %}
+
+      {% if messages %}
+      <ul class="messagelist">{% for message in messages %}<li>{{ message|safe }}</li>{% endfor %}</ul>
+      {% endif %}
+
+      <div id="content-main">
+        {% block content %}    
+            <div id="LeftNav">
+            	{% block leftnav %}
+                    {% if current_person %}
+                    <div class="recent-updates">
+                        <ul>
+                             <li style="margin-bottom: 5px;"><a href="{% url profiles_edit_person_profile current_person.id %}" class="button-misc">Edit Profile</a></li>
+                             <li><a href="{% url profiles_add_organization %}" class="button-misc">Create New Group</a></li>
+                        </ul>
+                    </div><!-- recent-updates -->
+                    {% endif %}
+
+										<div style="font-size: 11pt; font-weight:bold;">Explore</div>
+                    <br/>
+                    
+                    <div class="recent-updates">
+                        <ul>
+                          <li><a href="{% url profiles.views.browse %}">Faculty</a></li>
+                          <li><a href="{% url profiles.views.browse_student %}">Students</a></li>
+                          <li><a href="{% url profiles.views.browse_organization %}">Groups</a></li>
+                        </ul>
+                    </div><!-- recent-updates -->
+                    
+                    <div style="font-size: 11pt; font-weight:bold;">Recently Updated</div>
+                    <br/><br/>
+                    
+                    <p>Faculty</p><hr />
+                    <p style="clear:both;" />
+                    
+                    <div class="recent-updates">
+                        <ul>
+                          {% for p in recently_updated.facultymember %}
+                          <li><a href="{% url profiles_view_person_profile p.id %}">{{ p|dmtruncate:30}}</a></li>
+                          {% endfor %}                                                             
+                        </ul>
+                    </div><!-- recent-updates -->
+                    
+                    <p>Students</p><hr />
+                    <p style="clear:both;" />
+                    
+                    <div class="recent-updates">
+                        <ul>
+                          {% for p in recently_updated.student %}
+                          <li><a href="{% url profiles_view_person_profile p.id %}">{{ p|dmtruncate:30}}</a></li>
+                          {% endfor %}                                                             
+                        </ul>
+                    </div><!-- recent-updates -->
+                    
+                    {% if recently_updated.organization %}
+                    <p>Groups</p><hr />
+                    <p style="clear:both;" />
+                    
+                    <div class="recent-updates">
+                        <ul>
+                          {% for p in recently_updated.organization %}
+                          <li><a href="{% url profiles_view_organization p.id %}">{{ p|dmtruncate:30}}</a></li>
+                          {% endfor %}                                                             
+                        </ul>
+                    </div><!-- recent-updates -->
+                    {% endif %}
+                    
+                    <p>Courses</p><hr />
+                    <p style="clear:both;" />
+
+                    <div class="recent-updates">
+                            <ul>
+                                {% for p in recently_updated.course %}
+                                <li><a href="{% url view-course p.id %}">{{ p.title|dmtruncate:30 }}</a></li>
+                                {% endfor %}
+                            </ul>
+                    </div><!-- recent-updates -->
+                                                          
+                    <p>Blog Posts</p><hr />
+                    <p style="clear:both;" />
+
+                    <div class="recent-updates">
+                            <ul>
+                                {% for post in recently_updated.posts %}
+                                <li><a href="{{ post.get_absolute_url }}">{{ post.title|dmtruncate:30 }}</a></li>
+                                {% endfor %}
+                            </ul>
+                    </div><!-- recent-updates -->
+                                                          
+                    
+                {% endblock %}
+            </div>
+            <div id="MainBody">
+            	{% block mainbody %}
+            	{% endblock %}
+            </div>
+      	{% endblock %} 
+      </div>
+
+    </div> <!-- Main -->
+    
+    <p style="clear:both;" />
+
+    <div id="Footer">
+    </div> <!-- Footer -->
+
+  </div> <!-- Container -->                    
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+{% extends "mobile/base.html" %}
+
+{% load thumbnail %}
+
+{% load datamyne_extras %}
+
+{% block title %}dataMYNE{% endblock %}
+
+{% block content %}
+    <div data-role="page" id="search" data-theme="d">
+    
+        <div data-role="header" data-position="fixed">
+            <h1>dataMYNE</h1>
+        </div>
+    
+        <div data-role="content">   
+	        <div data-role="fieldcontain">
+		        <form action="{% url mobile_haystack_search %}" method="get" data-ajax="false">
+		            <input id="id_q" type="search" name="q" value=""/>
+		            <input type="submit" value="SEARCH"/>
+		        </form>
+	        </div>
+	        <ul data-role="listview" data-inset="true">
+	        {% for result in page.object_list %}
+	            {% ifequal result.model_name "facultymember" %}
+	            <li>
+		            <a href="result-{{ result.model_name }}-{{ result.object.id }}">
+		            {% if result.object.photo %}<img src="{% thumbnail result.object.photo 100x100 crop %}"/>{% endif %}
+		            <h3>{{ result.object.first_name }} {{ result.object.last_name }}</h3>
+	                </a>
+                </li>  
+	            {% endifequal %}
+                {% ifequal result.model_name "student" %} 
+                <li>
+                    <a href="result-{{ result.model_name }}-{{ result.object.id }}">
+                    {% if result.object.photo %}<img src="{% thumbnail result.object.photo 100x100 crop %}"/>{% endif %}
+                    <h3>{{ result.object.first_name }} {{ result.object.last_name }}</h3>
+                    </a>
+                </li>  
+                {% endifequal %}
+                {% ifequal result.model_name "staff" %} 
+                <li>
+                    <a href="result-{{ result.model_name }}-{{ result.object.id }}">
+                    {% if result.object.photo %}<img src="{% thumbnail result.object.photo 100x100 crop %}"/>{% endif %}
+                    <h3>{{ result.object.first_name }} {{ result.object.last_name }}</h3>
+                    </a>
+                </li>  
+                {% endifequal %}
+                {% ifequal result.model_name "work" %} 
+                <li>
+                    <a href="result-{{ result.model_name }}-{{ result.object.id }}">
+                    {% if result.object.image %}<img src="{% thumbnail result.object.image 100x100 crop %}"/>{% endif %}
+                    <h3>{{ result.object.title }}</h3>
+                    </a>
+                </li>  
+                {% endifequal %}
+                {% ifequal result.model_name "course" %} 
+                <li><a href="result-{{ result.model_name }}-{{ result.object.id }}">{{ result.object.title }}</a></li>  
+                {% endifequal %}
+                {% ifequal result.model_name "committee" %} 
+                <li><a href="result-{{ result.model_name }}-{{ result.object.id }}">{{ result.object.title }}</a></li>  
+                {% endifequal %}
+                {% ifequal result.model_name "organization" %} 
+                <li><a href="result-{{ result.model_name }}-{{ result.object.id }}">{{ result.object.title }}</a></li>  
+                {% endifequal %}
+	        {% endfor %}
+	        </ul>
+        </div>
+    
+        <div data-role="footer" data-position="fixed" data-id="nav-footer">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="{% url mobile_home %}" rel="external" data-role="button" data-icon="home">Home</a></li>
+                    <li><a href="{% url mobile_haystack_search %}" rel="external" data-role="button" data-icon="search" class="ui-state-persist ui-btn-active">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    {% for result in page.object_list %}
+    
+    <div data-role="page" id="result-{{ result.model_name }}-{{ result.object.id }}" data-theme="d">
+    
+        <div data-role="header" data-position="fixed">
+            <h1>{% ifequal result.model_name "facultymember" %} 
+                {{ result.object.first_name }} {{ result.object.last_name }}
+                {% endifequal %}
+                {% ifequal result.model_name "student" %} 
+                {{ result.object.first_name }} {{ result.object.last_name }}
+                {% endifequal %}
+                {% ifequal result.model_name "staff" %} 
+                {{ result.object.first_name }} {{ result.object.last_name }}
+                {% endifequal %}
+                {% ifequal result.model_name "work" %} 
+                {{ result.object.title }}
+                {% endifequal %}
+                {% ifequal result.model_name "course" %} 
+                {{ result.object.title }}
+                {% endifequal %}
+                {% ifequal result.model_name "committee" %} 
+                {{ result.object.title }}
+                {% endifequal %}
+                {% ifequal result.model_name "organization" %} 
+                {{ result.object.title }}
+                {% endifequal %}</h1>
+        </div>
+    
+        <div data-role="content">   
+	        {% ifequal result.model_name "facultymember" %} 
+	        {{ result.object.bio }}
+	        {% endifequal %}
+	        {% ifequal result.model_name "student" %} 
+            {{ result.object.bio }}
+	        {% endifequal %}
+	        {% ifequal result.model_name "staff" %} 
+            {{ result.object.bio }}
+	        {% endifequal %}
+	        {% ifequal result.model_name "work" %} 
+            {{ result.object.description }}
+	        {% endifequal %}
+	        {% ifequal result.model_name "course" %} 
+            {{ result.object.description }}
+	        {% endifequal %}
+	        {% ifequal result.model_name "committee" %} 
+            {{ result.object.mandate }}
+	        {% endifequal %}
+	        {% ifequal result.model_name "organization" %} 
+            {{ result.object.description }}
+	        {% endifequal %}       
+        </div>
+    
+        <div data-role="footer" data-position="fixed" data-id="nav-footer">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="{% url mobile_home %}" rel="external" data-role="button" data-icon="home">Home</a></li>
+                    <li><a href="{% url mobile_haystack_search %}" rel="external" data-role="button" data-icon="search" class="ui-state-persist ui-btn-active">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+
+{% endblock %}

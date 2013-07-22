@@ -1,0 +1,9 @@
+{{ object.title }}
+{{ object.course_title }}
+{{ object.course.description }}      
+{{ object.syllabus_text }}
+{{ object.course.subject.fullname}}
+{{ object.course.subject.abbreviation}}           
+{{ object.course.learning_outcomes }}
+{{ object.crn }}
+{{ object.course.coursenumber }}     

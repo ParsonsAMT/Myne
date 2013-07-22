@@ -1,0 +1,12 @@
+{{ object.full_name  }}  
+{{ object.bio }}
+{% if object.expertise %}
+    {% for expertise in object.expertise.all %} 
+        {{ expertise }}
+    {% endfor %} 
+{% endif %}
+
+{% if object.tags %}
+    {{ object.tags }} 
+{% endif %}
+{{ object.bio }}

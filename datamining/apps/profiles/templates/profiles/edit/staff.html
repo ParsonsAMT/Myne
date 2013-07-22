@@ -1,0 +1,196 @@
+{% extends "base_profiles.html" %}
+
+{% load thumbnail %}
+{% load adminmedia %}
+
+{% block title %}Edit profile{% endblock %}
+
+{% block extrahead %}             
+  <script src="{{ MEDIA_URL }}js/edit_profile.js" type="text/javascript"></script>
+  <script src="{{ MEDIA_URL }}js/section-title.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var selected_areas = [ {{ selected_areas }} ]; // for edit_profile.js
+    $(function() {
+		$(".vDateField").datepicker({showOn:"both",
+									 showButtonPanel:true,
+									 changeMonth:true,
+									 changeYear:true,
+									 yearRange: '-40:+5'});
+	});
+  </script>
+  <script src="{{ MEDIA_URL }}js/jquery.autocomplete.js"></script>
+    <script src="{{ MEDIA_URL }}js/ajax-select.js"></script>
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/jquery.autocomplete.css" type="text/css" media="screen">
+  {{ staff_form.media }}
+  {{ presentation_formset.media }}
+{% endblock %}
+
+{% block sitesection %}profile{% endblock %}
+
+{% block breadcrumblinks %}
+<a href="{% url profiles_staff_profile staff.id %}">{{ staff.first_name }} {{ staff.last_name }}</a>
+Edit
+{% endblock %}
+
+{% block mainbody %}
+<form action="{% url profiles_edit_staff_profile staff.id %}" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+  {% if staff_form.errors or workurl_formset.errors or workimage_formset.errors %}
+  <div class="errorlist">
+    Please fix errors below.
+  </div>
+  {% endif %}
+<div id="ProfileTop">
+  <div id="photo">
+    <h2>Photo</h2>
+    {{ staff_form.photo.errors }}
+    {% if staff.photo %}
+    <img src="{% thumbnail staff.photo 240x240 crop %}" />
+    <p>
+    <input id="photo-clear_id" type="checkbox" name="photo-clear">
+    <label for="photo-clear_id">Clear</label>
+    </p>
+    <p>
+    Change:
+    {% else %}
+    <img src="{{ MEDIA_URL }}images/defaults/240px/DataMyne_Icon_Staff_240.jpg" width="240" height="240" />
+    <p>
+    {% endif %}
+    <input id="id_photo" type="file" name="photo">
+    </p>
+  </div>
+
+  <div class="basic-info">
+    <h2>Basic Info</h2>
+    {% if user.is_staff %}
+    {{ staff_form.first_name.errors }}
+    <p>
+      {{ staff_form.first_name.label_tag }}{{ staff_form.first_name }}
+    </p>
+    {{ staff_form.last_name.errors }}
+    <p>
+      {{ staff_form.last_name.label_tag }}{{ staff_form.last_name }}
+    </p>
+    {{ staff_form.n_number.errors }}
+    <p>
+      {{ staff_form.n_number.label_tag }}{{ staff_form.n_number }}
+    </p>
+    {{ staff_form.academic_title.errors }}
+    <p>
+      {{ staff_form.academic_title.label_tag }}{{ staff_form.academic_title }}
+    </p>
+    {{ staff_form.admin_title.errors }}
+    <p>
+      {{ staff_form.admin_title.label_tag }}{{ staff_form.admin_title }}
+    </p>
+    {{ staff_form.status.errors }}
+    <p>
+      {{ staff_form.status.label_tag }}{{ staff_form.status }}
+    </p>
+    {{ staff_form.division.errors }}
+    <p>
+      {{ staff_form.division.label_tag }}{{ staff_form.division }}
+    </p>
+    {% else %}
+    <p class="fullname">
+      {{ staff.first_name }} {{ staff.last_name }}
+    </p>
+    <div class="title">
+      <p>
+	{{ staff.get_academic_title_display }}
+      </p>
+      <p>
+	{% if staff.admin_title %}{{ staff.admin_title }}{% endif %}
+      </p>
+    </div>
+    <p class="org-info">
+      {% if org_info.department %}
+      {{ org_info.division }} > {{ org_info.school }} > {{ org_info.department }}
+      {% endif %}
+    </p>
+    {% endif %}
+
+    {% ifequal staff.status 'FT' %}
+    {{ staff_form.office.errors }}
+    <p>
+      {{ staff_form.office.label_tag }}{{ staff_form.office }}
+    </p>
+    {{ staff_form.phone.errors }}
+    <p>
+      {{ staff_form.phone.label_tag }}{{ staff_form.phone }}
+    </p>    
+    {% endifequal %}
+    {{ staff_form.expertise.errors }}
+    <p>
+        {{ staff_form.expertise.label_tag }}<br>{{ staff_form.expertise }}
+        <em>{{ staff_form.expertise.help_text }}</em>
+    </p>
+  </div>
+</div>
+
+  <div>
+    <h2>Bio</h2>
+    {{ staff_form.bio.errors }}
+    <p><em>{{ staff_form.bio.help_text }}</em></p>
+    {{ staff_form.bio }}    
+  </div>
+
+  <div>
+    <h2>Tags</h2>
+    {{ staff_form.tags.errors }}
+    <p><em>{{ staff_form.tags.help_text }}</em></p>
+    {{ staff_form.tags }}
+  </div>
+
+  <div class="curriculum-vitae">
+    <h2>CV</h2>
+    {{ staff_form.cv.errors }}
+    {% if staff.cv %}
+    <a href="{{ staff.cv.url }}" title="Curriculum Vitae" target="_blank">View your uploaded CV file</a>
+    <img src="{{ MEDIA_URL }}images/icon.new-window.png" alt="new window" title="new window"/>
+    {% else %}
+    <em>No curriculum vitae uploaded yet.</em>
+    {% endif %}
+    <!--    <p><a href="#">Change file</a></p> -->
+    {{ staff_form.cv }}
+
+    {% if staff.generated_cv %}
+    <p>
+      <a href="{% url datamining.apps.cv.views.view staff.id %}">View your generated CV PDF</a>
+    </p>
+    <p>
+      <a href="{% url datamining.apps.cv.views.edit staff.id %}">Edit your generated CV PDF</a>
+    </p>
+    <p>
+      <a href="{% url datamining.apps.cv.views.delete staff.id %}">Delete your generated CV PDF</a>
+    </p>
+    {% else %}
+    <p>
+      You can also <a href="{% url datamining.apps.cv.views.edit staff.id %}">create and manage a CV PDF by clicking here</a>.
+    </p>
+    {% endif %}
+
+    {% if staff.cv or staff.generated_cv %}
+    <p>
+      You can <a href="{% url datamining.apps.cv.views.delete staff.id %}">delete your CVs</a>, if you do not wish to present them.
+    </p>
+    {% endif %}
+
+    {% if staff.cv and staff.generated_cv %}
+    <p>
+      You have both an uploaded CV and a generated CV present. Please
+      select which you would like to use:
+    </p>
+    {{ staff_form.use_which_cv }}
+{#    <input type="radio" name="use_which_cv" value="u" {% ifequal staff_form.use_which_cv.data 'u' %}checked="checked"{% endifequal %} />Uploaded    <input type="radio" name="use_which_cv" value="g" {% ifequal staff_form.use_which_cv.data 'g' %}checked="checked"{% endifequal %} />Generated   #}
+    {% endif %}
+    <p>
+      Your CV may be viewed by {{ staff_form.allow_cv_viewing_by }}.
+    </p>
+    <p style="clear: both;"/>
+  </div>
+
+  <input class="submit" type="submit" value="Submit" />
+</form>
+{% endblock %}
+

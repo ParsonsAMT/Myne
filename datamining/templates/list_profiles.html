@@ -1,0 +1,51 @@
+{% extends "base_profiles.html" %}
+
+{% block title %}Full Faculty List{% endblock %}
+
+{% block sitesection %}faculty-list{% endblock %}
+
+{% block breadcrumblinks %}
+Full Faculty List
+{% endblock %}
+
+{% block mainbody %}   
+  {% if tag %}
+  <h2>Faculty tagged '{{ tag }}'</h2>
+  {% else %}
+  <h2>Faculty List</h2>
+  {% endif %}
+
+  {% if faculty_by_expertise %}
+  <h2>tagged by expertise</h2>
+  <div style="padding-bottom: 30px;">
+  {% for fm in faculty_by_expertise %}
+  <p>
+    <a href="{% url profiles.views.view_profile fm.id %}">{{ fm.first_name }} {{ fm.last_name }}</a>
+    {% if user.is_staff %}
+    [<a href="{% url profiles.views.edit_profile fm.id %}">edit</a>]
+    {% if not fm.user_account %}
+    [<a href="{% url profiles.views.activate fm.id %}">activate</a>]
+    {% endif %}
+    {% endif %}
+  </p>
+  {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if faculty_by_interest %}
+  <h2>tagged by interest</h2>
+  <div style="padding-bottom: 30px;">
+  {% for fm in faculty_by_interest %}
+  <p>
+    <a href="{% url profiles.views.view_profile fm.id %}">{{ fm.first_name }} {{ fm.last_name }}</a>
+    {% if user.is_staff %}
+    [<a href="{% url profiles.views.edit_profile fm.id %}">edit</a>]
+    {% if not fm.user_account %}
+    [<a href="{% url profiles.views.activate fm.id %}">activate</a>]
+    {% endif %}
+    {% endif %}
+  </p>
+  {% endfor %}
+  </div>
+  {% endif %}
+{% endblock %}

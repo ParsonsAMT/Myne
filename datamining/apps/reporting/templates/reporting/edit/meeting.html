@@ -1,0 +1,122 @@
+{% extends "base_profiles.html" %}
+{% load thumbnail %}
+{% load adminmedia %}
+{% block title %}
+	{% if meeting %}
+    Edit {{ meeting.title }}
+	{% else %}
+    Create a new meeting
+	{% endif %}
+{% endblock %}
+
+{% block extrahead %}   
+{{ block.super }}          
+  <script src="{{ MEDIA_URL }}js/jquery.autocomplete.js"></script>
+  <script src="{{ MEDIA_URL }}js/ajax-select.js"></script>
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/jquery.autocomplete.css" type="text/css" media="screen">
+  <script src="{{ MEDIA_URL }}js/jquery.ui.timepicker.js"></script>
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/jquery-ui-timepicker.css" type="text/css" media="screen">
+  <script type="text/javascript">
+    $(function() {
+        $(".vDateField").datepicker({showOn:"both",
+                                     dateFormat: 'yy-mm-dd',
+                                     showButtonPanel:true,
+                                     changeMonth:true,
+                                     changeYear:true,
+                                     yearRange: '-40:+5'});
+    });
+    $(function() {
+        $(".vTimeField").timepicker({});
+    });
+  </script>
+{% endblock %}
+
+{% block sitesection %}profile{% endblock %}
+
+{% block breadcrumblinks %}
+{% if meeting %}
+Edit {{ meeting.title }}
+{% else %}
+Create a new meeting
+{% endif %}
+{% endblock %}
+
+{% block mainbody %}
+
+{% if meeting %}
+<form action="{% url reporting_edit_meeting meeting.id %}" method="POST" enctype="multipart/form-data">
+{% else %}
+<form action="{% url reporting_add_meeting model_name object_id  %}" method="POST" enctype="multipart/form-data">
+{% endif %}
+
+{% csrf_token %}
+    {% if meeting_form.errors %}
+  <div class="errorlist">
+    Please fix errors below.
+    {% for error in meeting_form.errors %}
+    {{ error }} <br/>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+    <div id="ProfileTop">
+        {% if meeting %}
+        <h1>Edit {{ meeting.content_object }} Meeting</h1>
+        {% else %}
+        <h1>Create New Meeting</h1>
+        {% endif %}
+    
+    <div class="basic-info">
+        <h2>Basic Info</h2>
+      {{ meeting_form.start_time.errors }}
+      <p>
+        <h4>Start</h4>
+        {{ meeting_form.start_time }}
+      </p>
+      {{ meeting_form.end_time.errors }}
+      <p>
+        <h4>End</h4>
+        {{ meeting_form.end_time }}
+      </p>
+    </div>
+  </div>
+  
+  <div>
+    <h4>Location</h4>
+    <p>
+      {{ meeting_form.location.errors }}
+      {{ meeting_form.location }}
+    </p>
+
+    <h4>Agenda</h4>
+    {{ meeting_form.agenda.errors }}
+    {{ meeting_form.agenda }}
+  </div>
+  
+  <div>
+    <h4>Minutes</h4>
+    {{ meeting_form.minutes.errors }}
+        {{ meeting_form.minutes }}
+  </div>
+  
+  <div>
+    <h4>Invited</h4>
+    {{ invitees|join:", " }}
+  </div>
+  
+  <div>
+    <h4>Invite New Attendees</h4>
+    {{ invitation_form.errors }}
+    {{ invitation_form.invites }}
+    <h4>Message (optional)</h4>
+    {{ invitation_form.message }}
+  </div>
+
+{% if meeting %}
+  <input class="submit" type="submit" value="Update" />
+{% else %}
+  <input class="submit" type="submit" value="Create" />
+{% endif %}
+
+</form>
+{% endblock %}

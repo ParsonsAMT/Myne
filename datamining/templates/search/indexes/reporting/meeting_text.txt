@@ -1,0 +1,2 @@
+{{ object.agenda }}
+{{ object.content_object.title }}

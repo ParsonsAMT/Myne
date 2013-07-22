@@ -1,0 +1,116 @@
+{% extends "base_profiles.html" %}
+
+{% block title %}Edit profile{% endblock %}
+
+{% block extrahead %}             
+  <script src="{{ MEDIA_URL }}js/edit_profile.js" type="text/javascript"></script>
+  <script src="{{ MEDIA_URL }}js/section-title.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var selected_areas = [ {{ selected_areas }} ]; // for edit_profile.js
+  </script>
+  <script src="{{ MEDIA_URL }}js/jquery.autocomplete.js"></script>
+	<script src="{{ MEDIA_URL }}js/ajax-select.js"></script>
+  <link rel="stylesheet" href="{{ MEDIA_URL }}css/jquery.autocomplete.css" type="text/css" media="screen">
+{% endblock %}
+
+{% block sitesection %}profile{% endblock %}
+
+{% block breadcrumblinks %}
+<a href="{% url profiles.views.view_course course.id %}">{{ course.title }}</a>
+Edit
+{% endblock %}
+
+{% block mainbody %}
+<form action="{% url profiles.views.edit_course_profile course.id %}" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+	{% if course_form.errors %}
+  <div class="errorlist">
+    Please fix errors below.
+    {{ course_form.errors }}
+  </div>
+  {% endif %}
+  
+  <div id="CourseProfile">
+  	<h1>Edit Course</h1>
+    <h2>Basic Info</h2>
+    {% if user.is_staff %}
+    {{ course_form.title.errors }}
+    <p>
+      <label for="id_title">Course Name</label> {{ course_form.title }}
+    </p>
+    {{ course_form.coursenumber.errors }}
+    <p>
+      <label for="id_coursenumber">Course Number</label> {{ course_form.coursenumber }}
+    </p>
+    {{ course_form.subject.errors }}
+    <p>
+      {{ course_form.subject.label_tag }} {{ course_form.subject }}
+    </p>
+    {% else %}
+    <p>
+      <label for="id_title">Course Name</label> {{ course.title }}
+    </p>
+    <p>
+      <label for="id_coursenumber">Course Number</label> {{ course.coursenumber }}
+    </p>
+    <p>
+      {{ course.subject.label_tag }} {{ course.subject }}
+    </p>
+    {% endif %}
+    
+    {{ course_form.prerequisites.errors }}
+    <p>
+      {{ course_form.prerequisites.label_tag }} {{ course_form.prerequisites }}
+    </p>
+    {{ course_form.status.errors }}
+    <p>
+      {{ course_form.status.label_tag }} {{ course_form.status }}
+    </p>
+    <p style="clear: both;"/>
+    {{ course_form.levels.errors }}
+    <p>
+      {{ course_form.levels.label_tag }} {{ course_form.levels }}
+    </p>
+    <p style="clear: both;"/>
+    {{ course_form.type.errors }}
+    <p>
+      {{ course_form.type.label_tag }} {{ course_form.type }}
+    </p>
+    <p style="clear: both;"/>
+    {{ course_form.format.errors }}
+    <p>
+      {{ course_form.format.label_tag }} {{ course_form.format }}
+    </p>
+    <p style="clear: both;"/>
+    {{ course_form.method.errors }}
+    <p>
+      {{ course_form.method.label_tag }} {{ course_form.method }}
+    </p>
+    <p style="clear: both;"/>
+    {{ course_form.tags.errors }}
+    <p>
+      {{ course_form.tags.label_tag }} {{ course_form.tags }}
+    </p>
+    
+    {{ course_form.description.errors }}
+    <p>
+      {{ course_form.description.label_tag }} {{ course_form.description }}
+    </p>
+    {{ course_form.learning_outcomes.errors }}
+    <p>
+      {{ course_form.learning_outcomes.label_tag }} {{ course_form.learning_outcomes }}
+    </p>
+    {{ course_form.timeline.errors }}
+    <p>
+      {{ course_form.timeline.label_tag }} {{ course_form.timeline }}
+    </p>
+    {{ course_form.projects.errors }}
+    <p>
+      {{ course_form.projects.label_tag }} {{ course_form.projects }}
+    </p>
+    
+  </div>
+
+  <input class="submit" type="submit" value="Submit" />
+</form>
+{% endblock %}

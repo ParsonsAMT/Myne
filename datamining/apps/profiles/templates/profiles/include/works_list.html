@@ -1,0 +1,65 @@
+{% load thumbnail %}
+
+{% load datamyne_extras %}
+
+		<script type="text/javascript">                                  
+	        $(function() {      
+	            $('.button-add-work a').button();                                                                     
+	        })                                       
+		    $(function() {      
+		        $('.buttons-work').buttonset();                                                                     
+		    })                                       
+		</script>     
+
+      <h2>Projects:</h2>
+      <div id="workimages-narrow">
+      {% if edittable %}
+      <div class="button-add-work"><a href="{% url profiles_add_work %}">Add Work</a></div>
+      {% endif %}
+      {% if work %}
+      <table>
+      {% for work in work %}
+          {% if work.content_object.image or work.content_object.title or work.content_object.url %}          
+          <tr>
+              <td class="thumbnail">
+	              <a href="{% url profiles_view_work work.content_object.id %}">{% spaceless %}
+	              {% if work.content_object.image %}
+	                  <img src="{% thumbnail work.content_object.image 100x100 crop %}" width="100" height="100" />
+	              {% else %}
+	                  <img src="{{ MEDIA_URL }}images/defaults/100px/DataMyne_Icon_Work_100.jpg" width="100" height="100" />
+	              {% endif %}
+	              {% endspaceless %}</a>
+              </td>
+              <td class="info">
+                  {% if work.content_object.title %}
+                  <p style="font-weight:bold;"><a href="{% url profiles_view_work work.content_object.id %}">{{ work.content_object.title|truncatewords:4 }}</a></p>
+                  {% else %}
+                  <p style="font-weight:bold;"><a href="{{ work.content_object.url }}">{{work.content_object.url|urlizetrunc:30}}</a></p>
+                  {% endif %}
+                  
+                  {% if work.content_object.type.all %}
+                    {% for t in work.content_object.type.all %}
+                        {% ifnotequal t.name "other" %}
+                            <p> {{ t }} </p>
+                        {% endifnotequal %}
+                    {% endfor %}
+                  {% endif %}
+                  {% if work.content_object.description %}
+                  <p> {{ work.content_object.description|truncatesmart:50 }} </p>
+                  {% endif %}
+                  {% if work.content_object.year %}
+                  <p> {{ work.content_object.year }} </p>
+                  {% endif %}
+                  {% if edittable and work.content_object %}
+                  <div class="buttons-work"><a href="{% url profiles_edit_work work.content_object.id %}" class="edit-work">Edit</a>
+                  <a href="{% url profiles_delete_work work.content_object.id person.id %}" class="delete-work">Delete</a></div>
+                  {% endif %}
+              </td>
+           </tr>
+           {% endif %}
+      {% endfor %}
+      </table>
+      {% else %}
+      <em>No work has been posted yet.</em>
+      {% endif %}
+      </div>

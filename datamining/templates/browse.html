@@ -1,0 +1,67 @@
+{% extends "base_profiles.html" %}
+
+{% load thumbnail %}
+
+{% load datamyne_extras %}
+
+{% block title %} Explore {% endblock %}
+
+{% block sitesection %}faculty-list{% endblock %}
+
+{% block breadcrumblinks %}
+Explore
+{% endblock %}
+
+{% block mainbody %}
+
+	<h2>{{ page_title }} List</h2>
+
+    {% if page.paginator %}
+      <div class="pagination">
+        [ {% for p in page.paginator.pages %}
+          <a href="alpha/?page={{ p.number }}">{{ p }}</a>
+        {% endfor %} ]
+      </div>
+    {% endif %}
+    
+		<div id="workimages">
+    	{% for object,img in images %}
+			<div class="thumbnail">
+			{% if object.photo %}
+	        <a href="{% url profiles_view_person_profile object.id %}" alt="{{ object }}" title="{{ object }}">
+	        	{% if img %}<img src="{% thumbnail img 100x100 crop %}"/>{% endif %}
+	        </a>
+			{% endif %}
+			{% if object.image %}
+	        <a href="{% url profiles_view_work object.id %}" alt="{{ object.title }}" title="{{ object.title }}">
+	        	{% if img %}<img src="{% thumbnail img 100x100 crop %}"/>{% endif %}
+	        </a>
+			{% endif %}
+      {% if object.logo %}
+	        <a href="{% url profiles_view_organization object.id %}" alt="{{ object.title }}" title="{{ object.title }}">
+	        	{% if img %}<img src="{% thumbnail img 100x100 crop %}"/>{% endif %}
+	        </a>
+			{% endif %}
+    	</div>
+    	{% endfor %}
+
+			<div class="imagetitle">
+				{% for object,img in images %}
+        <div class="singleimagetitle">
+				{% if object.photo %}
+	    	    	{{ object|truncatesmart:15 }}
+				{% else %}
+        	{% if object.logo %}
+          		{{ object.title|truncatesmart:15 }}
+          {% else %}
+						{% if object.affiliations.all %}
+		    	  	  	{{ object.affiliations.all.0.person|truncatesmart:15 }}
+						{% endif %}
+          {% endif %}
+				{% endif %}
+				</div>
+            {% endfor %}
+			</div>
+    </div>
+
+{% endblock %}

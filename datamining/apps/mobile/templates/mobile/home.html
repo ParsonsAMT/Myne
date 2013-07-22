@@ -1,0 +1,58 @@
+{% extends "mobile/base.html" %}
+
+{% load thumbnail %}
+
+{% load datamyne_extras %}
+
+{% block title %}dataMYNE{% endblock %}
+
+{% block content %}
+    <div data-role="page" id="home" data-theme="d">
+    
+        <div data-role="header" data-position="fixed">
+            <h1>dataMYNE</h1>
+        </div>
+    
+        <div data-role="content">
+            {% for object,img in images %}
+	        <div style="width: 100px; height: 138px; float: left;">
+		        <div class="thumbnail" style="border:1px solid #000; width: 100px; height: 100px;">
+		        {% if object.photo %}
+		            <a href="{% url profiles_view_person_profile object.id %}" alt="{{ object }}" title="{{ object }}">
+		                {% if img %}<img src="{% thumbnail img 100x100 crop %}"/>{% endif %}
+		            </a>
+		            <!--a href="{% url view-profile object.id %}">{{ object }}</a-->
+		        {% endif %}
+		        {% if object.image %}
+		            <a href="{% url profiles_view_work object.id %}" alt="{{ object.title }}" title="{{ object.title }}">
+		                {% if img %}<img src="{% thumbnail img 100x100 crop %}"/>{% endif %}
+		            </a>
+		            {% if object.title %}       
+		                <!--a href="{% url profiles_view_work object.id %}">{{ object.title }}</a-->
+		            {% endif %}
+		        {% endif %}
+		        </div>
+                <div class="singleimagetitle" style="border:1px solid #000; width: 100px; height: 30px;">
+                    {% if object.photo %}
+                            {{ object|truncatesmart:15 }}
+                    {% else %}
+                        {% if object.affiliations.all %}
+                                {{ object.affiliations.all.0.person|truncatesmart:15 }}
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+	        {% endfor %}
+        </div>
+    
+        <div data-role="footer" data-position="fixed" data-id="nav-footer">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="{% url mobile_home %}" rel="external" data-role="button" data-icon="home" class="ui-state-persist ui-btn-active">Home</a></li>
+                    <li><a href="{% url mobile_haystack_search %}" rel="external" data-role="button" data-icon="search">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

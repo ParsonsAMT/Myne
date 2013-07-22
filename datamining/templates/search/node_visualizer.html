@@ -1,0 +1,52 @@
+{% extends "search/search.html" %}
+                      
+{% block searchtabs %}
+<div id="view-as">
+      <input type="radio" id="radio1" name="radio"  /><label for="radio1">List</label>
+      <input type="radio" id="radio3"  name="radio" checked="checked"/><label for="radio3">Visualize</label>
+</div>                 
+{% endblock %} 
+
+{% block searchresults %} 
+<h3>Results</h3>
+
+<div style="margin-top: 1em; border: 1px solid #CCC; padding: 1em; text-align: center;">
+<object 
+  classid="java:prefuse.demos.applets.DataMyneRadialViewDemoApplet.class"
+  type="application/x-java-applet"
+  width="400" 
+  height="600"
+    pluginspage="http://java.sun.com/j2se/1.5.0/download.html"
+  >
+    <param name="archive" value="{ MEDIA_URL}}java/visualize.jar">
+    <param name="mayscript" value="true" /> 
+	<param name="scriptable" value="true" />
+	<param name="image" value="{{MEDIA_URL}}images/ajax-loader-big.gif" />
+	<param name="boxmessage" value="Loading..." />
+	<param name="boxbgcolor" value="#FFFFFF" />
+	<param name="test_string" value="outer" />
+
+    <comment>
+      <embed archive="{{ MEDIA_URL}}java/visualize.jar"
+        <noembed>
+          	<p>
+
+				<strong>
+					This browser does not have a Java Plug-in.
+					<br />
+					<a href="http://java.sun.com/products/plugin/downloads/index.html" title="Download Java Plug-in">
+						Get the latest Java Plug-in here.
+					</a>
+
+				</strong>
+			</p>
+		
+        </noembed>
+      </embed>
+    </comment> 
+    
+  </object>
+</div>
+{% endblock %}
+
+

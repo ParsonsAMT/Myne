@@ -1,0 +1,45 @@
+{% extends "base_profiles.html" %}
+
+{% load tagging_tags %}
+
+{% load thumbnail %}
+{% load inlines %}
+
+{% block title %}{{ object.title }}{% endblock %}
+
+{% block extrahead %}
+<script src="{{ MEDIA_URL }}js/jquery-1.3.2.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block sitesection %}{% endblock %}
+
+{% block breadcrumblinks %}
+{{ object.title }}
+{% endblock %}
+
+{% block mainbody %}
+<div id="CourseProfile" class="Blog">
+  <h1>{{ object.title }}</h1>
+
+  <h2>by {{ object.author.person_profile.full_name }}</h2>
+  <h3>posted {{ object.created|timesince }} ago</h3>
+
+  <div class="moreinfoleft">
+    <div class="desc">
+    {{ object.body|render_inlines|urlize|linebreaks|safe }}
+    </div>
+  </div>
+  
+  <div class="moreinforight">
+    <h2>Tags</h2>
+    <div class="tags">  
+      {% tags_for_object object as tag_list %}
+      {% for t in tag_list %}
+        <span class="tag-{{t.font_size}}"><a href="{% url haystack_search %}?q={{ t.name }}">{{t}}</a>{% if not forloop.last %}, {% endif %}</span>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+

@@ -1,0 +1,130 @@
+{% extends "base_profiles.html" %}
+
+{% load tagging_tags %}
+
+{% load thumbnail %}
+
+{% load adminmedia admin_list i18n %}
+
+{% block title %}Program {{ program.fullname }}{% endblock %}
+
+{% block sitesection %}{% endblock %}
+
+{% block breadcrumblinks %}
+{{ program.fullname }}
+{% endblock %}
+
+{% block mainbody %}
+<div id="AosProfile">
+	{% ifnotequal user.id None %}
+	{% if edittable %}
+	<a href="{% url profiles_edit_program program.id %}" class="button-misc">Edit Program</a></li>
+	{% endif %}	
+	{% endifnotequal %}	
+	
+  <h1>{{ program.fullname }}</h1>
+
+  <div class="basicinfo">
+  {% if program.school %} {{ program.school }} {% endif %}
+  {% if program.department %} {{ program.department }} {% endif %}
+  </div>
+  
+  {% if program.director %}
+  <div class="icon">
+    <img src="{% thumbnail program.director.photo 100x100 crop %}" />
+  </div>
+  <div class="icon-info">
+    <p class="fullname">
+      <a href="{% url profiles_view_person_profile program.director.id %}">
+        {{ program.director.first_name }} {{ program.director.last_name }}
+      </a>
+    </p>
+    <p>Program Director</p>
+    <p>
+      <a href="mailto:{{ program.director.user_account.username }}@{{ SCHOOL_URL }}" title="email">
+          {{ program.director.user_account.username }}@{{ SCHOOL_URL }}
+      </a>
+    </p>
+  </div>
+  {% endif %}
+  
+  {% if program.advisors %}
+  <div class="icon">
+    <img src="{% thumbnail program.advisors.photo 100x100 crop %}" />
+  </div>
+  <div class="icon-info">
+    <p class="fullname">
+      <a href="{% url profiles_view_person_profile program.advisors.id %}">
+        {{ program.advisors.first_name }} {{ program.advisors.last_name }}
+      </a>
+    </p>
+    <p>Program Advisor</p>
+    <p>
+      <a href="mailto:{{ program.advisors.user_account.username }}@{{ SCHOOL_URL }}" title="email">
+          {{ program.advisors.user_account.username }}@{{ SCHOOL_URL }}
+      </a>
+    </p>
+  </div>
+  {% endif %}
+  
+  <div style="clear:both"></div>
+  
+  <div>
+  	<h2>Description</h2>
+    <p>{{ program.description }}</p>
+  </div>
+  
+  <div class="moreinfoleft">
+  {% if program.facultylist.all %}
+  	<h2>Faculty</h2>
+    <div class="faculty">
+    	{% for p in program.facultylist.all %}
+      	<p>
+          <a href="{% url profiles_view_person_profile p.id %}">
+          {{ p.first_name }} {{ p.last_name }}
+          </a>
+        </p>
+      {% endfor%}
+    </div>
+  {% endif %}
+  
+  {% if program.website_url %}
+  	<h2>Website</h2>
+    <div class="website">
+    	<a href="{{ program.website_url }}">{{ program.website_url }}</a>
+    </div>
+  {% endif %}
+  
+  {% if program.curriculum_url %}
+  	<h2>Curriculum</h2>
+    <div class="curriculum">
+    	<a href="{{ program.curriculum_url }}">{{ program.curriculum_url }}</a>
+    </div>
+  {% endif %}
+  
+  {% if program.groups.all %}
+  	<h2>Groups</h2>
+    <div class="groups">
+    	{% for group in program.groups.all %}
+      	<p><a href="{% url profiles_view_organization group.id %}">{{ group.title }}</a></p>
+      {% endfor%}
+    </div>
+  {% endif %}
+  
+  {% if program.courses_url %}
+  	<h2>Course Visualization</h2>
+  {% endif %}
+  </div>
+  
+  <div class="moreinforight">
+  {% if program.works.all %}  
+  	<h2>Work Images</h2>
+    <br />
+    {% for work in program.works.all %}
+    	<a href="{% url profiles_view_work work.id %}"><img src="{% thumbnail work.image 100x100 crop %}" /></a>
+    {% endfor%}
+  {% endif %}
+  </div>
+  
+</div>
+{% endblock %}

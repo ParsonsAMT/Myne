@@ -1,0 +1,38 @@
+{% extends "base_profiles.html" %}
+
+{% load tagging_tags %}
+
+{% load thumbnail %}
+
+{% block title %}Profile for {{ person.first_name }} {{ person.last_name }}{% endblock %}
+
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/cv.css" />
+<style>
+  form {vertical-align:top;}
+</style>
+{% endblock %}
+
+{% block breadcrumblinks %}
+delete {{ person.first_name }} {{ person.last_name }}'s CV
+{% endblock %}
+
+{% block sitesection %}delete cv{% endblock %}
+
+{% block mainbody %}
+
+
+<div id="ProfileTop">
+<h1>Delete Your CVs</h1>
+
+  <form method="POST" action="{% url datamining.apps.cv.views.delete person.id %}" method="POST" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p style="margin: 2em 0;"><strong>You are about to delete all your CVs on DataMYNE.  Are you sure you want to do this?</strong>
+    </p>
+    <input type="submit" value="Yes, I'm sure" class="ui-button ui-widget ui-state-default ui-corner-all"/>
+  </form>
+</div>
+
+<p style="clear: both;">
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends "base_profiles.html" %}
+
+{% load tagging_tags %}
+
+{% load thumbnail %}
+
+{% load adminmedia admin_list i18n %}
+
+{% block title %}
+Committees | {{ committee.title }}
+{% endblock %}
+
+{% block extrahead %}
+{{ block.super }}     
+{% endblock %}
+
+{% block sitesection %}{% endblock %}
+
+{% block breadcrumblinks %}
+{{ title }}
+{% endblock %}
+
+{% block mainbody %}
+<div id="SectionProfile">
+  <div id="staff-links">
+    {% if edittable or can_invite %}
+      <div class="button-edit-profile">
+          {% spaceless %}
+            {% if edittable %}<a href="{% url reporting_edit_committee committee.id %}">Edit</a>{% endif %}
+          {% endspaceless %}
+      </div>
+    {% endif %}
+  </div>
+  
+  <h1>{% spaceless %}
+    {{ committee.title }}
+  {% endspaceless %}</h1>
+  {% if committee.parent %}
+  <h2>{% spaceless %}
+    subcommittee of <a href="{{ committee.parent.get_absolute_url }}">{{ committee.parent.title }}</a>
+  {% endspaceless %}</h2>
+  {% endif %}
+
+  <div class="moreinfoleft">
+    {% if committee.mandate %}
+      <h3>Mandate</h3>
+      <div class="desc">
+        {{ committee.mandate }}
+      </div>  
+    {% endif %}    
+    {% if current_chairpersons %}
+	    <h3>Chairs</h3>
+	    <ul>
+		{% for member in current_chairpersons %}
+			<li><a href="{% url profiles_view_person_profile member.person.id %}">{{ member.person }}</a></li>
+		{% endfor %}
+		</ul>  
+    {% endif %}    
+
+    {% if current_members %}
+        <h3>Member</h3>
+        <ul>
+        {% for member in current_members %}
+            <li><a href="{% url profiles_view_person_profile member.person.id %}">{{ member.person }}</a></li>
+        {% endfor %}
+        </ul>  
+    {% endif %}    
+    
+	{% if invitations %}
+	<div>
+	  <h4>Invitations</h4>
+	  <ul>
+	  {% for invitation in invitations %}
+	    <li>{{ invitation.host }} invited you to this committee. <a href="{% url profiles_accept_invitation invitation.slug %}">Join now!</a> (or <a href="{% url profiles_decline_invitation invitation.slug %}">ignore</a>)</li>
+	  {% endfor %}
+	  </ul>
+	</div>
+	{% endif %}
+
+  </div>
+  
+  <div class="moreinforight">
+    {# FUTURE: there is syntax in Django 1.3 that helps get rid of nested with blocks #}
+    {% with 'committee' as model_name %}
+    {% with committee as container %}
+    {% include 'reporting/include/meetings_list.html' %}
+    {% endwith %}
+    {% endwith %}
+    
+    {% include "profiles/include/mlt_list.html" %}
+
+  </div>
+
+</div>
+{% endblock %}
+

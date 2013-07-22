@@ -1,0 +1,118 @@
+/* @override http://127.0.0.1:8000/media/css/search.css */
+#search-filter {
+	margin:  1em 0 3em;
+}
+
+#Main h2#search-results-title {
+	color:  #000;
+	margin-bottom:  1em;
+}             
+
+#MainBody form {
+	margin: 4em 0;
+}                        
+
+
+#Main h2#search-results-title span {
+	color:  #336699;
+}
+
+#view-as {
+	margin-top:  -0.5em;
+	float:  right;
+}
+    
+    
+#Main h3 {              
+    font-weight: normal !important;
+    margin: 1em 0;
+}             
+
+
+/* @group Facet Filter */
+
+.facets {        
+    margin:12px 0px;
+}
+.facets ul.linkType {
+    margin:0em 0em 1em; padding:0;
+}
+.facets ul.linkType li {
+    margin:0 12px; padding:0;
+}
+.facets ul.linkType li a {           
+    margin:0; padding:0 0 0 0.5em;
+}
+.facets ul.linkType li .active,
+.facets ul.linkType li .active:hover
+{                       
+    font-weight:bold;
+    cursor:default;
+ }
+.facets ul.linkType li .facet0 { 
+    padding:0 0 0 0.5em; 
+ } 
+.facets ul.linkType li .facet1 { 
+    padding:0 0 0 1.5em;
+} 
+.facets ul.linkType li .facet2 { 
+    padding:0 0 0 2.5em;
+} 
+.facets h3 { margin:0; padding:0 0 3px; font-weight:bold; font-size:13px; }
+
+/* @end */
+
+
+/* @group List View */
+
+table.searchResults td{   
+    background: #EEE;
+	border: 1px solid #CCC; 
+	padding: 4px;     
+	width: 25%;
+}                          
+table.searchResults  a {
+    display: block;
+    	color:#0797c4;
+}                     
+table.searchResults a:hover {
+    background: #DDD;
+    
+	color:#ffa800;
+}      
+
+table.searchResults th {
+    border: 1px solid #DDD; 
+    padding: 4px;
+    background: #0797c4;
+    color: #FFF;
+    vertical-align: middle;
+    text-align: left;
+}
+table.searchResults {    
+    font-size: 7.5pt;
+	margin: 1em 0;
+}
+                    
+
+
+.search-pager {
+    margin: 1em 0;  
+    padding: 4px;
+    background: #CCF;
+}  
+/* @end */         
+
+
+/* @group Icon View */
+
+
+
+/* @end */
+
+/* @group Node View */
+
+
+
+/* @end */
+

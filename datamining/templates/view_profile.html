@@ -1,0 +1,230 @@
+{% extends "base_profiles.html" %}
+
+{% load tagging_tags %}
+
+{% load thumbnail %}
+
+{% block title %}Profile for {{ faculty.first_name }} {{ faculty.last_name }}{% endblock %}
+
+{% block sitesection %}profile{% endblock %}
+
+{% block breadcrumblinks %}
+{{ faculty.first_name }} {{ faculty.last_name }}
+{% endblock %}
+
+{% block mainbody %}
+<div id="ProfileTop">
+    <div id="staff-links">
+      {% if edittable %}
+      <div class="button-edit-profile">
+          <a href="{% url profiles_edit_profile faculty.id %}">Edit profile</a>
+      </div>
+      {% endif %}
+    </div>
+    
+    <div id="photo">
+    {% if faculty.photo %}
+      <img src="{% thumbnail faculty.photo 240x240 crop %}" />
+    {% else %}      
+      <img src="{{ MEDIA_URL }}images/defaults/240px/DataMyne_Icon_Faculty_240.jpg" width="240" height="240" />
+    {% endif %}      
+    </div>
+    
+    <div class="basic-info">
+      <p class="fullname">
+        {{ faculty.first_name }} {{ faculty.last_name }}
+      </p>
+      <div class="title">
+        <p>
+          {{ faculty.get_academic_title_display }}
+        </p>
+        <p>
+          {% if faculty.admin_title %}{{ faculty.admin_title }}{% endif %}
+        </p>
+      </div>
+      <p class="org-info">
+        {% if faculty.homedivision %}
+        <p>{{ faculty.homedivision.name }}</p>
+        {% endif %}
+        {% if faculty.homeschool %}
+        <p>{{ faculty.homeschool.fullname }}</p>
+        {% endif %}
+        {% if faculty.homedepartment %}
+        <p>{{ faculty.homedepartment.fullname }}</p>
+        {% endif %}
+        {% if faculty.homeprogram %}
+        <p>{{ faculty.homeprogram.fullname }}</p>
+        {% endif %}
+      </p>
+      {% ifequal faculty.status 'FT' %}
+      {% if faculty.office %}
+      <p>
+        {{ faculty.office }}
+      </p>
+      {% endif %}
+      {% if faculty.phone %}
+      <p>
+        {{ faculty.phone }}
+      </p>
+      {% endif %}
+      {% endifequal %}
+      {% if faculty.user_account %}
+      <p>
+        <a href="mailto:{{ faculty.user_account.username }}@{{ SCHOOL_URL }}" title="email">
+          {{ faculty.user_account.username }}@{{ SCHOOL_URL }}
+        </a>
+      </p>
+      {% endif %}
+    
+      <h2>Areas of expertise:</h2>
+      {% if faculty.expertise.all %}
+      {% for e in faculty.expertise.all %}
+      <a href="{% url list-tagged-profiles e %}">{{ e.name }}</a>{% if not forloop.last %},{% endif %} {% endfor %}
+      {% else %}
+      <em>No areas of expertise yet.</em>
+      {% endif %}
+      
+        <div>
+          <h2>Portfolio Links:</h2>
+          <ul>
+            {% if faculty.workurl_set.all %}
+            {% for url in faculty.workurl_set.all %}
+            <li><a href="{{ url.url }}" target="_blank">{{ url.title }}</a> -- {{ url.description }}</li>
+            {% endfor %}
+            {% else %}
+            <li><em>No portfolio links yet.</em></li>
+            {% endif %}
+          </ul>
+        </div>
+    </div>
+</div>
+    
+    <div>
+      <h2>Bio:</h2>
+      {% if faculty.bio %}
+      {{ faculty.bio|truncatewords_html:250|safe|linebreaks }}
+      {% else %}
+      <em>No bio yet.</em>
+      {% endif %}
+    </div>
+    
+    <div id="ProfileColumnLeft">
+        {% if can_read_cv %}
+        <div>
+          <h2>CV:</h2>
+          {% with faculty.get_cv_url as cv_url %}
+          {% if cv_url %}
+          <a href="{{ cv_url }}" title="Curriculum Vitae">Download PDF</a>
+          {% else %}
+          <em>No curriculum vitae uploaded yet.</em>
+          {% endif %}
+          {% endwith %}
+        </div>
+        {% endif %}
+
+		{%if presentations%}
+        <h2>Talks/Conferences/Publications:</h2>
+        <div id="presentations">
+		    <table>
+		    {% for img in presentations %}
+		        {% if img.image %}
+		        <tr>
+		            <td class="thumbnail">
+		                <a href="{{ img.url }}" target="_blank"><img src="{% thumbnail img.image 100x100 crop %}" /></a>
+		            </td>
+		            <td class="info">
+		                <p style="font-weight:bold;"> {{ img.title }} </p>
+		                {% if img.location or img.date %}
+		                <p>
+		                {% spaceless %}
+						{% if img.location %}
+						 {{ img.location }}{% if img.date %}, {% endif %} 
+		                {% endif %}
+						{% if img.date %}
+		                 {{ img.date|date:"M j, Y" }}
+		                {% endif %}
+		                {% endspaceless %}
+		                </p>
+		                {% endif %}
+		            </td>
+                </tr>
+		        {% else %}
+                <tr>
+		        <td>&nbsp;</td>
+		        </tr>
+		        {% endif %}
+		    {% endfor %}
+		    </table>
+        </div>
+		{% endif %}
+
+        <div>
+          <h2>Courses taught:</h2>
+          <form> {# dummy form for valid html, see section-title.js for event handling #}
+          <ul>
+            {% if faculty.sections %}
+            {% for s in faculty.sections %}
+            <li class="section-title">
+              <div class="inputs hide">
+	            <input type="hidden" name="id" value="{{ s.id }}" class="section-id">
+	            <input type="text" name="title" value="{{ s.get_display_title }}" class="text-input">
+              </div>
+              <span class="title"><a href="{% url view-section s.id %}">{{ s.get_display_title }}</a></span> ({{ s.semester }})
+              {% if s.syllabus and can_read_syllabi %}
+				  <br/><nobr>(<a href="{% url profiles_download_syllabus s.id %}">download syllabus</a>)</nobr>
+			  {% endif %}
+            </li>
+            {% endfor %}
+            {% else %}
+            <li><em>No courses yet.</em></li>
+            {% endif %}
+          </ul>
+          </form>
+        </div>
+        <!--
+        <h2>Social networking</h2>
+        <img src="../media/images/social-icon.jpg" />
+        -->
+    </div>
+    
+    <div id="ProfileColumnRight">
+        {% include "profiles/include/invitations_list.html" %}
+                
+		<div class="tags">
+          <h2>Tags:</h2>
+          {% tags_for_object faculty as tag_list %}
+          {% if tag_list %}
+          {% for t in tag_list %}<a href="{% url haystack_search %}?q={{ t.name }}">{{ t }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}
+          {% else %}
+          <em>No tags yet.</em>
+          {% endif %}
+        </div>
+        
+    {% include "profiles/include/works_list.html" %}
+        
+    {% include "profiles/include/mlt_list.html" %}
+
+<!--         {% if document.entities.all %}
+        <h2>Keywords:</h2>
+        <div id="calais-profile">
+            <ul>
+                {% for entity in document.entities.all %}
+                    <li>{{ entity.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        {% if document.topics.all %}
+        <h2>Topics:</h2>
+        <div id="calais-profile">
+            <ul>
+                {% for topic in document.topics.all %}
+                    <li>{{ topic }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+ -->    </div>
+{% endblock %}
+

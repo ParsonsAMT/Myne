@@ -1,0 +1,12 @@
+{{ object.title }}
+{{ object.description }}      
+{{ object.subject.fullname}}
+{{ object.subject.abbreviation}}           
+{{ object.learning_outcomes }}
+{{ object.coursenumber }}
+
+{% if object.section_set.all %}
+    {% for section in object.section_set.all %}
+        {{ section.syllabus_text }}
+    {% endfor %} 
+{% endif %}

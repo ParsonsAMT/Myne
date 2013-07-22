@@ -1,0 +1,22 @@
+	   <script type="text/javascript">                                  
+	       $(function() {   
+	             $('.buttons-invitation').buttonset();
+	     });
+	   </script>
+
+        {% if invitations %}
+        <div class="invitations" id="invitations-block">
+          <h2>Open Invitations</h2>
+          <ul>
+          {% for invitation in invitations %}
+            <li><a href="{{ invitation.host.get_absolute_url }}">{{ invitation.host }}</a>
+                invited you to 
+                <a href="{{ invitation.content_object.get_absolute_url }}">{{ invitation.content_object }}</a>. 
+	            <div class="buttons-invitation">
+	                <a href="{% url profiles_accept_invitation invitation.slug %}">Accept</a><a href="{% url profiles_decline_invitation invitation.slug %}">Decline</a>
+	            </div>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
