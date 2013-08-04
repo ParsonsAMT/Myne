@@ -35,15 +35,22 @@ Myne is currently being supported and maintained by Parsons the New School for D
 ##Contributors
 Myne would like to thank the following people for their help in creating and maintaining Myne.
 
-* Frederico Andrade <faandrade@gmail.com>
-* Jane Pirone - Data Mining <mining@b1950.parsons.edu>
-* Levi Gross <grossl@newschool.edu>
-* Lucas Vickers <lucasvickers@gmail.com>
-* Or Zubalsky <juviley@gmail.com>
-* Rory Solomon <rory@myne.newschool.edu>
-* dbudell
-* edwarm40
-* lucasvickers
+* Jane Pirone - pironej@newschool.edu
+* Jess Irish - irishj@newschool.edu
+* Levi Gross grossl@newschool.edu
+* Rory Solomon solomonr@newschool.edu
+* DongYoon Park cre8ive.park@gmail.com
+* Jonah Model jonah@paperequator.com
+* Minhao Yu minhaoy@gmail.com
+* Lucas Vickers lucasvickers@gmail.com
+* Or Zubalsky juviley@gmail.com
+* Frederico Andrade faandrade@gmail.com
+* Mike Edwards
+* Lucas Vickars
+* Dan Udell 
+* Freddie Andrade faandrade@gmail.com
+* Rachel Law
+* WenChing Li
 
 If you contributed to Myne and have been left out of the list, please submit a pull request.
 
